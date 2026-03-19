@@ -28,7 +28,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. The system can retrieve topics and questions from the knowledge bank for all three USMLE Steps
   3. Claude API responds to a test prompt confirming the integration is live
   4. The knowledge bank contains at least a baseline set of curated content entries (not empty)
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — FastAPI backend scaffold, PostgreSQL setup, and knowledge bank SQLAlchemy models
+- [ ] 01-02-PLAN.md — Next.js frontend scaffold with Tailwind/shadcn and dashboard landing page
+- [ ] 01-03-PLAN.md — Knowledge bank seed data, REST API endpoints, and Claude API integration
 
 ### Phase 2: Question Engine
 **Goal**: Users can answer questions in every USMLE format and receive AI-powered teaching feedback — whether as detailed explanations or Socratic dialogue
@@ -70,7 +75,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/3 | Planning complete | - |
 | 2. Question Engine | 0/TBD | Not started | - |
 | 3. Study Modes | 0/TBD | Not started | - |
 | 4. Progress Tracking | 0/TBD | Not started | - |
