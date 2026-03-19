@@ -1,0 +1,88 @@
+/*
+ * Global stylesheet for the usmleAI frontend.
+ * Imports Tailwind CSS layers and defines the shadcn/ui design tokens
+ * as CSS custom properties. The color palette is neutral and clean,
+ * matching a Linear/Notion-inspired aesthetic.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Light theme color tokens (default) */
+  :root {
+    --background: 0 0% 100%;         /* Pure white background */
+    --foreground: 240 10% 3.9%;      /* Near-black text */
+
+    --card: 0 0% 100%;               /* White card surfaces */
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;         /* Dark primary for buttons/links */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;     /* Light gray for secondary elements */
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;         /* Muted backgrounds and text */
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;        /* Subtle accent for hover states */
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;    /* Red for destructive actions */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;          /* Subtle border color */
+    --input: 240 5.9% 90%;           /* Input border color */
+    --ring: 240 5.9% 10%;            /* Focus ring color */
+    --radius: 0.5rem;                /* Default border radius */
+  }
+
+  /* Dark theme tokens (for future use) */
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  /* Apply design tokens to all elements */
+  * {
+    @apply border-border;
+  }
+
+  /* Set default body styling — white background, dark text */
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
