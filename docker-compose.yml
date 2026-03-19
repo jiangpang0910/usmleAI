@@ -1,0 +1,29 @@
+# Docker Compose configuration for usmleAI development environment
+# Defines the PostgreSQL database service used by the FastAPI backend
+
+services:
+  # PostgreSQL 16 database service for storing knowledge bank data
+  db:
+    image: postgres:16
+    container_name: usmleai-db
+    ports:
+      # Map container port 5432 to host port 5432 for local development access
+      - "5432:5432"
+    environment:
+      # Database credentials for local development (not for production use)
+      POSTGRES_USER: usmleai
+      POSTGRES_PASSWORD: usmleai_dev
+      POSTGRES_DB: usmleai
+    volumes:
+      # Persist database data across container restarts
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # Verify PostgreSQL is ready to accept connections
+      test: ["CMD-SHELL", "pg_isready -U usmleai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+# Named volume for persistent PostgreSQL data storage
+volumes:
+  pgdata:
