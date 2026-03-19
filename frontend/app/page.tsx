@@ -1,11 +1,10 @@
+import Dashboard from "@/components/dashboard/Dashboard";
+
 /**
  * Root page of the usmleAI application.
- * Renders a placeholder until the Dashboard component is built in Task 2.
+ * Renders the Dashboard component as the landing page,
+ * providing quick-start study actions and USMLE step coverage info.
  */
 export default function Home() {
-  return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-2xl font-bold">usmleAI</h1>
-    </main>
-  );
+  return <Dashboard />;
 }
