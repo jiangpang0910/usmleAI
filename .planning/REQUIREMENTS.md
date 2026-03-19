@@ -64,13 +64,28 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated during roadmap creation) | | |
+| QGEN-05 | Phase 1 | Pending |
+| QGEN-06 | Phase 1 | Pending |
+| QGEN-01 | Phase 2 | Pending |
+| QGEN-02 | Phase 2 | Pending |
+| QGEN-03 | Phase 2 | Pending |
+| QGEN-04 | Phase 2 | Pending |
+| TEACH-01 | Phase 2 | Pending |
+| TEACH-02 | Phase 2 | Pending |
+| TEACH-03 | Phase 2 | Pending |
+| STUDY-01 | Phase 3 | Pending |
+| STUDY-02 | Phase 3 | Pending |
+| STUDY-03 | Phase 3 | Pending |
+| TRACK-01 | Phase 4 | Pending |
+| TRACK-02 | Phase 4 | Pending |
+| TRACK-03 | Phase 4 | Pending |
+| TRACK-04 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 16 total
-- Mapped to phases: 0
-- Unmapped: 16 ⚠️
+- Mapped to phases: 16
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-19*
-*Last updated: 2026-03-19 after initial definition*
+*Last updated: 2026-03-19 after roadmap creation — all 16 requirements mapped*
