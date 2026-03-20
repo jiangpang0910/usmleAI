@@ -13,6 +13,15 @@ import type {
   ExplanationResponse,
   FreeResponseSubmitRequest,
   FreeResponseEvaluation,
+  RecordAnswerRequest,
+  RecordAnswerResponse,
+  AdaptiveSessionRequest,
+  AdaptiveSessionResponse,
+  PerformanceSummaryResponse,
+  ExamSessionRequest,
+  ExamSessionResponse,
+  ExamBlockResult,
+  SubmitExamBlockRequest,
 } from "./types";
 
 // Base URL for the FastAPI backend server.
@@ -132,6 +141,87 @@ export async function submitFreeResponse(
   data: FreeResponseSubmitRequest
 ): Promise<FreeResponseEvaluation> {
   return apiFetch<FreeResponseEvaluation>("/api/answers/submit-free-response", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}
+
+// ===== Session & Adaptive API Functions =====
+
+/**
+ * Record an answer to the persistent history database.
+ * Called after submitAnswer() so both validation and history tracking occur.
+ *
+ * @param data - The answer details including question_id, correctness, and topic
+ * @returns RecordAnswerResponse with the new record's UUID and timestamp
+ */
+export async function recordAnswer(
+  data: RecordAnswerRequest
+): Promise<RecordAnswerResponse> {
+  return apiFetch<RecordAnswerResponse>("/api/sessions/record-answer", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}
+
+/**
+ * Fetch the student's overall performance summary across all topics.
+ * Returns aggregate statistics and per-topic accuracy breakdowns.
+ *
+ * @returns PerformanceSummaryResponse with total answers, overall accuracy, and per-topic stats
+ */
+export async function fetchPerformance(): Promise<PerformanceSummaryResponse> {
+  return apiFetch<PerformanceSummaryResponse>("/api/sessions/performance");
+}
+
+/**
+ * Start an adaptive study session that prioritizes weak topics.
+ * The backend analyzes answer history and selects questions with
+ * 70% from weak areas and 30% from other topics.
+ *
+ * @param data - Session config with question count and optional USMLE step filter
+ * @returns AdaptiveSessionResponse with session ID, questions, and weak topics
+ */
+export async function startAdaptiveSession(
+  data: AdaptiveSessionRequest
+): Promise<AdaptiveSessionResponse> {
+  return apiFetch<AdaptiveSessionResponse>("/api/sessions/adaptive/start", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}
+
+// ===== Exam Simulation API Functions =====
+
+/**
+ * Start an exam simulation session with timed blocks.
+ * Creates a session with the specified USMLE step, block count,
+ * and timing configuration. The backend will be built in Plan 03.
+ *
+ * @param data - Exam configuration with step, block count, questions per block, and timing
+ * @returns ExamSessionResponse with session ID, question blocks, and break pool
+ */
+export async function startExamSession(
+  data: ExamSessionRequest
+): Promise<ExamSessionResponse> {
+  return apiFetch<ExamSessionResponse>("/api/sessions/exam/start", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}
+
+/**
+ * Submit a completed exam block for grading.
+ * Called when the block timer expires or the student manually submits.
+ * Unanswered questions should have selected_option_label set to null.
+ *
+ * @param data - Block answers including session_id, block_number, answers, and time spent
+ * @returns ExamBlockResult with per-question correctness and aggregate scores
+ */
+export async function submitExamBlock(
+  data: SubmitExamBlockRequest
+): Promise<ExamBlockResult> {
+  return apiFetch<ExamBlockResult>("/api/sessions/exam/submit-block", {
     method: "POST",
     body: JSON.stringify(data),
   });

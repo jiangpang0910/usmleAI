@@ -162,3 +162,153 @@ export interface QuestionState {
   /** Submission result, null if not yet answered */
   submitResult: AnswerSubmitResponse | null;
 }
+
+// ===== Session & Adaptive Types =====
+
+/** Request body for POST /api/sessions/record-answer -- persist answer to history */
+export interface RecordAnswerRequest {
+  /** UUID of the question that was answered */
+  question_id: string;
+  /** Label the student selected, e.g., "A", "B" */
+  selected_option_label: string;
+  /** Whether the student's answer was correct */
+  is_correct: boolean;
+  /** UUID of the topic this question belongs to (denormalized for aggregation) */
+  topic_id: string;
+  /** Difficulty level of the question at answer time */
+  difficulty: string;
+  /** Seconds spent on this question, or null if not tracked */
+  time_spent_seconds: number | null;
+}
+
+/** Response from POST /api/sessions/record-answer -- confirmation of recorded answer */
+export interface RecordAnswerResponse {
+  /** UUID of the newly created answer history record */
+  id: string;
+  /** Whether the recorded answer was correct */
+  is_correct: boolean;
+  /** ISO timestamp when the answer was recorded */
+  created_at: string;
+}
+
+/** Per-topic performance metrics used in performance summaries and adaptive selection */
+export interface TopicPerformance {
+  /** UUID of the topic */
+  topic_id: string;
+  /** Human-readable topic name (e.g., "Cardiology") */
+  topic_name: string;
+  /** Total number of questions answered in this topic */
+  total_answered: number;
+  /** Number of correctly answered questions */
+  correct_count: number;
+  /** Accuracy ratio: correct_count / total_answered (0.0 to 1.0) */
+  accuracy: number;
+}
+
+/** Request body for POST /api/sessions/adaptive/start -- start adaptive session */
+export interface AdaptiveSessionRequest {
+  /** Number of questions for this session (default 20, range 5-40) */
+  question_count?: number;
+  /** Optional USMLE step filter ("step1", "step2ck", "step3") */
+  usmle_step?: string;
+}
+
+/** Response from POST /api/sessions/adaptive/start -- adaptive session with questions */
+export interface AdaptiveSessionResponse {
+  /** UUID of the newly created adaptive session */
+  session_id: string;
+  /** Selected questions prioritizing weak areas */
+  questions: Question[];
+  /** Topics where student accuracy is below 60% threshold */
+  weak_topics: TopicPerformance[];
+}
+
+/** Response from GET /api/sessions/performance -- overall performance summary */
+export interface PerformanceSummaryResponse {
+  /** Total number of questions answered across all topics */
+  total_answered: number;
+  /** Overall accuracy ratio across all topics (0.0 to 1.0) */
+  overall_accuracy: number;
+  /** Per-topic performance breakdown sorted by accuracy ascending */
+  topics: TopicPerformance[];
+}
+
+// ===== Exam Simulation Types =====
+
+/** Configuration for an exam simulation session */
+export interface ExamConfig {
+  /** Which USMLE step to simulate ("step1", "step2ck", "step3") */
+  usmle_step: string;
+  /** Number of question blocks in the exam */
+  block_count: number;
+  /** Number of questions per block */
+  questions_per_block: number;
+  /** Minutes allowed per block */
+  minutes_per_block: number;
+}
+
+/** Request body for POST /api/sessions/exam/start -- start exam simulation */
+export interface ExamSessionRequest {
+  /** Exam configuration specifying step, blocks, and timing */
+  config: ExamConfig;
+}
+
+/** A single exam block containing questions and a time limit */
+export interface ExamBlock {
+  /** Block number within the exam (1-indexed) */
+  block_number: number;
+  /** Questions assigned to this block */
+  questions: Question[];
+  /** Time limit for this block in seconds */
+  time_limit_seconds: number;
+}
+
+/** Response from POST /api/sessions/exam/start -- exam session with blocks */
+export interface ExamSessionResponse {
+  /** UUID of the newly created exam session */
+  session_id: string;
+  /** Array of exam blocks, each with questions and time limits */
+  blocks: ExamBlock[];
+  /** Total break time pool in seconds (student can allocate between blocks) */
+  break_pool_seconds: number;
+}
+
+/** Result summary for a submitted exam block */
+export interface ExamBlockResult {
+  /** Block number that was submitted */
+  block_number: number;
+  /** Total number of questions in this block */
+  total: number;
+  /** Number of correctly answered questions */
+  correct: number;
+  /** Per-question results with selected answers and correctness */
+  questions: Array<{
+    /** UUID of the question */
+    question_id: string;
+    /** Label the student selected, or null if unanswered */
+    selected_label: string | null;
+    /** Whether the answer was correct */
+    is_correct: boolean;
+  }>;
+}
+
+/** Request body for POST /api/sessions/exam/submit-block -- submit a completed exam block */
+export interface SubmitExamBlockRequest {
+  /** UUID of the exam session this block belongs to */
+  session_id: string;
+  /** Block number being submitted */
+  block_number: number;
+  /** Array of answers for each question in the block */
+  answers: Array<{
+    /** UUID of the question */
+    question_id: string;
+    /** Label selected by student, or null if unanswered (time expired) */
+    selected_option_label: string | null;
+    /** UUID of the question's topic (denormalized) */
+    topic_id: string;
+    /** Difficulty level of the question */
+    difficulty: string;
+  }>;
+  /** Total seconds spent on this block */
+  time_spent_seconds: number;
+}
