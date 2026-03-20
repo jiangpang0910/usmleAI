@@ -170,7 +170,7 @@ export default function DragDropView({ question, onComplete }: DragDropViewProps
         const next = new Map(prev);
 
         // Remove this item from any previous zone placement
-        for (const [key, value] of next.entries()) {
+        for (const [key, value] of Array.from(next.entries())) {
           if (value === zoneName && key !== itemName) {
             // Return the previously placed item to unplaced pool
             next.delete(key);
@@ -212,11 +212,11 @@ export default function DragDropView({ question, onComplete }: DragDropViewProps
     setPlacements((prev) => {
       const next = new Map(prev);
       // Remove item from any previous zone
-      for (const [key, value] of next.entries()) {
+      for (const [key, value] of Array.from(next.entries())) {
         if (key === itemName) next.delete(key);
       }
       // Remove any previous item from this zone
-      for (const [key, value] of next.entries()) {
+      for (const [key, value] of Array.from(next.entries())) {
         if (value === zoneName) next.delete(key);
       }
       next.set(itemName, zoneName);
@@ -248,7 +248,7 @@ export default function DragDropView({ question, onComplete }: DragDropViewProps
    * @returns The DragItem placed in this zone, or undefined
    */
   function getItemInZone(zoneName: string): DragItem | undefined {
-    for (const [itemName, zone] of placements.entries()) {
+    for (const [itemName, zone] of Array.from(placements.entries())) {
       if (zone === zoneName) {
         return dragItems.find((d) => d.itemName === itemName);
       }

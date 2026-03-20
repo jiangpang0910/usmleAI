@@ -26,6 +26,9 @@ import TeachingPanel from "./TeachingPanel";
 import QuestionGrid from "./QuestionGrid";
 import ResultsSummary from "./ResultsSummary";
 import SequentialCaseView from "./SequentialCaseView";
+import DragDropView from "./DragDropView";
+import AbstractView from "./AbstractView";
+import FreeResponseView from "./FreeResponseView";
 
 /**
  * Extract the case ID from a sequential question's stem.
@@ -364,6 +367,88 @@ export default function QuestionView({ questions }: QuestionViewProps) {
     );
   }
 
+  // ===== Drag-and-Drop Question Routing =====
+  // Delegates to DragDropView for drag-and-drop format questions
+  if (currentQuestion.question_type === "drag_and_drop") {
+    return (
+      <div className="space-y-6">
+        <DragDropView
+          question={currentQuestion}
+          onComplete={() => {
+            if (isLastQuestion) {
+              setIsComplete(true);
+            } else {
+              handleNext();
+            }
+          }}
+        />
+        <QuestionGrid
+          totalQuestions={questions.length}
+          currentIndex={currentIndex}
+          questionStates={questionStates}
+          onJumpTo={handleJumpTo}
+          isOpen={isGridOpen}
+          onToggle={() => setIsGridOpen((prev) => !prev)}
+        />
+      </div>
+    );
+  }
+
+  // ===== Abstract/Research Format Question Routing =====
+  // Delegates to AbstractView for research abstract format questions
+  if (currentQuestion.question_type === "abstract") {
+    return (
+      <div className="space-y-6">
+        <AbstractView
+          question={currentQuestion}
+          onComplete={() => {
+            if (isLastQuestion) {
+              setIsComplete(true);
+            } else {
+              handleNext();
+            }
+          }}
+        />
+        <QuestionGrid
+          totalQuestions={questions.length}
+          currentIndex={currentIndex}
+          questionStates={questionStates}
+          onJumpTo={handleJumpTo}
+          isOpen={isGridOpen}
+          onToggle={() => setIsGridOpen((prev) => !prev)}
+        />
+      </div>
+    );
+  }
+
+  // ===== Free-Response Question Routing =====
+  // Delegates to FreeResponseView for open-ended clinical reasoning questions
+  if (currentQuestion.question_type === "free_response") {
+    return (
+      <div className="space-y-6">
+        <FreeResponseView
+          question={currentQuestion}
+          onComplete={() => {
+            if (isLastQuestion) {
+              setIsComplete(true);
+            } else {
+              handleNext();
+            }
+          }}
+        />
+        <QuestionGrid
+          totalQuestions={questions.length}
+          currentIndex={currentIndex}
+          questionStates={questionStates}
+          onJumpTo={handleJumpTo}
+          isOpen={isGridOpen}
+          onToggle={() => setIsGridOpen((prev) => !prev)}
+        />
+      </div>
+    );
+  }
+
+  // ===== Default: Single Best Answer (SBA) Rendering =====
   return (
     <div className="space-y-6">
       {/* ===== Progress Bar with Flag and Grid Toggle ===== */}
