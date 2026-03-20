@@ -9,15 +9,18 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.sessions import SessionMiddleware
 
+from app.config import settings
 from app.database import Base, engine
 
 # Import models so they are registered with Base.metadata before create_all
 import app.models.knowledge  # noqa: F401
 import app.models.session  # noqa: F401
+import app.models.user  # noqa: F401
 
-# Import API routers for topics, questions, answers, Claude AI, and sessions
-from app.routers import topics, questions, answers, claude, sessions, exam
+# Import API routers for topics, questions, answers, Claude AI, sessions, and auth
+from app.routers import topics, questions, answers, claude, sessions, exam, auth
 
 
 @asynccontextmanager
@@ -39,6 +42,10 @@ app = FastAPI(
     description="USMLE Study Platform API",
     lifespan=lifespan,
 )
+
+# Session middleware for authlib OAuth state management
+# Must be added BEFORE CORS middleware so session cookies work correctly
+app.add_middleware(SessionMiddleware, secret_key=settings.JWT_SECRET)
 
 # Configure CORS middleware to allow requests from the Next.js frontend
 # In development, the frontend runs on http://localhost:3000
@@ -85,3 +92,6 @@ app.include_router(sessions.router)
 
 # Exam simulation router: POST /api/sessions/exam/start and /submit-block
 app.include_router(exam.router)
+
+# Auth router: Google OAuth login/callback, JWT user info, and logout
+app.include_router(auth.router)

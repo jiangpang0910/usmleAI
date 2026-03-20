@@ -35,6 +35,24 @@ class Settings(BaseSettings):
     # Default points to the Docker Compose Redis service on standard port
     REDIS_URL: str = "redis://localhost:6379/0"
 
+    # Google OAuth 2.0 client ID from Google Cloud Console
+    # Used by authlib to initiate the OAuth consent flow
+    GOOGLE_CLIENT_ID: str = ""
+
+    # Google OAuth 2.0 client secret from Google Cloud Console
+    # Used by authlib to exchange authorization codes for tokens
+    GOOGLE_CLIENT_SECRET: str = ""
+
+    # Secret key for signing JWT access tokens
+    # MUST be changed in production — generate with: python -c "import secrets; print(secrets.token_hex(32))"
+    JWT_SECRET: str = "dev-secret-change-me"
+
+    # Algorithm used for JWT signing (HS256 = HMAC-SHA256)
+    JWT_ALGORITHM: str = "HS256"
+
+    # Number of hours before a JWT access token expires
+    JWT_EXPIRY_HOURS: int = 24
+
     # Display name for the application, used in API docs and health check
     APP_NAME: str = "usmleAI"
 
