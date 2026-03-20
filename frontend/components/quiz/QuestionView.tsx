@@ -9,17 +9,66 @@
  * 3. Handles answer submission with green/red correctness highlighting
  * 4. Shows AI-powered teaching feedback after submission
  * 5. Provides navigation between questions with state persistence
+ * 6. Includes a flag/bookmark button to mark questions for review
+ * 7. Integrates a slide-out question grid for direct navigation
+ * 8. Shows ResultsSummary page after completing all questions
  *
  * Tracks per-question state (answered, flagged, submission results) for use
- * by downstream components like the results summary page (plan 02-05).
+ * by the QuestionGrid and ResultsSummary components.
  */
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import type { Question, QuestionState } from "@/lib/types";
 import { submitAnswer } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import AnswerOption from "./AnswerOption";
 import TeachingPanel from "./TeachingPanel";
+import QuestionGrid from "./QuestionGrid";
+import ResultsSummary from "./ResultsSummary";
+import SequentialCaseView from "./SequentialCaseView";
+
+/**
+ * Extract the case ID from a sequential question's stem.
+ * Looks for the "[Case: XXX, Part N of M]" prefix pattern to group
+ * sequential questions that belong to the same clinical case.
+ *
+ * @param stem - The question stem text
+ * @returns The case ID string, or null if no case prefix found
+ */
+function extractCaseId(stem: string): string | null {
+  const match = stem.match(/\[Case:\s*([^,]+),/);
+  return match ? match[1].trim() : null;
+}
+
+/**
+ * Group sequential questions by their shared case ID.
+ * Returns the indices and questions for the case that the given index belongs to.
+ *
+ * @param questions - All questions in the quiz
+ * @param startIndex - Index of a sequential question to find the case group for
+ * @returns Object with caseQuestions array and the indices they occupy
+ */
+function getSequentialCaseGroup(
+  questions: Question[],
+  startIndex: number
+): { caseQuestions: Question[]; indices: number[] } {
+  const caseId = extractCaseId(questions[startIndex].stem);
+  if (!caseId) return { caseQuestions: [questions[startIndex]], indices: [startIndex] };
+
+  // Collect all questions in this case by matching case ID
+  const caseQuestions: Question[] = [];
+  const indices: number[] = [];
+  for (let i = 0; i < questions.length; i++) {
+    if (
+      questions[i].question_type === "sequential" &&
+      extractCaseId(questions[i].stem) === caseId
+    ) {
+      caseQuestions.push(questions[i]);
+      indices.push(i);
+    }
+  }
+  return { caseQuestions, indices };
+}
 
 /**
  * Props for the QuestionView component.
@@ -40,6 +89,12 @@ export default function QuestionView({ questions }: QuestionViewProps) {
   const [questionStates, setQuestionStates] = useState<
     Map<number, QuestionState>
   >(new Map());
+  /** Whether the question grid drawer is open */
+  const [isGridOpen, setIsGridOpen] = useState(false);
+  /** Whether the quiz is complete and results should be shown */
+  const [isComplete, setIsComplete] = useState(false);
+  /** Timestamp of when the quiz session started — used for time tracking in results */
+  const sessionStartTime = useRef(Date.now());
 
   /** The question currently being displayed */
   const currentQuestion = questions[currentIndex];
@@ -52,6 +107,9 @@ export default function QuestionView({ questions }: QuestionViewProps) {
 
   /** Whether we're on the last question */
   const isLastQuestion = currentIndex === questions.length - 1;
+
+  /** Whether the current question is flagged/bookmarked */
+  const isFlagged = currentState?.isFlagged ?? false;
 
   /**
    * Handle answer option selection.
@@ -125,6 +183,59 @@ export default function QuestionView({ questions }: QuestionViewProps) {
   }
 
   /**
+   * Toggle the flag/bookmark status for the current question.
+   * Flagged questions appear with a yellow indicator in the question grid
+   * and are listed separately in the results summary.
+   */
+  function handleToggleFlag() {
+    setQuestionStates((prev) => {
+      const next = new Map(prev);
+      const existing = prev.get(currentIndex);
+      next.set(currentIndex, {
+        status: existing?.status ?? "unanswered",
+        isFlagged: !(existing?.isFlagged ?? false),
+        submitResult: existing?.submitResult ?? null,
+      });
+      return next;
+    });
+  }
+
+  /**
+   * Jump to a specific question by index.
+   * Called from the QuestionGrid when a user clicks a question square.
+   * If navigating away from results, clears the complete state.
+   *
+   * @param index - The 0-based question index to navigate to
+   */
+  function handleJumpTo(index: number) {
+    if (index < 0 || index >= questions.length) return;
+    // If we're viewing results and user jumps to review, exit results view
+    setIsComplete(false);
+    setCurrentIndex(index);
+    // Restore the selected option if the question was already answered
+    const targetState = questionStates.get(index);
+    setSelectedOption(
+      targetState?.submitResult?.selected_option_label ?? null
+    );
+  }
+
+  /**
+   * Mark the quiz as complete and show the results summary.
+   * Called when the user clicks "Finish Quiz" after answering the last question.
+   */
+  function handleFinishQuiz() {
+    setIsComplete(true);
+  }
+
+  /**
+   * Navigate back to the dashboard.
+   * Uses window.location for a full page navigation to clear quiz state.
+   */
+  function handleBackToDashboard() {
+    window.location.href = "/";
+  }
+
+  /**
    * Render inline images from the question stem.
    * Supports markdown image syntax ![alt](url) and renders images
    * for X-rays, ECGs, pathology slides, etc.
@@ -182,34 +293,96 @@ export default function QuestionView({ questions }: QuestionViewProps) {
     );
   }
 
-  // Quiz complete state — shown after the last question is answered
-  if (currentIndex >= questions.length) {
+  // ===== Results Summary View =====
+  // Shown after the user clicks "Finish Quiz" on the last question
+  if (isComplete) {
     return (
-      <div className="text-center py-12">
-        <h2 className="text-2xl font-bold mb-4">Quiz Complete!</h2>
-        <p className="text-muted-foreground">
-          You have answered all questions in this topic.
-        </p>
-      </div>
+      <>
+        <ResultsSummary
+          questions={questions}
+          questionStates={questionStates}
+          sessionStartTime={sessionStartTime.current}
+          onBackToDashboard={handleBackToDashboard}
+          onReviewQuestion={handleJumpTo}
+        />
+        {/* Keep the grid available even during results review */}
+        <QuestionGrid
+          totalQuestions={questions.length}
+          currentIndex={currentIndex}
+          questionStates={questionStates}
+          onJumpTo={handleJumpTo}
+          isOpen={isGridOpen}
+          onToggle={() => setIsGridOpen((prev) => !prev)}
+        />
+      </>
     );
   }
 
   return (
     <div className="space-y-6">
-      {/* ===== Progress Bar ===== */}
-      {/* Shows current question number out of total */}
+      {/* ===== Progress Bar with Flag and Grid Toggle ===== */}
+      {/* Shows current question number, flag button, and grid toggle */}
       <div className="flex items-center justify-between text-sm text-muted-foreground">
-        <span className="font-medium">
-          Question {currentIndex + 1} of {questions.length}
-        </span>
-        {/* Progress indicator as a visual bar */}
-        <div className="w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-blue-600 rounded-full transition-all duration-300"
-            style={{
-              width: `${((currentIndex + 1) / questions.length) * 100}%`,
-            }}
-          />
+        <div className="flex items-center gap-2">
+          {/* Question counter */}
+          <span className="font-medium">
+            Question {currentIndex + 1} of {questions.length}
+          </span>
+
+          {/* Flag/bookmark toggle button */}
+          <Button
+            variant={isFlagged ? "default" : "ghost"}
+            size="sm"
+            onClick={handleToggleFlag}
+            className={
+              isFlagged
+                ? "bg-yellow-500 hover:bg-yellow-600 text-white h-7 px-2"
+                : "text-gray-400 hover:text-yellow-500 h-7 px-2"
+            }
+            aria-label={isFlagged ? "Remove flag" : "Flag for review"}
+          >
+            {/* Flag icon — filled when flagged, outline when not */}
+            {isFlagged ? "\u2691" : "\u2690"}
+          </Button>
+        </div>
+
+        <div className="flex items-center gap-3">
+          {/* Progress indicator as a visual bar */}
+          <div className="w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-blue-600 rounded-full transition-all duration-300"
+              style={{
+                width: `${((currentIndex + 1) / questions.length) * 100}%`,
+              }}
+            />
+          </div>
+
+          {/* Grid toggle button — opens the question navigator drawer */}
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsGridOpen((prev) => !prev)}
+            className="h-7 px-2 text-gray-500 hover:text-blue-600"
+            aria-label="Open question navigator"
+          >
+            {/* Grid icon (3x3 squares using Unicode) */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+            </svg>
+          </Button>
         </div>
       </div>
 
@@ -279,15 +452,15 @@ export default function QuestionView({ questions }: QuestionViewProps) {
             </Button>
           )}
 
-          {/* Next button — shown after answer is submitted */}
+          {/* Next button — shown after answer is submitted (not on last question) */}
           {isSubmitted && !isLastQuestion && (
             <Button onClick={handleNext}>Next Question</Button>
           )}
 
-          {/* Quiz complete indicator on last question */}
+          {/* Finish Quiz button — shown on last question after submission */}
           {isSubmitted && isLastQuestion && (
-            <Button variant="outline" disabled>
-              Quiz Complete
+            <Button onClick={handleFinishQuiz}>
+              Finish Quiz
             </Button>
           )}
         </div>
@@ -301,6 +474,17 @@ export default function QuestionView({ questions }: QuestionViewProps) {
           currentState?.submitResult?.selected_option_label ?? selectedOption ?? ""
         }
         isVisible={isSubmitted}
+      />
+
+      {/* ===== Question Grid Drawer ===== */}
+      {/* Slide-out panel for navigating between questions */}
+      <QuestionGrid
+        totalQuestions={questions.length}
+        currentIndex={currentIndex}
+        questionStates={questionStates}
+        onJumpTo={handleJumpTo}
+        isOpen={isGridOpen}
+        onToggle={() => setIsGridOpen((prev) => !prev)}
       />
     </div>
   );
