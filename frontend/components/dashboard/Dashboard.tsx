@@ -144,8 +144,8 @@ export default function Dashboard() {
                         router.push("/topics");
                       } else if (action.title === "Adaptive Session") {
                         router.push("/adaptive");
-                      } else {
-                        alert(`${action.title} — coming soon!`);
+                      } else if (action.title === "Exam Simulation") {
+                        router.push("/exam");
                       }
                     }}
                   >
