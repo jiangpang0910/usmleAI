@@ -136,14 +136,18 @@ export default function Dashboard() {
                   <CardDescription>{action.description}</CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  {/* Pick a Topic navigates to /topics; other actions are coming soon */}
+                  {/* Route to the appropriate study mode page based on card title */}
                   <Button
                     className="w-full"
-                    onClick={() =>
-                      action.title === "Pick a Topic"
-                        ? router.push("/topics")
-                        : alert(`${action.title} — coming soon!`)
-                    }
+                    onClick={() => {
+                      if (action.title === "Pick a Topic") {
+                        router.push("/topics");
+                      } else if (action.title === "Adaptive Session") {
+                        router.push("/adaptive");
+                      } else {
+                        alert(`${action.title} — coming soon!`);
+                      }
+                    }}
                   >
                     {action.buttonLabel}
                   </Button>
