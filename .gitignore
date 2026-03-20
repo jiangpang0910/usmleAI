@@ -2,3 +2,5 @@ backend/app/__pycache__/
 backend/app/models/__pycache__/
 __pycache__/
 *.pyc
+backend/.env
+backend/venv/

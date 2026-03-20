@@ -71,20 +71,20 @@ const usmleSteps: USMLEStep[] = [
     title: "Basic Science Foundations",
     description:
       "Anatomy, Physiology, Biochemistry, Pathology, Pharmacology, Microbiology",
-    accentColor: "border-l-blue-500", // Blue accent for basic sciences
+    accentColor: "border-l-blue-800", // Dark navy for basic sciences
   },
   {
     step: "Step 2 CK",
     title: "Clinical Knowledge",
     description:
       "Internal Medicine, Surgery, Pediatrics, OB/GYN, Psychiatry, Emergency Medicine",
-    accentColor: "border-l-green-500", // Green accent for clinical sciences
+    accentColor: "border-l-blue-600", // Medium navy for clinical sciences
   },
   {
     step: "Step 3",
     title: "Practice of Medicine",
     description: "Biostatistics, Epidemiology, Ethics, Patient Safety",
-    accentColor: "border-l-purple-500", // Purple accent for practice/behavioral
+    accentColor: "border-l-blue-400", // Light navy for practice/behavioral
   },
 ];
 
@@ -105,16 +105,19 @@ const usmleSteps: USMLEStep[] = [
 export default function Dashboard() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Centered container with max width and generous padding */}
-      <div className="max-w-5xl mx-auto p-8 space-y-8">
-        {/* ===== Header Section ===== */}
-        {/* App title and subtitle — clean, minimal header without heavy chrome */}
-        <header className="space-y-2">
+      {/* ===== Navy Header Bar ===== */}
+      {/* Dark navy header strip with white text — medical school aesthetic */}
+      <header className="bg-[hsl(217,71%,20%)] text-white py-6 px-8 shadow-md">
+        <div className="max-w-5xl mx-auto">
           <h1 className="text-2xl font-bold tracking-tight">usmleAI</h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-blue-200">
             AI-powered USMLE preparation
           </p>
-        </header>
+        </div>
+      </header>
+
+      {/* Centered container with max width and generous padding */}
+      <div className="max-w-5xl mx-auto p-8 space-y-8">
 
         {/* ===== Quick-Start Action Cards ===== */}
         {/* Three study modes in a responsive grid: stacked on mobile, 3-column on desktop */}
@@ -171,13 +174,6 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* ===== Footer ===== */}
-        {/* Simple attribution footer in muted text */}
-        <footer className="pt-8 pb-4">
-          <p className="text-xs text-muted-foreground text-center">
-            Powered by Claude AI
-          </p>
-        </footer>
       </div>
     </div>
   );

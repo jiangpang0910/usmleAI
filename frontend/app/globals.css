@@ -10,35 +10,35 @@
 @tailwind utilities;
 
 @layer base {
-  /* Light theme color tokens (default) */
+  /* Light theme color tokens — Navy blue medical school aesthetic */
   :root {
-    --background: 0 0% 100%;         /* Pure white background */
-    --foreground: 240 10% 3.9%;      /* Near-black text */
+    --background: 216 50% 92%;       /* Blue background */
+    --foreground: 222 47% 11%;       /* Dark navy text */
 
     --card: 0 0% 100%;               /* White card surfaces */
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 240 5.9% 10%;         /* Dark primary for buttons/links */
-    --primary-foreground: 0 0% 98%;
+    --primary: 217 71% 25%;          /* Deep navy blue for buttons/links */
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 240 4.8% 95.9%;     /* Light gray for secondary elements */
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 214 32% 91%;        /* Light blue-gray for secondary elements */
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 240 4.8% 95.9%;         /* Muted backgrounds and text */
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 214 32% 91%;            /* Muted blue-gray backgrounds */
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 240 4.8% 95.9%;        /* Subtle accent for hover states */
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 214 32% 91%;           /* Subtle blue accent for hover states */
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84.2% 60.2%;    /* Red for destructive actions */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;          /* Subtle border color */
-    --input: 240 5.9% 90%;           /* Input border color */
-    --ring: 240 5.9% 10%;            /* Focus ring color */
+    --border: 214 32% 86%;           /* Subtle blue-tinted border */
+    --input: 214 32% 86%;            /* Input border color */
+    --ring: 217 71% 25%;             /* Navy focus ring */
     --radius: 0.5rem;                /* Default border radius */
   }
 
