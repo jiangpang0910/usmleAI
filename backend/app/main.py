@@ -15,8 +15,8 @@ from app.database import Base, engine
 # Import models so they are registered with Base.metadata before create_all
 import app.models.knowledge  # noqa: F401
 
-# Import API routers for topics, questions, and Claude AI integration
-from app.routers import topics, questions, claude
+# Import API routers for topics, questions, answers, and Claude AI integration
+from app.routers import topics, questions, answers, claude
 
 
 @asynccontextmanager
@@ -72,5 +72,8 @@ app.include_router(topics.router)
 # Questions router: GET /api/questions/ and GET /api/questions/{question_id}
 app.include_router(questions.router)
 
-# Claude router: POST /api/claude/test for AI integration verification
+# Answers router: POST /api/answers/submit
+app.include_router(answers.router)
+
+# Claude router: POST /api/claude/test and POST /api/claude/explain
 app.include_router(claude.router)
