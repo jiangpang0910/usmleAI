@@ -181,10 +181,12 @@ async def explain_question(
     if request.user_answer_label:
         user_message += f"\n\nThe student selected: {request.user_answer_label}"
 
-    # Build the messages list: system prompt first, then user question context
+    # Prepend system prompt to user message (some free models don't support system role)
+    full_user_message = f"{system_prompt}\n\n---\n\n{user_message}"
+
+    # Build the messages list with combined prompt
     messages = [
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": user_message},
+        {"role": "user", "content": full_user_message},
     ]
 
     # Append conversation history for Socratic multi-turn follow-up
