@@ -39,6 +39,11 @@ Three study modes: topic-based quiz (refine existing), adaptive session (new), a
 - Optional break screen between blocks with 45-minute total break pool (matches real USMLE). Once 45 min used up, remaining blocks start immediately
 - Full block review after completion: every question with correct/incorrect status, explanations available on click
 
+### Teaching LLM
+- Use Gemini 2.0 Flash via OpenRouter for teaching/explanation generation (cheapest with >85% medical accuracy)
+- Swap the existing Claude API explain endpoint to use OpenRouter with Gemini 2.0 Flash
+- Keep the same backend API interface — frontend doesn't need to change
+
 ### Claude's Discretion
 - Adaptive question selection algorithm details
 - Step 3 exam simulation adaptation (two-day format simplification)
@@ -102,7 +107,7 @@ Three study modes: topic-based quiz (refine existing), adaptive session (new), a
 <deferred>
 ## Deferred Ideas
 
-None — discussion stayed within phase scope
+- OpenRouter/Gemini 2.0 migration could also be done as a standalone quick task if it makes sense to decouple from study modes
 
 </deferred>
 
