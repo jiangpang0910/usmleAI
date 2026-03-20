@@ -1,0 +1,555 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "USMLE Exam Structure",
+  "description": "Complete JSON schema representing the structure of all three USMLE Steps, based on official USMLE.org exam format specifications (as of 2026).",
+
+  "definitions": {
+
+    "answer_option": {
+      "type": "object",
+      "description": "A single answer choice (A, B, C, D, E, etc.)",
+      "required": ["label", "text"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Letter label for the option",
+          "examples": ["A", "B", "C", "D", "E"]
+        },
+        "text": {
+          "type": "string",
+          "description": "The answer option text"
+        },
+        "is_correct": {
+          "type": "boolean",
+          "description": "Whether this is the single best answer"
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Why this option is correct or incorrect (shown after answering)"
+        }
+      }
+    },
+
+    "single_best_answer": {
+      "type": "object",
+      "description": "Standard USMLE question: patient-centered vignette with one question and 4-5+ lettered options. Only ONE best answer. Used across all Steps.",
+      "required": ["id", "format", "vignette_format", "stem", "options", "correct_answer"],
+      "properties": {
+        "id": { "type": "string" },
+        "format": { "const": "single_best_answer" },
+        "vignette_format": {
+          "type": "string",
+          "enum": ["paragraph", "chart_tabular"],
+          "description": "Patient scenario can be presented as a narrative paragraph (vignette) or in chart/tabular format with clearly marked sections"
+        },
+        "stem": {
+          "type": "string",
+          "description": "Clinical vignette and question text"
+        },
+        "lead_in": {
+          "type": "string",
+          "description": "The actual question asked, e.g., 'Which of the following is the most likely diagnosis?'"
+        },
+        "options": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/answer_option" },
+          "minItems": 4,
+          "description": "Four or more lettered response options"
+        },
+        "correct_answer": {
+          "type": "string",
+          "description": "Label of the correct option (e.g., 'C')"
+        },
+        "has_media": {
+          "type": "boolean",
+          "description": "Whether the question includes images, audio, or lab graphics"
+        },
+        "media": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["image", "audio", "lab_result", "ecg", "xray", "ct_scan", "pathology_slide"] },
+              "url": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Overall explanation of the correct answer with pathophysiology"
+        }
+      }
+    },
+
+    "sequential_item_set": {
+      "type": "object",
+      "description": "2-3 questions sharing one patient vignette, answered in order. Once you proceed, you CANNOT go back to change previous answers. Tests evolving clinical reasoning.",
+      "required": ["id", "format", "vignette", "items"],
+      "properties": {
+        "id": { "type": "string" },
+        "format": { "const": "sequential_item_set" },
+        "vignette": {
+          "type": "string",
+          "description": "Shared patient vignette that all items in the set reference"
+        },
+        "vignette_format": {
+          "type": "string",
+          "enum": ["paragraph", "chart_tabular"]
+        },
+        "items": {
+          "type": "array",
+          "description": "2-3 sequential questions. Each may add new clinical info (e.g., lab results come back, patient condition changes).",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["sequence", "additional_info", "lead_in", "options", "correct_answer"],
+            "properties": {
+              "sequence": {
+                "type": "integer",
+                "description": "Order in sequence (1, 2, 3)"
+              },
+              "additional_info": {
+                "type": "string",
+                "description": "New clinical information revealed at this step (e.g., 'Lab results return showing...'). Empty for first item."
+              },
+              "lead_in": {
+                "type": "string",
+                "description": "The question for this step"
+              },
+              "options": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/answer_option" },
+                "minItems": 4
+              },
+              "correct_answer": { "type": "string" },
+              "explanation": { "type": "string" }
+            }
+          }
+        },
+        "cannot_go_back": {
+          "const": true,
+          "description": "Sequential items cannot be revisited once answered"
+        }
+      }
+    },
+
+    "multiple_item_set": {
+      "type": "object",
+      "description": "Step 3 only: 2-3 independent questions sharing one vignette. Unlike sequential sets, these CAN be answered in any order and revisited.",
+      "required": ["id", "format", "vignette", "items"],
+      "properties": {
+        "id": { "type": "string" },
+        "format": { "const": "multiple_item_set" },
+        "vignette": {
+          "type": "string",
+          "description": "Shared patient vignette"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["lead_in", "options", "correct_answer"],
+            "properties": {
+              "lead_in": { "type": "string" },
+              "options": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/answer_option" },
+                "minItems": 4
+              },
+              "correct_answer": { "type": "string" },
+              "explanation": { "type": "string" }
+            }
+          }
+        },
+        "can_revisit": {
+          "const": true,
+          "description": "Unlike sequential sets, these items can be answered in any order"
+        }
+      }
+    },
+
+    "abstract_format": {
+      "type": "object",
+      "description": "A research abstract or journal summary followed by 2+ questions. Tests interpretation of clinical studies, biostatistics, epidemiology, and evidence-based medicine.",
+      "required": ["id", "format", "abstract", "items"],
+      "properties": {
+        "id": { "type": "string" },
+        "format": { "const": "abstract" },
+        "abstract": {
+          "type": "object",
+          "description": "The research abstract content",
+          "properties": {
+            "title": { "type": "string" },
+            "objective": { "type": "string" },
+            "methods": { "type": "string" },
+            "results": { "type": "string" },
+            "conclusion": { "type": "string" },
+            "tables": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": { "type": "string" },
+                  "data": { "type": "string", "description": "Tabular data as formatted text or markdown" }
+                }
+              }
+            },
+            "figures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "description": { "type": "string" },
+                  "url": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "items": {
+          "type": "array",
+          "description": "2 or more questions about the abstract",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["lead_in", "options", "correct_answer"],
+            "properties": {
+              "lead_in": { "type": "string" },
+              "options": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/answer_option" },
+                "minItems": 4
+              },
+              "correct_answer": { "type": "string" },
+              "explanation": { "type": "string" },
+              "tested_concept": {
+                "type": "string",
+                "enum": ["biostatistics", "epidemiology", "pharmacology", "diagnostic_studies", "patient_care", "ethics"],
+                "description": "Which domain this abstract question tests"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "pharmaceutical_ad": {
+      "type": "object",
+      "description": "Step 3 only: A drug advertisement from a medical journal. Tests ability to critically evaluate pharmaceutical marketing claims.",
+      "required": ["id", "format", "advertisement", "items"],
+      "properties": {
+        "id": { "type": "string" },
+        "format": { "const": "pharmaceutical_ad" },
+        "advertisement": {
+          "type": "object",
+          "properties": {
+            "drug_name": { "type": "string" },
+            "indication": { "type": "string" },
+            "claims": { "type": "array", "items": { "type": "string" } },
+            "study_data": { "type": "string" },
+            "side_effects": { "type": "string" },
+            "contraindications": { "type": "string" },
+            "references": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["lead_in", "options", "correct_answer"],
+            "properties": {
+              "lead_in": { "type": "string" },
+              "options": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/answer_option" },
+                "minItems": 4
+              },
+              "correct_answer": { "type": "string" },
+              "explanation": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "ccs_case": {
+      "type": "object",
+      "description": "Step 3 Day 2 only: Computer-based Case Simulation. Dynamic, interactive patient management simulation. The user orders tests, prescribes treatments, advances the clock, and manages evolving patient conditions.",
+      "required": ["id", "format", "setting", "initial_presentation", "expected_actions", "scoring_domains"],
+      "properties": {
+        "id": { "type": "string" },
+        "format": { "const": "ccs_case_simulation" },
+        "setting": {
+          "type": "string",
+          "enum": ["emergency_department", "outpatient_office", "inpatient_ward", "icu", "home"],
+          "description": "Clinical setting where the case takes place"
+        },
+        "max_real_time_minutes": {
+          "type": "integer",
+          "description": "Maximum real time allotted for this case (10-20 minutes typically)"
+        },
+        "simulated_time_span": {
+          "type": "string",
+          "description": "How much simulated clinical time the case covers (e.g., 'minutes', 'hours', 'days', 'months')"
+        },
+        "initial_presentation": {
+          "type": "object",
+          "description": "What the physician sees when the case begins",
+          "properties": {
+            "chief_complaint": { "type": "string" },
+            "history": { "type": "string" },
+            "vitals": {
+              "type": "object",
+              "properties": {
+                "blood_pressure": { "type": "string" },
+                "heart_rate": { "type": "integer" },
+                "respiratory_rate": { "type": "integer" },
+                "temperature": { "type": "string" },
+                "spo2": { "type": "string" }
+              }
+            },
+            "physical_exam": { "type": "string" }
+          }
+        },
+        "timeline": {
+          "type": "array",
+          "description": "Sequence of events that can unfold based on physician actions and clock advances",
+          "items": {
+            "type": "object",
+            "properties": {
+              "trigger": {
+                "type": "string",
+                "description": "What triggers this event (time elapsed, action taken, etc.)"
+              },
+              "event": {
+                "type": "string",
+                "description": "What happens (patient condition changes, test results arrive, etc.)"
+              },
+              "updated_vitals": { "type": "object" },
+              "new_findings": { "type": "string" }
+            }
+          }
+        },
+        "expected_actions": {
+          "type": "object",
+          "description": "What the physician should do — used for scoring",
+          "properties": {
+            "indicated": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "action": { "type": "string", "description": "e.g., 'Order CBC', 'Start IV normal saline', 'Consult cardiology'" },
+                  "timing": { "type": "string", "enum": ["immediate", "early", "after_initial_workup", "follow_up"] },
+                  "category": { "type": "string", "enum": ["diagnostic", "therapeutic", "monitoring", "consultation"] }
+                }
+              },
+              "description": "Actions that should be taken — awarded credit"
+            },
+            "contraindicated": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "action": { "type": "string" },
+                  "risk_level": { "type": "string", "enum": ["minor", "moderate", "dangerous"] },
+                  "reason": { "type": "string" }
+                }
+              },
+              "description": "Actions that should NOT be taken — decrease score, especially if dangerous"
+            }
+          }
+        },
+        "diagnosis": {
+          "type": "string",
+          "description": "The underlying diagnosis the case is testing"
+        },
+        "scoring_domains": {
+          "type": "array",
+          "description": "The six domains CCS cases are scored on",
+          "items": {
+            "type": "string",
+            "enum": ["diagnosis", "therapy", "monitoring", "timing", "sequencing", "location"]
+          }
+        }
+      }
+    },
+
+    "question_metadata": {
+      "type": "object",
+      "description": "Metadata attached to any question type",
+      "properties": {
+        "usmle_step": {
+          "type": "string",
+          "enum": ["step1", "step2ck", "step3"],
+          "description": "Which USMLE Step this question targets"
+        },
+        "topic": { "type": "string", "description": "Primary discipline (e.g., Cardiology, Pharmacology)" },
+        "subtopic": { "type": "string", "description": "Specific area within the topic" },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "medium", "hard"]
+        },
+        "source": {
+          "type": "string",
+          "enum": ["curated", "ai_generated"],
+          "description": "Whether this was human-written or Claude-generated"
+        },
+        "learning_objectives": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "What the student should learn from this question"
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Additional tags for filtering (e.g., 'high_yield', 'clinical_reasoning', 'first_aid')"
+        }
+      }
+    }
+  },
+
+  "type": "object",
+  "description": "Complete USMLE exam structure covering all three Steps",
+  "required": ["exam"],
+  "properties": {
+    "exam": {
+      "type": "object",
+      "required": ["steps"],
+      "properties": {
+        "steps": {
+          "type": "object",
+          "required": ["step1", "step2ck", "step3"],
+          "properties": {
+
+            "step1": {
+              "type": "object",
+              "description": "USMLE Step 1 — Basic Sciences. Pass/Fail scoring. Tests foundational science knowledge applied to clinical scenarios.",
+              "properties": {
+                "scoring": { "const": "pass_fail" },
+                "total_questions": { "type": "integer", "maximum": 280, "description": "Up to 280 questions" },
+                "blocks": {
+                  "type": "object",
+                  "description": "As of May 14, 2026: 14 blocks of 20 questions at 30 minutes each (previously 7 blocks of 40 at 60 min)",
+                  "properties": {
+                    "count": { "type": "integer", "enum": [7, 14], "description": "7 (pre-May 2026) or 14 (post-May 2026)" },
+                    "questions_per_block": { "type": "integer", "enum": [20, 40] },
+                    "minutes_per_block": { "type": "integer", "enum": [30, 60] }
+                  }
+                },
+                "total_test_time_hours": { "const": 8 },
+                "break_time_minutes": { "type": "integer", "minimum": 45 },
+                "tutorial_minutes": { "const": 15 },
+                "question_formats": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["single_best_answer"]
+                  },
+                  "description": "Step 1 uses single best answer only"
+                },
+                "content_areas": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "Anatomy, Physiology, Biochemistry, Pathology, Pharmacology, Microbiology, Behavioral Sciences, Genetics, Immunology"
+                }
+              }
+            },
+
+            "step2ck": {
+              "type": "object",
+              "description": "USMLE Step 2 CK — Clinical Knowledge. Numerically scored. Tests clinical reasoning and patient management.",
+              "properties": {
+                "scoring": { "const": "numeric" },
+                "total_questions": { "type": "integer", "maximum": 318, "description": "Up to 318 questions" },
+                "blocks": {
+                  "type": "object",
+                  "description": "As of May 7, 2026: transitioning to shorter, more frequent blocks",
+                  "properties": {
+                    "count": { "type": "integer" },
+                    "questions_per_block": { "type": "integer" },
+                    "minutes_per_block": { "type": "integer" }
+                  }
+                },
+                "total_test_time_hours": { "const": 9 },
+                "break_time_minutes": { "type": "integer", "minimum": 45 },
+                "tutorial_minutes": { "const": 15 },
+                "question_formats": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["single_best_answer", "sequential_item_set", "abstract", "chart_tabular"]
+                  },
+                  "description": "Step 2 CK has the richest variety of MCQ formats"
+                },
+                "content_areas": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "Internal Medicine, Surgery, Pediatrics, OB/GYN, Psychiatry, Emergency Medicine, Preventive Medicine"
+                }
+              }
+            },
+
+            "step3": {
+              "type": "object",
+              "description": "USMLE Step 3 — Clinical Practice. Numerically scored. Two-day exam testing independent practice readiness. Day 2 includes CCS case simulations.",
+              "properties": {
+                "scoring": { "const": "numeric" },
+                "days": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "day_number": { "type": "integer", "enum": [1, 2] },
+                      "name": { "type": "string", "enum": ["Foundations of Independent Practice (FIP)", "Advanced Clinical Medicine (ACM)"] },
+                      "mcq_blocks": {
+                        "type": "object",
+                        "properties": {
+                          "count": { "type": "integer", "const": 6 },
+                          "questions_per_block": { "type": "integer" },
+                          "minutes_per_block": { "type": "integer" }
+                        }
+                      },
+                      "ccs_cases": {
+                        "type": "integer",
+                        "description": "Number of CCS case simulations (Day 2 only: 13 cases)",
+                        "default": 0
+                      }
+                    }
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "question_formats": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "single_best_answer",
+                      "sequential_item_set",
+                      "multiple_item_set",
+                      "abstract",
+                      "pharmaceutical_ad",
+                      "ccs_case_simulation"
+                    ]
+                  },
+                  "description": "Step 3 has all MCQ formats plus CCS case simulations"
+                },
+                "content_areas": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "All clinical disciplines plus practice management, patient safety, medical ethics"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
