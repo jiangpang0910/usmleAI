@@ -15,6 +15,9 @@ from app.database import Base, engine
 # Import models so they are registered with Base.metadata before create_all
 import app.models.knowledge  # noqa: F401
 
+# Import API routers for topics, questions, and Claude AI integration
+from app.routers import topics, questions, claude
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -60,3 +63,14 @@ def health_check():
     Used by monitoring tools and load balancers to verify service health.
     """
     return {"status": "healthy", "app": "usmleAI"}
+
+
+# Register API routers — each handles a group of related endpoints
+# Topics router: GET /api/topics/ and GET /api/topics/{topic_id}
+app.include_router(topics.router)
+
+# Questions router: GET /api/questions/ and GET /api/questions/{question_id}
+app.include_router(questions.router)
+
+# Claude router: POST /api/claude/test for AI integration verification
+app.include_router(claude.router)
