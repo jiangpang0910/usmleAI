@@ -318,6 +318,52 @@ export default function QuestionView({ questions }: QuestionViewProps) {
     );
   }
 
+  // ===== Sequential Case Routing =====
+  // If the current question is a sequential type, group all case parts
+  // and render them using SequentialCaseView instead of the standard view.
+  if (currentQuestion.question_type === "sequential") {
+    const { caseQuestions, indices } = getSequentialCaseGroup(
+      questions,
+      currentIndex
+    );
+
+    /**
+     * Handle sequential case completion.
+     * Advances past all questions in the completed case to the next
+     * non-sequential question (or the next case set).
+     */
+    const handleSequentialCaseComplete = () => {
+      // Find the index after the last question in this case
+      const lastCaseIndex = indices[indices.length - 1];
+      if (lastCaseIndex < questions.length - 1) {
+        // Move to the question after this case
+        setCurrentIndex(lastCaseIndex + 1);
+        setSelectedOption(null);
+      } else {
+        // This was the last case in the quiz -- show results
+        setIsComplete(true);
+      }
+    };
+
+    return (
+      <div className="space-y-6">
+        <SequentialCaseView
+          questions={caseQuestions}
+          onCaseComplete={handleSequentialCaseComplete}
+        />
+        {/* Keep the question grid available for navigation */}
+        <QuestionGrid
+          totalQuestions={questions.length}
+          currentIndex={currentIndex}
+          questionStates={questionStates}
+          onJumpTo={handleJumpTo}
+          isOpen={isGridOpen}
+          onToggle={() => setIsGridOpen((prev) => !prev)}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       {/* ===== Progress Bar with Flag and Grid Toggle ===== */}
