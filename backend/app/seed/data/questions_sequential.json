@@ -1,0 +1,85 @@
+[
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Cardiovascular",
+    "stem": "[Case: cardiology-hf-001, Part 1 of 3]\n\nA 67-year-old man presents to the emergency department with progressive shortness of breath over the past 3 days. He has a history of hypertension and type 2 diabetes. On examination, his blood pressure is 160/95 mmHg, heart rate 110 bpm, and oxygen saturation 89% on room air. Bilateral crackles are heard on lung auscultation. An S3 gallop is present. Chest X-ray shows bilateral pulmonary edema.\n\nWhich of the following is the most likely diagnosis?",
+    "question_type": "sequential",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The presentation of dyspnea, bilateral crackles, S3 gallop, and pulmonary edema on CXR in a patient with hypertension is classic for acute decompensated heart failure.",
+    "options": [
+      {"label": "A", "text": "Acute decompensated heart failure", "is_correct": true, "explanation": "Correct. S3 gallop, bilateral crackles, and pulmonary edema in a patient with HTN risk factors = acute decompensated HF."},
+      {"label": "B", "text": "Community-acquired pneumonia", "is_correct": false, "explanation": "Incorrect. Bilateral symmetric edema pattern and S3 gallop point to cardiac rather than infectious cause."},
+      {"label": "C", "text": "Pulmonary embolism", "is_correct": false, "explanation": "Incorrect. PE typically presents with unilateral findings and would not cause bilateral pulmonary edema or S3."},
+      {"label": "D", "text": "COPD exacerbation", "is_correct": false, "explanation": "Incorrect. COPD would show hyperinflation on CXR, not pulmonary edema. No history of COPD mentioned."},
+      {"label": "E", "text": "Acute respiratory distress syndrome", "is_correct": false, "explanation": "Incorrect. ARDS requires an inciting event (sepsis, trauma) and shows bilateral infiltrates, but the S3 gallop and HTN history favor cardiac cause."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Cardiovascular",
+    "stem": "[Case: cardiology-hf-001, Part 2 of 3]\n\nContinuing the case: The patient is diagnosed with acute decompensated heart failure. Initial labs show BNP 1,850 pg/mL (normal <100), creatinine 1.8 mg/dL, and potassium 4.2 mEq/L.\n\nWhich of the following is the most appropriate initial treatment?",
+    "question_type": "sequential",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "IV furosemide is first-line for acute decompensated HF to reduce volume overload and pulmonary edema rapidly.",
+    "options": [
+      {"label": "A", "text": "IV furosemide", "is_correct": true, "explanation": "Correct. Loop diuretics are first-line for acute HF with volume overload to relieve pulmonary congestion."},
+      {"label": "B", "text": "Oral metoprolol", "is_correct": false, "explanation": "Incorrect. Beta-blockers should not be initiated during acute decompensation as they can worsen cardiac output."},
+      {"label": "C", "text": "IV dopamine", "is_correct": false, "explanation": "Incorrect. Inotropes are reserved for cardiogenic shock with hypotension, not first-line for decompensated HF."},
+      {"label": "D", "text": "Oral lisinopril", "is_correct": false, "explanation": "Incorrect. ACE inhibitors are part of long-term HF management but not first-line acute treatment."},
+      {"label": "E", "text": "IV nitroglycerin", "is_correct": false, "explanation": "Incorrect. Nitrates can be adjunctive but furosemide is the priority for volume overload."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Cardiovascular",
+    "stem": "[Case: cardiology-hf-001, Part 3 of 3]\n\nThe patient responds to IV furosemide with improved oxygenation and urine output. Echocardiography shows ejection fraction of 30%. He is now stable for discharge planning.\n\nWhich of the following medication combinations is most appropriate for long-term management?",
+    "question_type": "sequential",
+    "usmle_step": "step2ck",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "Guideline-directed medical therapy for HFrEF includes ACE inhibitor (or ARB), beta-blocker, and aldosterone antagonist — the 'triple therapy' shown to reduce mortality.",
+    "options": [
+      {"label": "A", "text": "Lisinopril, carvedilol, and spironolactone", "is_correct": true, "explanation": "Correct. ACEi + beta-blocker + MRA is guideline-directed triple therapy for HFrEF (EF <=40%)."},
+      {"label": "B", "text": "Amlodipine, hydrochlorothiazide, and aspirin", "is_correct": false, "explanation": "Incorrect. These treat hypertension but are not guideline-directed HF therapy. Amlodipine is neutral in HF but not first-line."},
+      {"label": "C", "text": "Furosemide, digoxin, and hydralazine", "is_correct": false, "explanation": "Incorrect. Furosemide manages symptoms but doesn't reduce mortality. Digoxin reduces hospitalizations but not mortality."},
+      {"label": "D", "text": "Metoprolol, valsartan, and furosemide", "is_correct": false, "explanation": "Incorrect. Missing aldosterone antagonist. Furosemide alone is for symptom management, not mortality benefit."},
+      {"label": "E", "text": "Lisinopril and aspirin only", "is_correct": false, "explanation": "Incorrect. Incomplete — missing beta-blocker and aldosterone antagonist, which both provide mortality benefit."}
+    ]
+  },
+  {
+    "topic": "Pediatrics",
+    "subtopic": "Neonatology",
+    "stem": "[Case: peds-neonate-001, Part 1 of 2]\n\nA 3-day-old full-term neonate is brought to the emergency department by her parents because she has been feeding poorly and appears increasingly lethargic over the past 12 hours. On examination, the infant is jaundiced and hypotonic. Temperature is 38.2°C (100.8°F). She was born via uncomplicated vaginal delivery and the mother's Group B Streptococcus (GBS) screening was negative. Initial labs show WBC 22,000/μL with 80% neutrophils and elevated C-reactive protein.\n\nWhich of the following is the most appropriate initial diagnostic workup?",
+    "question_type": "sequential",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "A febrile neonate under 28 days with poor feeding and lethargy requires a full sepsis workup including blood culture, urine culture, and lumbar puncture. Neonatal sepsis can rapidly progress and meningitis must be excluded.",
+    "options": [
+      {"label": "A", "text": "Blood culture, urine culture, and lumbar puncture", "is_correct": true, "explanation": "Correct. Full sepsis evaluation in a febrile neonate (<28 days) includes blood, urine, and CSF cultures to rule out bacteremia and meningitis."},
+      {"label": "B", "text": "Blood culture and chest X-ray only", "is_correct": false, "explanation": "Incorrect. Incomplete workup — a febrile neonate needs LP to exclude meningitis, which can present subtly at this age."},
+      {"label": "C", "text": "Rapid strep test and observation", "is_correct": false, "explanation": "Incorrect. Rapid strep test is for pharyngitis in older children. Neonatal sepsis requires full culture-based evaluation."},
+      {"label": "D", "text": "CBC and observation for 24 hours", "is_correct": false, "explanation": "Incorrect. Observation alone is inappropriate in a febrile neonate. Delayed treatment of neonatal sepsis carries high morbidity and mortality."}
+    ]
+  },
+  {
+    "topic": "Pediatrics",
+    "subtopic": "Neonatology",
+    "stem": "[Case: peds-neonate-001, Part 2 of 2]\n\nThe full sepsis workup is performed. Blood cultures are pending. CSF analysis shows WBC 350/μL (90% neutrophils), protein 180 mg/dL, and glucose 20 mg/dL. Gram stain shows gram-positive cocci.\n\nWhich of the following is the most appropriate empiric antibiotic regimen?",
+    "question_type": "sequential",
+    "usmle_step": "step2ck",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "Neonatal meningitis with gram-positive cocci (likely GBS or Listeria) requires ampicillin plus a third-generation cephalosporin (cefotaxime preferred over ceftriaxone in neonates due to bilirubin displacement risk with ceftriaxone).",
+    "options": [
+      {"label": "A", "text": "Ampicillin and cefotaxime", "is_correct": true, "explanation": "Correct. Ampicillin covers GBS and Listeria; cefotaxime provides broad gram-negative coverage and good CSF penetration. Cefotaxime is preferred over ceftriaxone in neonates."},
+      {"label": "B", "text": "Vancomycin and ceftriaxone", "is_correct": false, "explanation": "Incorrect. Ceftriaxone displaces bilirubin from albumin in neonates, risking kernicterus. Vancomycin is not first-line for neonatal meningitis."},
+      {"label": "C", "text": "Penicillin G alone", "is_correct": false, "explanation": "Incorrect. Monotherapy is insufficient for empiric neonatal meningitis coverage. Need combination therapy until cultures identify the organism."},
+      {"label": "D", "text": "Ciprofloxacin and metronidazole", "is_correct": false, "explanation": "Incorrect. Fluoroquinolones are generally avoided in neonates due to cartilage toxicity risk. This combination does not cover typical neonatal pathogens."}
+    ]
+  }
+]
