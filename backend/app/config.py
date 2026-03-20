@@ -20,16 +20,16 @@ class Settings(BaseSettings):
     # Default points to the Docker Compose PostgreSQL service
     DATABASE_URL: str = "postgresql://usmleai:usmleai_dev@localhost:5432/usmleai"
 
-    # Anthropic API key for Claude AI integration (legacy, kept for /test endpoint)
+    # Anthropic API key for Claude AI integration (legacy, kept for compatibility)
     ANTHROPIC_API_KEY: str = ""
 
     # OpenRouter API key for teaching features (explanation + Socratic modes)
     # Get your key at https://openrouter.ai/keys
     OPENROUTER_API_KEY: str = ""
 
-    # OpenRouter model to use for teaching — defaults to a cheap, accurate model
-    # See https://openrouter.ai/models for options
-    OPENROUTER_MODEL: str = "anthropic/claude-sonnet-4"
+    # OpenRouter model to use for teaching
+    # Kimi K2 is free on OpenRouter: moonshotai/kimi-k2:free
+    OPENROUTER_MODEL: str = "moonshotai/kimi-k2:free"
 
     # Redis connection string for caching API responses
     # Default points to the Docker Compose Redis service on standard port

@@ -28,7 +28,7 @@ router = APIRouter(prefix="/api/claude", tags=["claude"])
 def get_openrouter_client() -> OpenAI:
     """
     Create an OpenAI client configured for OpenRouter.
-    OpenRouter uses the OpenAI-compatible API format with a different base URL.
+    Uses free models like google/gemma-3n-e4b-it:free — no credits needed.
     """
     if not settings.OPENROUTER_API_KEY:
         raise HTTPException(
