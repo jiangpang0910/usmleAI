@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-02-PLAN.md
-last_updated: "2026-03-20T06:09:34.199Z"
+stopped_at: Completed 03-04-PLAN.md
+last_updated: "2026-03-20T06:16:09.950Z"
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 13
-  completed_plans: 12
+  completed_plans: 13
 ---
 
 # Project State
@@ -58,6 +58,7 @@ Plan: 3 of 5
 | Phase 03 P01 | 4min | 2 tasks | 7 files |
 | Phase 03 P03 | 2min | 1 tasks | 3 files |
 | Phase 03 P02 | 2min | 2 tasks | 4 files |
+| Phase 03 P04 | 5min | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -93,6 +94,10 @@ Recent decisions affecting current work:
 - [Phase 03]: 60% accuracy threshold for weak topic identification, 70/30 weak/other ratio for adaptive questions
 - [Phase 03]: Return full QuestionResponse objects in exam blocks (not IDs) to match frontend ExamBlock.questions type
 - [Phase 03]: Two-phase AdaptiveSetup component manages both config and session transition
+- [Phase 03]: ExamSetup uses 4-phase state machine (setup/blocks/break/review) matching AdaptiveSetup pattern
+- [Phase 03]: ExamTimer hidden by default with Show/Hide toggle, matching real USMLE exam UX
+- [Phase 03]: onTick callback pattern lets ExamBlock track timerRemaining for accurate time_spent_seconds
+- [Phase 03]: Custom no-feedback answer options in ExamBlock (AnswerOption has submit-state highlighting not suitable for exam mode)
 
 ### Pending Todos
 
@@ -112,6 +117,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-20T06:09:34.194Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-03-20T06:16:00.019Z
+Stopped at: Completed 03-04-PLAN.md
 Resume file: None

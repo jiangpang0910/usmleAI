@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation** - Project scaffolding, knowledge bank structure, and Claude API integration
 - [x] **Phase 2: Question Engine** - All question formats, AI-powered generation, and teaching modes (completed 2026-03-20)
-- [ ] **Phase 3: Study Modes** - Topic quiz, adaptive sessions, and timed exam simulation
+- [x] **Phase 3: Study Modes** - Topic quiz, adaptive sessions, and timed exam simulation (completed 2026-03-20)
 - [ ] **Phase 4: Progress Tracking** - Score history, weak area identification, spaced repetition, and analytics
 
 ## Phase Details
@@ -91,5 +91,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/3 | Planning complete | - |
 | 2. Question Engine | 5/5 | Complete   | 2026-03-20 |
-| 3. Study Modes | 4/5 | In Progress|  |
+| 3. Study Modes | 5/5 | Complete   | 2026-03-20 |
 | 4. Progress Tracking | 0/TBD | Not started | - |
