@@ -1,15 +1,19 @@
 """
-API router for Claude AI integration and teaching endpoints.
+API router for AI teaching endpoints.
 
 Provides endpoints for:
-- Testing the Anthropic Claude API connection (POST /test)
+- Testing the AI connection (POST /test)
 - AI-powered teaching explanations with explanation and Socratic modes (POST /explain)
+
+Uses OpenRouter as the LLM provider — supports any model available on OpenRouter
+including Claude, GPT, Gemini, etc. Configured via OPENROUTER_API_KEY and
+OPENROUTER_MODEL environment variables.
 """
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from anthropic import Anthropic
+from openai import OpenAI
 
 from app.config import settings
 from app.database import get_db
@@ -21,50 +25,60 @@ from app.schemas.teaching import ExplanationRequest, ExplanationResponse
 router = APIRouter(prefix="/api/claude", tags=["claude"])
 
 
+def get_openrouter_client() -> OpenAI:
+    """
+    Create an OpenAI client configured for OpenRouter.
+    OpenRouter uses the OpenAI-compatible API format with a different base URL.
+    """
+    if not settings.OPENROUTER_API_KEY:
+        raise HTTPException(
+            status_code=400,
+            detail="OPENROUTER_API_KEY not configured. Set it in backend/.env",
+        )
+    return OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key=settings.OPENROUTER_API_KEY,
+    )
+
+
 @router.post("/test", response_model=ClaudeTestResponse)
 async def test_claude(request: ClaudeTestRequest):
     """
-    Test the Claude API connection by sending a prompt and returning the response.
+    Test the OpenRouter AI connection by sending a prompt and returning the response.
 
-    Validates that the ANTHROPIC_API_KEY is configured, then sends the
-    provided prompt to Claude (claude-sonnet-4-20250514) and returns the AI response.
+    Uses the configured OPENROUTER_MODEL (defaults to anthropic/claude-sonnet-4).
 
     Returns:
         ClaudeTestResponse with the AI-generated text, model name, and "success" status.
 
     Raises:
-        HTTPException 400: If ANTHROPIC_API_KEY is not configured in settings.
-        HTTPException 502: If the Claude API call fails (network error, invalid key, etc.).
+        HTTPException 400: If OPENROUTER_API_KEY is not configured.
+        HTTPException 502: If the API call fails.
     """
-    # Verify the API key is configured before attempting the call
-    if not settings.ANTHROPIC_API_KEY:
-        raise HTTPException(
-            status_code=400,
-            detail="ANTHROPIC_API_KEY not configured. Set it in .env or environment variables.",
-        )
-
     try:
-        # Create an Anthropic client with the configured API key
-        client = Anthropic(api_key=settings.ANTHROPIC_API_KEY)
+        # Get an OpenRouter-configured client
+        client = get_openrouter_client()
 
-        # Send the prompt to Claude and get the response
-        message = client.messages.create(
-            model="claude-sonnet-4-20250514",
+        # Send the prompt via OpenRouter's OpenAI-compatible API
+        response = client.chat.completions.create(
+            model=settings.OPENROUTER_MODEL,
             max_tokens=500,
             messages=[{"role": "user", "content": request.prompt}],
         )
 
         # Return the successful response with model info
         return ClaudeTestResponse(
-            response=message.content[0].text,
-            model=message.model,
+            response=response.choices[0].message.content,
+            model=response.model,
             status="success",
         )
+    except HTTPException:
+        raise
     except Exception as e:
         # Wrap any API errors in a 502 Bad Gateway response
         raise HTTPException(
             status_code=502,
-            detail=f"Claude API error: {str(e)}",
+            detail=f"OpenRouter API error: {str(e)}",
         )
 
 
@@ -116,13 +130,6 @@ async def explain_question(
         HTTPException 404: If the question_id does not exist.
         HTTPException 502: If the Claude API call fails.
     """
-    # Verify the API key is configured before attempting the call
-    if not settings.ANTHROPIC_API_KEY:
-        raise HTTPException(
-            status_code=400,
-            detail="ANTHROPIC_API_KEY not configured. Set it in .env or environment variables.",
-        )
-
     # Validate teaching_mode is one of the supported values
     if request.teaching_mode not in ("explanation", "socratic"):
         raise HTTPException(
@@ -145,7 +152,7 @@ async def explain_question(
         else SOCRATIC_SYSTEM_PROMPT
     )
 
-    # Build the user message with question details for Claude
+    # Build the user message with question details
     # Include the stem, all options, and the correct answer
     correct_option = next(
         (opt for opt in question.answer_options if opt.is_correct),
@@ -158,20 +165,27 @@ async def explain_question(
     )
 
     # Compose the user message with question context
-    user_message = (
-        f"Question:\n{question.stem}\n\n"
-        f"Answer Options:\n{options_text}\n\n"
-        f"Correct Answer: {correct_option.label}" if correct_option else
-        f"Question:\n{question.stem}\n\n"
-        f"Answer Options:\n{options_text}"
-    )
+    if correct_option:
+        user_message = (
+            f"Question:\n{question.stem}\n\n"
+            f"Answer Options:\n{options_text}\n\n"
+            f"Correct Answer: {correct_option.label}"
+        )
+    else:
+        user_message = (
+            f"Question:\n{question.stem}\n\n"
+            f"Answer Options:\n{options_text}"
+        )
 
     # If the student provided their answer, include it for personalized feedback
     if request.user_answer_label:
         user_message += f"\n\nThe student selected: {request.user_answer_label}"
 
-    # Build the messages list starting with the user's question context
-    messages = [{"role": "user", "content": user_message}]
+    # Build the messages list: system prompt first, then user question context
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_message},
+    ]
 
     # Append conversation history for Socratic multi-turn follow-up
     if request.conversation_history:
@@ -182,14 +196,13 @@ async def explain_question(
             })
 
     try:
-        # Create an Anthropic client with the configured API key
-        client = Anthropic(api_key=settings.ANTHROPIC_API_KEY)
+        # Get an OpenRouter-configured client
+        client = get_openrouter_client()
 
-        # Send the teaching request to Claude with the appropriate system prompt
-        message = client.messages.create(
-            model="claude-sonnet-4-20250514",
+        # Send the teaching request via OpenRouter
+        response = client.chat.completions.create(
+            model=settings.OPENROUTER_MODEL,
             max_tokens=1500,
-            system=system_prompt,
             messages=messages,
         )
 
@@ -197,12 +210,14 @@ async def explain_question(
         return ExplanationResponse(
             question_id=question.id,
             teaching_mode=request.teaching_mode,
-            content=message.content[0].text,
-            model=message.model,
+            content=response.choices[0].message.content,
+            model=response.model,
         )
+    except HTTPException:
+        raise
     except Exception as e:
-        # Wrap any Claude API errors in a 502 Bad Gateway response
+        # Wrap any OpenRouter API errors in a 502 Bad Gateway response
         raise HTTPException(
             status_code=502,
-            detail=f"Claude API error: {str(e)}",
+            detail=f"OpenRouter API error: {str(e)}",
         )
