@@ -24,6 +24,25 @@ services:
       timeout: 5s
       retries: 5
 
-# Named volume for persistent PostgreSQL data storage
+  # Redis 7 cache service for caching API responses (topics, questions)
+  # Reduces database load by serving repeated read-heavy queries from memory
+  redis:
+    image: redis:7-alpine
+    container_name: usmleai-redis
+    ports:
+      # Map container port 6379 to host port 6379 for local development access
+      - "6379:6379"
+    volumes:
+      # Persist cached data across container restarts
+      - redisdata:/data
+    healthcheck:
+      # Verify Redis is ready to accept connections
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+# Named volumes for persistent data storage
 volumes:
   pgdata:
+  redisdata:

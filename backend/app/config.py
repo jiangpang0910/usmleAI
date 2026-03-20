@@ -24,6 +24,10 @@ class Settings(BaseSettings):
     # Must be set in .env or environment for AI features to work
     ANTHROPIC_API_KEY: str = ""
 
+    # Redis connection string for caching API responses
+    # Default points to the Docker Compose Redis service on standard port
+    REDIS_URL: str = "redis://localhost:6379/0"
+
     # Display name for the application, used in API docs and health check
     APP_NAME: str = "usmleAI"
 
