@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-05-PLAN.md
-last_updated: "2026-03-20T05:37:16.202Z"
+stopped_at: Completed 02-04-PLAN.md
+last_updated: "2026-03-20T05:39:15.901Z"
 progress:
   total_phases: 4
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 13
-  completed_plans: 7
+  completed_plans: 8
 ---
 
 # Project State
@@ -53,6 +53,7 @@ Plan: 5 of 5
 | Phase 02 P02 | 15min | 3 tasks | 8 files |
 | Phase 02 P03 | 8min | 2 tasks | 4 files |
 | Phase 02 P05 | 278s | 2 tasks | 3 files |
+| Phase 02 P04 | 4min | 2 tasks | 12 files |
 
 ## Accumulated Context
 
@@ -79,6 +80,10 @@ Recent decisions affecting current work:
 - [Phase 02]: Auto-fetch explanation on answer submission, re-fetch on teaching mode toggle
 - [Phase 02]: Used stem prefix [Case: XXX, Part N of M] convention to group sequential questions by case ID
 - [Phase 02]: Fixed-position drawer with backdrop overlay for question grid navigation
+- [Phase 02]: DnD uses answer_option text format ItemName -> TargetZone with stem-parsed target zones
+- [Phase 02]: Abstract sections parsed by splitting on markdown ## headers with color-coded Card rendering
+- [Phase 02]: Free-response: 20-char minimum, AI scoring via Claude with regex score extraction
+- [Phase 02]: Mobile DnD fallback uses dropdown selects instead of touch DnD library
 
 ### Pending Todos
 
@@ -98,6 +103,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-20T05:37:16.197Z
-Stopped at: Completed 02-05-PLAN.md
+Last session: 2026-03-20T05:39:15.895Z
+Stopped at: Completed 02-04-PLAN.md
 Resume file: None
