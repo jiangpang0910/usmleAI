@@ -17,7 +17,7 @@ import app.models.knowledge  # noqa: F401
 import app.models.session  # noqa: F401
 
 # Import API routers for topics, questions, answers, Claude AI, and sessions
-from app.routers import topics, questions, answers, claude, sessions
+from app.routers import topics, questions, answers, claude, sessions, exam
 
 
 @asynccontextmanager
@@ -82,3 +82,6 @@ app.include_router(claude.router)
 # Sessions router: POST /api/sessions/record-answer, GET /api/sessions/performance,
 # POST /api/sessions/adaptive/start
 app.include_router(sessions.router)
+
+# Exam simulation router: POST /api/sessions/exam/start and /submit-block
+app.include_router(exam.router)
