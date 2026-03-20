@@ -1,85 +1,82 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { Button } from "@/components/ui/button";
+/**
+ * QuestionView — Main quiz question display component.
+ *
+ * Manages the full question-answering flow:
+ * 1. Displays the clinical vignette (question stem) with optional inline images
+ * 2. Renders answer options A-E as clickable cards
+ * 3. Handles answer submission with green/red correctness highlighting
+ * 4. Shows AI-powered teaching feedback after submission
+ * 5. Provides navigation between questions with state persistence
+ *
+ * Tracks per-question state (answered, flagged, submission results) for use
+ * by downstream components like the results summary page (plan 02-05).
+ */
+
+import { useState } from "react";
+import type { Question, QuestionState } from "@/lib/types";
 import { submitAnswer } from "@/lib/api";
-import type {
-  Question,
-  QuestionState,
-  AnswerSubmitResponse,
-} from "@/lib/types";
+import { Button } from "@/components/ui/button";
 import AnswerOption from "./AnswerOption";
 import TeachingPanel from "./TeachingPanel";
 
 /**
  * Props for the QuestionView component.
- * Receives the full array of questions for the current quiz session.
  */
 interface QuestionViewProps {
-  /** Array of questions fetched for this topic */
+  /** Array of questions for this quiz session */
   questions: Question[];
 }
 
-/**
- * QuestionView — the main quiz interface for answering USMLE-style SBA questions.
- *
- * Layout (top to bottom):
- * 1. Progress bar showing current question number
- * 2. Question stem (clinical vignette) with optional inline images
- * 3. Answer options (A-E) with selection highlighting
- * 4. Submit button (disabled until an option is selected)
- * 5. Teaching panel (appears after submission with explanation/Socratic toggle)
- * 6. Navigation buttons (Previous / Next Question)
- *
- * Tracks per-question state (answered, flagged, submit result) so users
- * can navigate back to previously answered questions and see their results.
- */
 export default function QuestionView({ questions }: QuestionViewProps) {
   /** Index of the currently displayed question (0-based) */
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  /** Label of the currently selected option (null if none selected) */
+  /** Label of the currently selected option before submission (e.g., "A") */
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-
   /** Whether an answer submission is in progress */
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  /**
-   * Map of question index to its state (answered status, flag status, submit result).
-   * Uses a Map for efficient per-question state lookup.
-   */
+  /** Per-question state map — tracks answers, flags, and submission results */
   const [questionStates, setQuestionStates] = useState<
     Map<number, QuestionState>
   >(new Map());
 
-  /** The currently displayed question */
+  /** The question currently being displayed */
   const currentQuestion = questions[currentIndex];
 
-  /** State for the current question (if previously answered) */
+  /** Get the state for the current question (if it has been answered) */
   const currentState = questionStates.get(currentIndex);
 
   /** Whether the current question has been submitted */
-  const isAnswered = currentState?.status === "answered";
+  const isSubmitted = !!currentState?.submitResult;
 
-  /** The submit result for the current question (if answered) */
-  const submitResult = currentState?.submitResult ?? null;
+  /** Whether we're on the last question */
+  const isLastQuestion = currentIndex === questions.length - 1;
+
+  /**
+   * Handle answer option selection.
+   * Only allows selection if the question hasn't been submitted yet.
+   */
+  function handleOptionSelect(label: string) {
+    if (isSubmitted) return;
+    setSelectedOption(label);
+  }
 
   /**
    * Handle answer submission.
-   * Sends the selected option to the backend and stores the result
-   * in the questionStates map.
+   * Calls the backend API and stores the result in questionStates.
    */
-  const handleSubmit = useCallback(async () => {
-    if (!selectedOption || isAnswered) return;
+  async function handleSubmit() {
+    if (!selectedOption || isSubmitted || isSubmitting) return;
 
     setIsSubmitting(true);
     try {
-      const result: AnswerSubmitResponse = await submitAnswer({
+      const result = await submitAnswer({
         question_id: currentQuestion.id,
         selected_option_label: selectedOption,
       });
 
-      // Store the result in the question states map
+      // Store the submission result in the question states map
       setQuestionStates((prev) => {
         const next = new Map(prev);
         next.set(currentIndex, {
@@ -90,105 +87,112 @@ export default function QuestionView({ questions }: QuestionViewProps) {
         return next;
       });
     } catch (err) {
-      // Show error inline -- user can retry
-      console.error("Failed to submit answer:", err);
+      // Show error as alert — could be improved with inline error display
+      alert(
+        err instanceof Error ? err.message : "Failed to submit answer"
+      );
     } finally {
       setIsSubmitting(false);
     }
-  }, [selectedOption, isAnswered, currentQuestion, currentIndex]);
+  }
 
   /**
    * Navigate to the next question.
-   * Resets the selected option for fresh state.
+   * Resets the selected option and loads any existing state for the next question.
    */
-  const handleNext = () => {
-    if (currentIndex < questions.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      setSelectedOption(null);
-    }
-  };
+  function handleNext() {
+    if (isLastQuestion) return;
+    setCurrentIndex((prev) => prev + 1);
+    // If next question was already answered, don't reset selected option
+    const nextState = questionStates.get(currentIndex + 1);
+    setSelectedOption(
+      nextState?.submitResult?.selected_option_label ?? null
+    );
+  }
 
   /**
    * Navigate to the previous question.
-   * Resets the selected option (previous answer shown via questionStates).
+   * Loads existing state if the question was previously answered.
    */
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-      setSelectedOption(null);
-    }
-  };
+  function handlePrevious() {
+    if (currentIndex === 0) return;
+    setCurrentIndex((prev) => prev - 1);
+    // Restore the selected option from previous state
+    const prevState = questionStates.get(currentIndex - 1);
+    setSelectedOption(
+      prevState?.submitResult?.selected_option_label ?? null
+    );
+  }
 
   /**
-   * Render the question stem with inline image support.
-   * Detects markdown image syntax ![alt](url) and <img> tags
-   * in the stem text and renders them as clickable images.
-   *
-   * @param stem - The raw question stem text
-   * @returns JSX with text and inline images
+   * Render inline images from the question stem.
+   * Supports markdown image syntax ![alt](url) and renders images
+   * for X-rays, ECGs, pathology slides, etc.
    */
-  const renderStem = (stem: string) => {
-    // Check for markdown image pattern: ![alt](url)
-    const markdownImageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
-    // Check for HTML img tag pattern: <img src="url">
-    const htmlImageRegex = /<img\s+src="([^"]+)"[^>]*>/g;
-
-    const hasMarkdownImages = markdownImageRegex.test(stem);
-    const hasHtmlImages = htmlImageRegex.test(stem);
-
-    // If no images, render as plain text
-    if (!hasMarkdownImages && !hasHtmlImages) {
-      return <p className="text-base leading-relaxed whitespace-pre-wrap">{stem}</p>;
-    }
-
-    // Split stem into text and image segments for markdown images
-    const parts: Array<{ type: "text" | "image"; content: string; alt?: string }> = [];
+  function renderStemContent(stem: string) {
+    // Match markdown image patterns: ![alt text](url)
+    const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
+    const parts: (string | { alt: string; url: string })[] = [];
     let lastIndex = 0;
-    const regex = /!\[([^\]]*)\]\(([^)]+)\)/g;
     let match;
 
-    while ((match = regex.exec(stem)) !== null) {
+    while ((match = imageRegex.exec(stem)) !== null) {
       // Add text before the image
       if (match.index > lastIndex) {
-        parts.push({ type: "text", content: stem.slice(lastIndex, match.index) });
+        parts.push(stem.slice(lastIndex, match.index));
       }
-      // Add the image
-      parts.push({ type: "image", content: match[2], alt: match[1] });
+      // Add the image reference
+      parts.push({ alt: match[1], url: match[2] });
       lastIndex = match.index + match[0].length;
     }
-
-    // Add remaining text after last image
+    // Add remaining text after the last image
     if (lastIndex < stem.length) {
-      parts.push({ type: "text", content: stem.slice(lastIndex) });
+      parts.push(stem.slice(lastIndex));
     }
 
     return (
       <div className="space-y-4">
-        {parts.map((part, idx) =>
-          part.type === "text" ? (
-            <p key={idx} className="text-base leading-relaxed whitespace-pre-wrap">
-              {part.content}
-            </p>
-          ) : (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img
+        {parts.map((part, idx) => {
+          if (typeof part === "string") {
+            return (
+              <p key={idx} className="whitespace-pre-wrap">
+                {part}
+              </p>
+            );
+          }
+          // Render inline image with click-to-zoom (opens in new tab)
+          return (
+            <a
               key={idx}
-              src={part.content}
-              alt={part.alt || "Clinical image"}
-              className="max-w-full rounded-lg border border-gray-200 cursor-pointer hover:shadow-md transition-shadow"
-              onClick={() => window.open(part.content, "_blank")}
-            />
-          )
-        )}
+              href={part.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={part.url}
+                alt={part.alt}
+                className="max-w-full rounded-lg border border-gray-200 cursor-zoom-in hover:shadow-md transition-shadow"
+              />
+            </a>
+          );
+        })}
       </div>
     );
-  };
+  }
 
-  // Show quiz complete message when all questions are answered and user is past the last one
-  const allAnswered =
-    questions.length > 0 &&
-    currentIndex === questions.length - 1 &&
-    isAnswered;
+  // Quiz complete state — shown after the last question is answered
+  if (currentIndex >= questions.length) {
+    return (
+      <div className="text-center py-12">
+        <h2 className="text-2xl font-bold mb-4">Quiz Complete!</h2>
+        <p className="text-muted-foreground">
+          You have answered all questions in this topic.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -198,8 +202,8 @@ export default function QuestionView({ questions }: QuestionViewProps) {
         <span className="font-medium">
           Question {currentIndex + 1} of {questions.length}
         </span>
-        {/* Visual progress indicator */}
-        <div className="flex-1 mx-4 h-2 bg-gray-100 rounded-full overflow-hidden">
+        {/* Progress indicator as a visual bar */}
+        <div className="w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-blue-600 rounded-full transition-all duration-300"
             style={{
@@ -210,17 +214,17 @@ export default function QuestionView({ questions }: QuestionViewProps) {
       </div>
 
       {/* ===== Question Stem (Clinical Vignette) ===== */}
-      {/* Large readable text for the clinical scenario with optional inline images */}
+      {/* Displays the clinical scenario with support for inline images */}
       <div className="prose prose-lg max-w-none">
-        {renderStem(currentQuestion.stem)}
+        {renderStemContent(currentQuestion.stem)}
       </div>
 
       {/* ===== Answer Options ===== */}
-      {/* Vertical list of A-E options with selection/correctness states */}
+      {/* Renders each option as a clickable card with selection/correctness states */}
       <div className="space-y-3">
         {currentQuestion.answer_options.map((option) => {
-          // Find per-option feedback from submit result (if answered)
-          const feedback = submitResult?.options_feedback?.find(
+          // Find per-option feedback if answer has been submitted
+          const optionFeedback = currentState?.submitResult?.options_feedback?.find(
             (f) => f.label === option.label
           );
 
@@ -230,66 +234,32 @@ export default function QuestionView({ questions }: QuestionViewProps) {
               label={option.label}
               text={option.text}
               isSelected={selectedOption === option.label}
-              isSubmitted={isAnswered}
+              isSubmitted={isSubmitted}
               isCorrect={
-                isAnswered
-                  ? submitResult?.correct_option_label === option.label
+                isSubmitted
+                  ? currentState?.submitResult?.correct_option_label ===
+                    option.label
                   : false
               }
               isUserChoice={
-                isAnswered
-                  ? submitResult?.selected_option_label === option.label
+                isSubmitted
+                  ? currentState?.submitResult?.selected_option_label ===
+                    option.label
                   : false
               }
-              onClick={() => setSelectedOption(option.label)}
-              explanation={isAnswered ? feedback?.explanation ?? null : null}
+              onClick={() => handleOptionSelect(option.label)}
+              explanation={
+                isSubmitted ? optionFeedback?.explanation ?? null : null
+              }
             />
           );
         })}
       </div>
 
-      {/* ===== Submit Button ===== */}
-      {/* Disabled until an option is selected; hidden after submission */}
-      {!isAnswered && (
-        <Button
-          className="w-full"
-          size="lg"
-          onClick={handleSubmit}
-          disabled={!selectedOption || isSubmitting}
-        >
-          {isSubmitting ? "Submitting..." : "Submit Answer"}
-        </Button>
-      )}
-
-      {/* ===== Result Summary ===== */}
-      {/* Brief correct/incorrect feedback shown immediately after submission */}
-      {isAnswered && submitResult && (
-        <div
-          className={`rounded-lg p-4 text-sm font-medium ${
-            submitResult.is_correct
-              ? "bg-green-50 text-green-800 border border-green-200"
-              : "bg-red-50 text-red-800 border border-red-200"
-          }`}
-        >
-          {submitResult.is_correct
-            ? "Correct! Well done."
-            : `Incorrect. The correct answer is ${submitResult.correct_option_label}: ${submitResult.correct_option_text}`}
-        </div>
-      )}
-
-      {/* ===== Teaching Panel ===== */}
-      {/* Shows Claude-generated explanation or Socratic dialogue after submission */}
-      {isAnswered && (
-        <TeachingPanel
-          questionId={currentQuestion.id}
-          userAnswerLabel={submitResult?.selected_option_label ?? ""}
-          isVisible={isAnswered}
-        />
-      )}
-
-      {/* ===== Navigation Buttons ===== */}
-      <div className="flex justify-between pt-4">
-        {/* Previous question button */}
+      {/* ===== Action Buttons ===== */}
+      {/* Submit button (before answer) and navigation buttons (after answer) */}
+      <div className="flex items-center justify-between">
+        {/* Previous button — disabled on first question */}
         <Button
           variant="outline"
           onClick={handlePrevious}
@@ -298,18 +268,40 @@ export default function QuestionView({ questions }: QuestionViewProps) {
           Previous
         </Button>
 
-        {/* Next question button (only after answering, or quiz complete message) */}
-        {isAnswered && currentIndex < questions.length - 1 && (
-          <Button onClick={handleNext}>Next Question</Button>
-        )}
+        <div className="flex gap-2">
+          {/* Submit button — shown before answer is submitted */}
+          {!isSubmitted && (
+            <Button
+              onClick={handleSubmit}
+              disabled={!selectedOption || isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Submit"}
+            </Button>
+          )}
 
-        {/* Quiz complete indicator on last question */}
-        {allAnswered && (
-          <div className="flex items-center text-sm font-medium text-green-700">
-            Quiz Complete!
-          </div>
-        )}
+          {/* Next button — shown after answer is submitted */}
+          {isSubmitted && !isLastQuestion && (
+            <Button onClick={handleNext}>Next Question</Button>
+          )}
+
+          {/* Quiz complete indicator on last question */}
+          {isSubmitted && isLastQuestion && (
+            <Button variant="outline" disabled>
+              Quiz Complete
+            </Button>
+          )}
+        </div>
       </div>
+
+      {/* ===== Teaching Panel ===== */}
+      {/* AI-generated explanation/Socratic feedback shown after submission */}
+      <TeachingPanel
+        questionId={currentQuestion.id}
+        userAnswerLabel={
+          currentState?.submitResult?.selected_option_label ?? selectedOption ?? ""
+        }
+        isVisible={isSubmitted}
+      />
     </div>
   );
 }

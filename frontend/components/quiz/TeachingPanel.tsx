@@ -1,83 +1,73 @@
 "use client";
 
+/**
+ * TeachingPanel — AI-powered teaching feedback panel with mode toggle.
+ *
+ * Provides two teaching modes:
+ * - Explanation: Detailed breakdown of the correct answer and reasoning
+ * - Socratic: Interactive guided questioning that helps students think through the problem
+ *
+ * The Socratic mode supports multi-turn conversation where the student
+ * can respond to Claude's questions and receive follow-up guidance.
+ *
+ * Appears below the answer options after the user submits their answer.
+ */
+
 import { useEffect, useState, useCallback } from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { requestExplanation } from "@/lib/api";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 /**
  * Props for the TeachingPanel component.
- * Controls when the panel appears and what question/answer context to use.
+ * Controls when the panel is visible and provides context for the explanation.
  */
 interface TeachingPanelProps {
-  /** ID of the question being explained */
+  /** UUID of the question being explained */
   questionId: string;
-  /** Label of the answer the user selected (e.g., "A") */
+  /** Label of the user's selected answer (provides context for the explanation) */
   userAnswerLabel: string;
-  /** Only show the panel after the answer has been submitted */
+  /** Whether the panel should be displayed (true after answer submission) */
   isVisible: boolean;
 }
 
-/**
- * A single message in the Socratic conversation thread.
- * Tracks the role (user or assistant) and the message content.
- */
+/** A single message in the Socratic conversation thread */
 interface ConversationMessage {
-  /** Who sent the message: the student or the AI */
+  /** Who sent the message: "user" or "assistant" */
   role: "user" | "assistant";
   /** The message text content */
   content: string;
 }
 
-/**
- * TeachingPanel — displays AI-generated teaching feedback after a question is answered.
- *
- * Two modes:
- * 1. Explanation mode: detailed breakdown of why the answer is correct/incorrect
- * 2. Socratic mode: guided questioning where the AI asks follow-up questions
- *    to deepen understanding, supporting multi-turn conversation
- *
- * The panel auto-fetches an explanation when it becomes visible and allows
- * the user to toggle between modes at any time.
- */
 export default function TeachingPanel({
   questionId,
   userAnswerLabel,
   isVisible,
 }: TeachingPanelProps) {
-  /** Current teaching mode: detailed explanation or Socratic questioning */
-  const [teachingMode, setTeachingMode] = useState<
-    "explanation" | "socratic"
-  >("explanation");
-
-  /** The AI-generated explanation content (for explanation mode) */
+  /** Current teaching mode — determines the style of AI response */
+  const [teachingMode, setTeachingMode] = useState<"explanation" | "socratic">(
+    "explanation"
+  );
+  /** The current AI-generated content to display */
   const [content, setContent] = useState<string>("");
-
   /** Whether an API request is in progress */
   const [isLoading, setIsLoading] = useState(false);
-
-  /** Error message if the API request fails */
+  /** Error message if the API call fails */
   const [error, setError] = useState<string | null>(null);
-
-  /** Full conversation history for Socratic multi-turn dialogue */
+  /** Full conversation history for Socratic mode multi-turn dialogue */
   const [conversationHistory, setConversationHistory] = useState<
     ConversationMessage[]
   >([]);
-
-  /** Text input value for the Socratic follow-up response */
+  /** Text input value for the student's Socratic mode response */
   const [socraticInput, setSocraticInput] = useState("");
 
   /**
-   * Fetch an explanation from the Claude API.
-   * Called on initial visibility and when the teaching mode toggles.
+   * Fetch an explanation or Socratic response from the Claude API.
+   * Called when the panel first becomes visible and when the teaching mode changes.
    *
-   * @param mode - Which teaching mode to request
-   * @param history - Optional conversation history for Socratic mode
+   * @param mode - The teaching mode to request
+   * @param history - Optional conversation history for Socratic follow-ups
    */
   const fetchExplanation = useCallback(
     async (
@@ -95,11 +85,10 @@ export default function TeachingPanel({
           conversation_history: history,
         });
 
-        if (mode === "explanation") {
-          // For explanation mode, just show the content directly
-          setContent(response.content);
-        } else {
-          // For Socratic mode, append assistant response to conversation
+        setContent(response.content);
+
+        // In Socratic mode, append the assistant's response to conversation history
+        if (mode === "socratic") {
           setConversationHistory((prev) => [
             ...prev,
             { role: "assistant", content: response.content },
@@ -107,9 +96,7 @@ export default function TeachingPanel({
         }
       } catch (err) {
         setError(
-          err instanceof Error
-            ? err.message
-            : "Failed to load explanation"
+          err instanceof Error ? err.message : "Failed to get explanation"
         );
       } finally {
         setIsLoading(false);
@@ -119,11 +106,11 @@ export default function TeachingPanel({
   );
 
   /**
-   * Auto-fetch explanation when the panel becomes visible.
-   * Triggers on first render and when visibility changes.
+   * Auto-fetch explanation when the panel becomes visible for the first time.
+   * Uses the default "explanation" mode initially.
    */
   useEffect(() => {
-    if (isVisible) {
+    if (isVisible && !content && !isLoading) {
       fetchExplanation("explanation");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -131,62 +118,58 @@ export default function TeachingPanel({
 
   /**
    * Handle teaching mode toggle.
-   * Clears previous content and fetches fresh content in the new mode.
-   *
-   * @param mode - The mode to switch to
+   * Clears previous content and fetches a new response in the selected mode.
    */
-  const handleModeSwitch = (mode: "explanation" | "socratic") => {
-    if (mode === teachingMode) return;
-
-    setTeachingMode(mode);
+  function handleModeToggle(newMode: "explanation" | "socratic") {
+    if (newMode === teachingMode) return; // No-op if same mode
+    setTeachingMode(newMode);
     setContent("");
     setConversationHistory([]);
     setSocraticInput("");
-    fetchExplanation(mode);
-  };
+    fetchExplanation(newMode);
+  }
 
   /**
-   * Handle Socratic follow-up submission.
-   * Appends the user's message to the conversation and requests
-   * a new AI response with the full conversation context.
+   * Handle student's Socratic response submission.
+   * Appends the student's message to history and requests a follow-up from Claude.
    */
-  const handleSocraticSubmit = () => {
+  async function handleSocraticSubmit() {
     if (!socraticInput.trim()) return;
 
-    // Build updated conversation history with user's new message
+    // Add the student's message to the conversation
     const updatedHistory: ConversationMessage[] = [
       ...conversationHistory,
       { role: "user", content: socraticInput.trim() },
     ];
-
     setConversationHistory(updatedHistory);
     setSocraticInput("");
-    fetchExplanation("socratic", updatedHistory);
-  };
 
-  // Don't render anything until the answer has been submitted
+    // Request Claude's follow-up response with full conversation context
+    await fetchExplanation("socratic", updatedHistory);
+  }
+
+  // Don't render anything if the panel isn't visible
   if (!isVisible) return null;
 
   return (
     <Card className="mt-6">
       <CardHeader>
         <div className="flex items-center justify-between">
-          {/* Panel title */}
           <CardTitle className="text-lg">Teaching Feedback</CardTitle>
 
-          {/* Mode toggle: two-segment button group */}
+          {/* Teaching mode toggle — two side-by-side buttons */}
           <div className="flex gap-1">
             <Button
               variant={teachingMode === "explanation" ? "default" : "outline"}
               size="sm"
-              onClick={() => handleModeSwitch("explanation")}
+              onClick={() => handleModeToggle("explanation")}
             >
               Explanation
             </Button>
             <Button
               variant={teachingMode === "socratic" ? "default" : "outline"}
               size="sm"
-              onClick={() => handleModeSwitch("socratic")}
+              onClick={() => handleModeToggle("socratic")}
             >
               Socratic
             </Button>
@@ -195,71 +178,65 @@ export default function TeachingPanel({
       </CardHeader>
 
       <CardContent>
-        {/* Error display */}
-        {error && <p className="text-red-600 text-sm">{error}</p>}
+        {/* Loading state — pulsing text indicator */}
+        {isLoading && (
+          <p className="text-muted-foreground animate-pulse">
+            Generating explanation...
+          </p>
+        )}
 
-        {/* Explanation mode: single block of content */}
-        {teachingMode === "explanation" && (
-          <div>
-            {isLoading ? (
-              <p className="text-muted-foreground animate-pulse">
-                Generating explanation...
-              </p>
-            ) : (
-              <div className="prose prose-sm max-w-none whitespace-pre-wrap">
-                {content}
-              </div>
-            )}
+        {/* Error state — red text with error details */}
+        {error && <p className="text-red-600">Error: {error}</p>}
+
+        {/* Explanation mode — single response displayed as formatted prose */}
+        {!isLoading && !error && teachingMode === "explanation" && content && (
+          <div className="prose prose-sm max-w-none whitespace-pre-wrap">
+            {content}
           </div>
         )}
 
-        {/* Socratic mode: conversation thread with input for follow-up */}
-        {teachingMode === "socratic" && (
+        {/* Socratic mode — conversation thread with input for follow-ups */}
+        {!isLoading && !error && teachingMode === "socratic" && (
           <div className="space-y-4">
-            {/* Conversation history */}
+            {/* Render conversation messages as a thread */}
             {conversationHistory.map((msg, idx) => (
               <div
                 key={idx}
-                className={cn_message(msg.role)}
+                className={cn(
+                  "p-3 rounded-lg text-sm",
+                  msg.role === "assistant"
+                    ? "bg-blue-50 border border-blue-100"
+                    : "bg-gray-50 border border-gray-100 ml-8"
+                )}
               >
-                {/* Role label */}
-                <span className="text-xs font-semibold uppercase text-muted-foreground">
-                  {msg.role === "assistant" ? "Tutor" : "You"}
-                </span>
-                {/* Message content */}
-                <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                {/* Role label for clarity */}
+                <p className="text-xs font-semibold text-muted-foreground mb-1">
+                  {msg.role === "assistant" ? "Claude" : "You"}
+                </p>
+                <p className="whitespace-pre-wrap">{msg.content}</p>
               </div>
             ))}
 
-            {/* Loading indicator for pending AI response */}
-            {isLoading && (
-              <p className="text-muted-foreground animate-pulse text-sm">
-                Thinking...
-              </p>
-            )}
-
-            {/* Follow-up input for student's response */}
-            {!isLoading && conversationHistory.length > 0 && (
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={socraticInput}
-                  onChange={(e) => setSocraticInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") handleSocraticSubmit();
-                  }}
-                  placeholder="Type your response..."
-                  className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <Button
-                  size="sm"
-                  onClick={handleSocraticSubmit}
-                  disabled={!socraticInput.trim()}
-                >
-                  Send
-                </Button>
-              </div>
-            )}
+            {/* Student input for Socratic follow-up responses */}
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={socraticInput}
+                onChange={(e) => setSocraticInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleSocraticSubmit();
+                }}
+                placeholder="Type your response..."
+                className="flex-1 px-3 py-2 border border-gray-200 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <Button
+                size="sm"
+                onClick={handleSocraticSubmit}
+                disabled={!socraticInput.trim() || isLoading}
+              >
+                Send
+              </Button>
+            </div>
           </div>
         )}
       </CardContent>
@@ -267,17 +244,3 @@ export default function TeachingPanel({
   );
 }
 
-/**
- * Returns Tailwind classes for styling a conversation message bubble.
- * Assistant messages get a subtle gray background, user messages get blue.
- *
- * @param role - Whether this is a "user" or "assistant" message
- * @returns CSS class string for the message container
- */
-function cn_message(role: "user" | "assistant"): string {
-  const base = "rounded-lg p-3 space-y-1";
-  if (role === "assistant") {
-    return `${base} bg-gray-50 border border-gray-100`;
-  }
-  return `${base} bg-blue-50 border border-blue-100`;
-}

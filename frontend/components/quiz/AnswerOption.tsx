@@ -1,43 +1,44 @@
 "use client";
 
+/**
+ * AnswerOption — Renders a single answer option (A, B, C, D, or E) as a clickable card.
+ *
+ * Visual states:
+ * - Default: gray border, hoverable
+ * - Selected (before submit): blue border + blue background tint
+ * - Correct answer (after submit): green border + green background
+ * - User's wrong answer (after submit): red border + red background
+ * - Other options (after submit): faded out with reduced opacity
+ *
+ * After submission, the option becomes non-interactive and shows
+ * per-option explanation text if available.
+ */
+
 import { cn } from "@/lib/utils";
 
 /**
  * Props for the AnswerOption component.
- * Controls the visual state based on selection, submission, and correctness.
+ * Controls visual state based on selection and submission status.
  */
 interface AnswerOptionProps {
   /** Option label: "A", "B", "C", "D", or "E" */
   label: string;
-  /** The answer text content */
+  /** The text content of this answer option */
   text: string;
   /** Whether this option is currently selected by the user (before submit) */
   isSelected: boolean;
-  /** Whether the answer has been submitted (locks interactions) */
+  /** Whether the answer has been submitted */
   isSubmitted: boolean;
-  /** Whether this option is the correct answer (only relevant after submit) */
+  /** Whether this option is the correct answer (only meaningful after submit) */
   isCorrect: boolean;
-  /** Whether the user picked this option (only relevant after submit) */
+  /** Whether the user selected this option (only meaningful after submit) */
   isUserChoice: boolean;
   /** Click handler for selecting this option */
   onClick: () => void;
-  /** Per-option explanation text (shown after submit) */
+  /** Per-option explanation text shown after submission */
   explanation: string | null;
 }
 
-/**
- * AnswerOption — renders a single answer choice (A-E) for an SBA question.
- *
- * Visual states:
- * - Default: gray border, hoverable
- * - Selected (pre-submit): blue border and background
- * - Correct (post-submit): green border and background with checkmark
- * - Wrong choice (post-submit): red border and background with X mark
- * - Other options (post-submit): dimmed with reduced opacity
- *
- * After submission, the option is disabled and shows per-option explanation
- * text if available.
- */
 export default function AnswerOption({
   label,
   text,
@@ -49,43 +50,32 @@ export default function AnswerOption({
   explanation,
 }: AnswerOptionProps) {
   /**
-   * Determine the visual style based on current state.
+   * Determine the visual style classes based on the current state.
    * Priority: submitted states > selected state > default state.
    */
-  const getOptionStyles = (): string => {
+  function getOptionClasses(): string {
+    // After submission — show correctness feedback
     if (isSubmitted) {
-      // After submission: show correct answer in green
       if (isCorrect) {
+        // Correct answer always shows green (whether user picked it or not)
         return "border-2 border-green-600 bg-green-50";
       }
-      // After submission: show user's wrong choice in red
       if (isUserChoice && !isCorrect) {
+        // User's wrong selection shows red
         return "border-2 border-red-600 bg-red-50";
       }
-      // After submission: dim all other options
+      // All other options fade out after submission
       return "border border-gray-200 opacity-60";
     }
-    // Before submission: highlight selected option in blue
+
+    // Before submission — show selection state
     if (isSelected) {
       return "border-2 border-blue-600 bg-blue-50";
     }
-    // Default: subtle border with hover effect
+
+    // Default unselected state with hover effect
     return "border border-gray-200 hover:border-blue-400 cursor-pointer";
-  };
-
-  /**
-   * Render a status indicator icon after submission.
-   * Green checkmark for correct, red X for wrong user choice.
-   */
-  const getStatusIndicator = (): string | null => {
-    if (!isSubmitted) return null;
-    if (isCorrect) return "✓";
-    if (isUserChoice && !isCorrect) return "✗";
-    return null;
-  };
-
-  /** Status indicator text (checkmark or X) */
-  const statusIndicator = getStatusIndicator();
+  }
 
   return (
     <button
@@ -93,39 +83,50 @@ export default function AnswerOption({
       onClick={isSubmitted ? undefined : onClick}
       disabled={isSubmitted}
       className={cn(
-        "w-full text-left rounded-lg p-4 transition-all",
-        "flex flex-col gap-2",
-        getOptionStyles(),
+        "w-full text-left p-4 rounded-lg transition-colors",
+        getOptionClasses(),
         isSubmitted && "cursor-default"
       )}
     >
-      {/* Option label and text with optional status indicator */}
       <div className="flex items-start gap-3">
         {/* Option label badge (A, B, C, etc.) */}
-        <span className="font-semibold text-sm min-w-[1.5rem] mt-0.5">
-          {label}.
+        <span
+          className={cn(
+            "flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold",
+            isSubmitted && isCorrect
+              ? "bg-green-600 text-white"
+              : isSubmitted && isUserChoice && !isCorrect
+                ? "bg-red-600 text-white"
+                : isSelected
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-100 text-gray-700"
+          )}
+        >
+          {label}
         </span>
 
-        {/* Option text content */}
-        <span className="flex-1 text-sm">{text}</span>
+        {/* Option text and optional explanation */}
+        <div className="flex-1">
+          <p className="text-sm leading-relaxed">{text}</p>
 
-        {/* Status indicator after submission (checkmark or X) */}
-        {statusIndicator && (
-          <span
-            className={cn(
-              "font-bold text-lg",
-              isCorrect ? "text-green-600" : "text-red-600"
-            )}
-          >
-            {statusIndicator}
-          </span>
-        )}
+          {/* Per-option explanation — shown only after submission if available */}
+          {isSubmitted && explanation && (
+            <p className="mt-2 text-xs text-gray-500 italic">{explanation}</p>
+          )}
+
+          {/* Correctness indicator text after submission */}
+          {isSubmitted && isCorrect && (
+            <p className="mt-1 text-xs font-semibold text-green-700">
+              Correct Answer
+            </p>
+          )}
+          {isSubmitted && isUserChoice && !isCorrect && (
+            <p className="mt-1 text-xs font-semibold text-red-700">
+              Your Answer (Incorrect)
+            </p>
+          )}
+        </div>
       </div>
-
-      {/* Per-option explanation shown after submission */}
-      {isSubmitted && explanation && (
-        <p className="text-xs text-gray-500 ml-7 mt-1">{explanation}</p>
-      )}
     </button>
   );
 }

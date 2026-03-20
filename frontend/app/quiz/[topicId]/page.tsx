@@ -1,49 +1,44 @@
 "use client";
 
+/**
+ * Quiz page route — renders the question answering interface for a specific topic.
+ *
+ * Extracts the topicId from the URL parameters, fetches questions for that topic,
+ * and renders the QuestionView component with the loaded questions.
+ *
+ * Route: /quiz/[topicId]
+ */
+
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import { fetchQuestionsByTopic } from "@/lib/api";
 import type { Question } from "@/lib/types";
+import { Button } from "@/components/ui/button";
 import QuestionView from "@/components/quiz/QuestionView";
 
-/**
- * Quiz page route (/quiz/[topicId]).
- *
- * Fetches questions for the given topic ID and renders the QuestionView
- * component for the user to answer SBA questions.
- *
- * Handles three states:
- * - Loading: while questions are being fetched
- * - Empty: if no questions exist for this topic
- * - Error: if the API request fails
- */
 export default function QuizPage() {
-  /** Extract the topic ID from the URL path parameter */
+  /** Router for navigation (back to topics page) */
+  const router = useRouter();
+  /** Extract topicId from the dynamic route segment */
   const params = useParams();
   const topicId = params.topicId as string;
 
-  /** Router for back navigation */
-  const router = useRouter();
-
   /** Array of questions fetched for this topic */
   const [questions, setQuestions] = useState<Question[]>([]);
-
   /** Whether questions are currently being loaded */
   const [isLoading, setIsLoading] = useState(true);
-
   /** Error message if question fetch fails */
   const [error, setError] = useState<string | null>(null);
 
   /**
-   * Fetch questions from the backend when the component mounts
-   * or when the topic ID changes.
+   * Fetch questions for the given topic on component mount.
+   * Only runs when topicId changes (route navigation).
    */
   useEffect(() => {
-    if (!topicId) return;
-
     async function loadQuestions() {
+      if (!topicId) return;
       try {
+        setIsLoading(true);
         const data = await fetchQuestionsByTopic(topicId);
         setQuestions(data);
       } catch (err) {
@@ -54,7 +49,6 @@ export default function QuizPage() {
         setIsLoading(false);
       }
     }
-
     loadQuestions();
   }, [topicId]);
 
@@ -73,14 +67,12 @@ export default function QuizPage() {
 
       {/* ===== Main Content ===== */}
       <div className="max-w-5xl mx-auto p-8">
-        {/* Back link to topic picker */}
-        <Button
-          variant="ghost"
-          onClick={() => router.push("/topics")}
-          className="text-sm text-muted-foreground -ml-2 mb-6"
-        >
-          &larr; Back to Topics
-        </Button>
+        {/* Back navigation link to topics page */}
+        <div className="mb-6">
+          <Button variant="outline" onClick={() => router.push("/topics")}>
+            Back to Topics
+          </Button>
+        </div>
 
         {/* Loading state */}
         {isLoading && (
@@ -88,16 +80,16 @@ export default function QuizPage() {
         )}
 
         {/* Error state */}
-        {error && <p className="text-red-600">{error}</p>}
+        {error && <p className="text-red-600">Error: {error}</p>}
 
-        {/* Empty state: no questions available for this topic */}
+        {/* Empty state — no questions found for this topic */}
         {!isLoading && !error && questions.length === 0 && (
           <p className="text-muted-foreground">
             No questions found for this topic.
           </p>
         )}
 
-        {/* Question view: renders the quiz interface */}
+        {/* Question view — rendered when questions are loaded */}
         {!isLoading && !error && questions.length > 0 && (
           <QuestionView questions={questions} />
         )}
