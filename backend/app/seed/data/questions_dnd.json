@@ -1,0 +1,36 @@
+[
+  {
+    "topic": "Pharmacology",
+    "subtopic": "Cardiovascular Pharmacology",
+    "stem": "Match each drug to its primary mechanism of action by dragging the drug name to the correct mechanism category.\n\n**Target Zones:**\n- Beta-1 selective antagonist\n- ACE inhibitor\n- Calcium channel blocker\n- Thiazide diuretic",
+    "question_type": "drag_and_drop",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "Understanding drug mechanisms is fundamental to pharmacology. Metoprolol is a beta-1 selective blocker used for hypertension and heart failure. Lisinopril inhibits angiotensin-converting enzyme, reducing angiotensin II production. Amlodipine blocks L-type calcium channels in vascular smooth muscle, causing vasodilation. Hydrochlorothiazide inhibits the Na-Cl cotransporter in the distal convoluted tubule, promoting diuresis.",
+    "learning_objectives": ["Beta-1 selective antagonist", "ACE inhibitor", "Calcium channel blocker", "Thiazide diuretic"],
+    "options": [
+      {"label": "A", "text": "Metoprolol -> Beta-1 selective antagonist", "is_correct": true, "explanation": "Metoprolol selectively blocks beta-1 adrenergic receptors in the heart, reducing heart rate and contractility. It is cardioselective at therapeutic doses."},
+      {"label": "B", "text": "Lisinopril -> ACE inhibitor", "is_correct": true, "explanation": "Lisinopril inhibits angiotensin-converting enzyme (ACE), preventing conversion of angiotensin I to angiotensin II. This reduces vasoconstriction and aldosterone secretion."},
+      {"label": "C", "text": "Amlodipine -> Calcium channel blocker", "is_correct": true, "explanation": "Amlodipine is a dihydropyridine calcium channel blocker that inhibits L-type calcium channels in vascular smooth muscle, causing vasodilation and reducing blood pressure."},
+      {"label": "D", "text": "Hydrochlorothiazide -> Thiazide diuretic", "is_correct": true, "explanation": "Hydrochlorothiazide (HCTZ) inhibits the Na-Cl cotransporter in the distal convoluted tubule, increasing sodium and water excretion to lower blood volume and pressure."}
+    ]
+  },
+  {
+    "topic": "Anatomy",
+    "subtopic": "Neuroanatomy",
+    "stem": "Match each cranial nerve to its primary function by dragging the nerve name to the correct functional category.\n\n**Target Zones:**\n- Pupillary constriction and accommodation\n- Facial expression muscles\n- Tongue movement\n- Shoulder shrug and head rotation",
+    "question_type": "drag_and_drop",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "Cranial nerve functions are high-yield for USMLE. CN III (oculomotor) controls pupillary constriction via parasympathetic fibers and lens accommodation. CN VII (facial) innervates the muscles of facial expression. CN XII (hypoglossal) is the motor nerve to the tongue. CN XI (spinal accessory) innervates the trapezius and sternocleidomastoid muscles for shoulder shrug and head rotation.",
+    "learning_objectives": ["Pupillary constriction and accommodation", "Facial expression muscles", "Tongue movement", "Shoulder shrug and head rotation"],
+    "options": [
+      {"label": "A", "text": "CN III (Oculomotor) -> Pupillary constriction and accommodation", "is_correct": true, "explanation": "CN III carries parasympathetic fibers to the ciliary ganglion, which innervates the sphincter pupillae (pupil constriction) and ciliary muscle (accommodation for near vision)."},
+      {"label": "B", "text": "CN VII (Facial) -> Facial expression muscles", "is_correct": true, "explanation": "CN VII innervates the muscles of facial expression including the orbicularis oculi, frontalis, buccinator, and platysma. It also carries taste from the anterior 2/3 of the tongue."},
+      {"label": "C", "text": "CN XII (Hypoglossal) -> Tongue movement", "is_correct": true, "explanation": "CN XII is the sole motor nerve to the tongue musculature (except palatoglossus, innervated by CN X). Lesions cause the tongue to deviate toward the affected side on protrusion."},
+      {"label": "D", "text": "CN XI (Spinal Accessory) -> Shoulder shrug and head rotation", "is_correct": true, "explanation": "CN XI innervates the trapezius (shoulder shrug) and sternocleidomastoid (head rotation to the contralateral side). It has both cranial and spinal roots."}
+    ]
+  }
+]

@@ -11,6 +11,8 @@ import type {
   AnswerSubmitResponse,
   ExplanationRequest,
   ExplanationResponse,
+  FreeResponseSubmitRequest,
+  FreeResponseEvaluation,
 } from "./types";
 
 // Base URL for the FastAPI backend server.
@@ -113,6 +115,23 @@ export async function requestExplanation(
   data: ExplanationRequest
 ): Promise<ExplanationResponse> {
   return apiFetch<ExplanationResponse>("/api/claude/explain", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}
+
+/**
+ * Submit a free-response answer for AI evaluation.
+ * Sends the student's written clinical reasoning to Claude for scoring
+ * and constructive feedback with a 0-10 score.
+ *
+ * @param data - The question ID and the student's written response
+ * @returns FreeResponseEvaluation with score, feedback, and model answer
+ */
+export async function submitFreeResponse(
+  data: FreeResponseSubmitRequest
+): Promise<FreeResponseEvaluation> {
+  return apiFetch<FreeResponseEvaluation>("/api/answers/submit-free-response", {
     method: "POST",
     body: JSON.stringify(data),
   });

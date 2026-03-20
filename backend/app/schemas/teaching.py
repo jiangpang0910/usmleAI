@@ -132,3 +132,42 @@ class ExplanationResponse(BaseModel):
 
     # The Claude model identifier used to generate the response
     model: str
+
+
+class FreeResponseSubmitRequest(BaseModel):
+    """
+    Request schema for free-response answer submission.
+
+    The student writes a free-text clinical reasoning response
+    that will be evaluated by Claude AI for correctness and completeness.
+    """
+
+    # The UUID of the question being answered
+    question_id: UUID
+
+    # The student's written answer / clinical reasoning
+    user_response: str
+
+
+class FreeResponseEvaluation(BaseModel):
+    """
+    Response schema for AI-evaluated free-response answer.
+
+    Returns a scored evaluation from Claude with detailed feedback
+    including key points identified, missed items, and improvement suggestions.
+    """
+
+    # The question that was answered
+    question_id: UUID
+
+    # 0-10 score from Claude evaluation (10 = perfect response)
+    score: int
+
+    # Claude's evaluation with key points, missed items, suggestions
+    feedback: str
+
+    # The stored explanation as reference (model answer)
+    model_answer: str
+
+    # Claude model used for evaluation
+    model: str

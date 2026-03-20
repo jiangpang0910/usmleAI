@@ -124,6 +124,30 @@ export interface ExplanationResponse {
   model: string;
 }
 
+// ===== Free-Response Types =====
+
+/** Request body for POST /api/answers/submit-free-response */
+export interface FreeResponseSubmitRequest {
+  /** ID of the free-response question being answered */
+  question_id: string;
+  /** The student's written clinical reasoning response */
+  user_response: string;
+}
+
+/** AI evaluation result for a free-response answer */
+export interface FreeResponseEvaluation {
+  /** ID of the question that was evaluated */
+  question_id: string;
+  /** 0-10 score from Claude evaluation (10 = perfect response) */
+  score: number;
+  /** Claude's evaluation with key points, missed items, and suggestions */
+  feedback: string;
+  /** The stored explanation as reference (model answer) */
+  model_answer: string;
+  /** The AI model that generated the evaluation */
+  model: string;
+}
+
 // ===== Quiz Session State Types =====
 
 /** Status of a question in the quiz session -- used by QuestionGrid and QuestionView */

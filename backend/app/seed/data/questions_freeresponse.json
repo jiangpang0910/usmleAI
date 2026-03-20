@@ -1,0 +1,34 @@
+[
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Emergency Medicine",
+    "stem": "A 45-year-old woman presents with sudden-onset severe headache described as 'the worst headache of my life,' neck stiffness, and photophobia. Her vital signs are stable. CT scan of the head is negative.\n\nDescribe your next diagnostic steps, your differential diagnosis, and your initial management plan. Explain your clinical reasoning.",
+    "question_type": "free_response",
+    "usmle_step": "step2ck",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "This presentation is classic for subarachnoid hemorrhage (SAH) until proven otherwise. A negative CT does not rule out SAH, especially if performed more than 6 hours after symptom onset (sensitivity drops from ~98% at 6h to ~93% at 24h). The next step is lumbar puncture (LP) to check for xanthochromia and RBCs. If LP is positive, CT angiography (CTA) should be performed to identify the source (usually a ruptured berry aneurysm). Differential diagnosis includes SAH, meningitis, migraine, and cerebral venous sinus thrombosis. Initial management includes strict blood pressure control, pain management (avoiding NSAIDs), bed rest, and neurosurgical consultation if SAH is confirmed.",
+    "learning_objectives": [
+      "Recognize the classic presentation of subarachnoid hemorrhage",
+      "Understand the limitations of CT sensitivity for SAH over time",
+      "Describe the role of lumbar puncture in SAH diagnosis"
+    ],
+    "options": []
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Cardiology",
+    "stem": "A 58-year-old man with a history of type 2 diabetes, hypertension, and hyperlipidemia presents to the emergency department with 3 hours of substernal chest pressure radiating to his left arm. His ECG shows ST elevation in leads II, III, and aVF. Troponin I is elevated at 2.4 ng/mL.\n\nDescribe the diagnosis, identify the coronary artery most likely involved, outline the immediate management steps, and discuss potential complications to monitor for in the first 48 hours. Explain your reasoning.",
+    "question_type": "free_response",
+    "usmle_step": "step2ck",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "This is an acute ST-elevation myocardial infarction (STEMI) involving the inferior wall (leads II, III, aVF), most commonly caused by occlusion of the right coronary artery (RCA). Immediate management follows the MONA protocol plus reperfusion: Morphine (if needed for pain), Oxygen (if SpO2 <94%), Nitroglycerin (sublingual, avoid if right ventricular involvement suspected), Aspirin (325mg chewed), plus dual antiplatelet therapy (P2Y12 inhibitor), heparin, and emergent percutaneous coronary intervention (PCI) within 90 minutes of arrival (door-to-balloon time). Complications to monitor include: right ventricular infarction (check right-sided leads V4R), bradycardia/heart block (the RCA supplies the AV node in 85% of patients), papillary muscle rupture, ventricular septal defect, and cardiogenic shock.",
+    "learning_objectives": [
+      "Diagnose STEMI using ECG criteria and cardiac biomarkers",
+      "Correlate ECG lead changes with coronary artery territories",
+      "Outline acute STEMI management and reperfusion strategy"
+    ],
+    "options": []
+  }
+]

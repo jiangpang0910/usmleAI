@@ -179,6 +179,9 @@ def seed_database():
             "questions_step2ck.json",
             "questions_step3.json",
             "questions_sequential.json",
+            "questions_dnd.json",
+            "questions_abstract.json",
+            "questions_freeresponse.json",
         ]
         for filename in question_files:
             count += seed_questions(db, topic_map, filename)

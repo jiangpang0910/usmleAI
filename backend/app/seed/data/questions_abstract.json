@@ -1,0 +1,46 @@
+[
+  {
+    "topic": "Biostatistics",
+    "subtopic": "Clinical Trials",
+    "stem": "## Objective\nTo evaluate the efficacy of a novel monoclonal antibody (Drug X) versus standard chemotherapy in patients with stage IIIB non-small cell lung cancer (NSCLC).\n\n## Methods\nA randomized, double-blind, placebo-controlled trial enrolled 450 patients with confirmed stage IIIB NSCLC at 32 centers. Patients were randomized 1:1 to Drug X (200mg IV every 3 weeks) plus standard chemotherapy or placebo plus standard chemotherapy. The primary endpoint was progression-free survival (PFS). Secondary endpoints included overall survival (OS) and objective response rate (ORR).\n\n## Results\nMedian PFS was 8.4 months in the Drug X group vs 5.2 months in the placebo group (HR 0.62, 95% CI 0.49-0.78, p<0.001). ORR was 42% vs 28% (p=0.003). Median OS was 14.2 months vs 11.8 months (HR 0.79, 95% CI 0.63-0.99, p=0.04). Grade 3-4 immune-related adverse events occurred in 18% of the Drug X group vs 3% in the placebo group.\n\n## Conclusion\nDrug X plus standard chemotherapy significantly improved PFS and OS compared to chemotherapy alone in stage IIIB NSCLC, with manageable immune-related toxicity.\n\nBased on this abstract, which of the following is the most accurate interpretation of the study results?",
+    "question_type": "abstract",
+    "usmle_step": "step1",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "The hazard ratio of 0.62 for PFS indicates a 38% reduction in the risk of disease progression or death. The confidence interval (0.49-0.78) does not cross 1.0, confirming statistical significance. The p-value <0.001 further supports this. While the OS improvement was also significant (p=0.04), the HR CI barely excludes 1.0 (0.63-0.99), suggesting a more modest and less certain survival benefit.",
+    "learning_objectives": [
+      "Interpret hazard ratios in clinical trial results",
+      "Assess statistical significance using confidence intervals and p-values",
+      "Distinguish between primary and secondary endpoints"
+    ],
+    "options": [
+      {"label": "A", "text": "Drug X reduced the risk of disease progression by 38% compared to placebo", "is_correct": true, "explanation": "Correct. HR 0.62 means 1 - 0.62 = 0.38 = 38% risk reduction. The 95% CI does not cross 1.0 and p<0.001 confirms significance."},
+      {"label": "B", "text": "Drug X improved overall survival by 62% compared to placebo", "is_correct": false, "explanation": "Incorrect. The HR 0.62 applies to PFS, not OS. The OS HR was 0.79 (21% risk reduction), and this is a common misinterpretation of hazard ratios."},
+      {"label": "C", "text": "The study failed to show a significant difference in overall survival", "is_correct": false, "explanation": "Incorrect. The OS p-value was 0.04, which is below the conventional 0.05 threshold. However, the CI (0.63-0.99) is marginal."},
+      {"label": "D", "text": "The adverse event profile makes Drug X unsuitable for clinical use", "is_correct": false, "explanation": "Incorrect. The conclusion states toxicity was 'manageable.' 18% grade 3-4 immune events is notable but within the range seen with other immunotherapy agents."},
+      {"label": "E", "text": "The study design was inadequate because it used a placebo control", "is_correct": false, "explanation": "Incorrect. Both groups received standard chemotherapy; the placebo controlled for the addition of Drug X, which is an appropriate design when standard of care is maintained."}
+    ]
+  },
+  {
+    "topic": "Biostatistics",
+    "subtopic": "Epidemiology",
+    "stem": "## Objective\nTo determine the association between daily aspirin use and the incidence of colorectal cancer in adults aged 50-70 years.\n\n## Methods\nA prospective cohort study followed 28,500 participants (14,200 daily aspirin users and 14,300 non-users) over 10 years. Participants were identified from a large health maintenance organization database. Colorectal cancer incidence was confirmed by pathology reports. Cox proportional hazards regression was used to calculate adjusted hazard ratios controlling for age, sex, BMI, smoking status, family history, and dietary fiber intake.\n\n## Results\nColorectal cancer developed in 185 aspirin users (1.3%) and 312 non-users (2.2%). The adjusted HR was 0.58 (95% CI 0.48-0.70, p<0.001). Subgroup analysis showed stronger effect in men (HR 0.52) than women (HR 0.67). The number needed to treat (NNT) to prevent one case of colorectal cancer over 10 years was 114. Major GI bleeding occurred in 3.1% of aspirin users vs 0.8% of non-users.\n\n## Conclusion\nDaily aspirin use was associated with a significant reduction in colorectal cancer incidence over 10 years, with a clinically meaningful NNT but an increased risk of GI bleeding.\n\nWhich of the following is the most important limitation of this study design?",
+    "question_type": "abstract",
+    "usmle_step": "step1",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "As a prospective cohort study (observational), this design cannot establish causation. Aspirin users may differ systematically from non-users in ways that affect cancer risk (confounding by indication, healthy user bias). Even though the analysis adjusted for several confounders, residual confounding is always a concern in observational studies. Only a randomized controlled trial can address this limitation.",
+    "learning_objectives": [
+      "Identify limitations of observational study designs",
+      "Distinguish between association and causation",
+      "Understand confounding in cohort studies"
+    ],
+    "options": [
+      {"label": "A", "text": "The observational design cannot establish a causal relationship between aspirin use and reduced cancer risk", "is_correct": true, "explanation": "Correct. Cohort studies can show association but not causation. Despite adjustment for known confounders, unmeasured confounders (healthy user bias, socioeconomic status) may explain the observed association."},
+      {"label": "B", "text": "The sample size of 28,500 was too small to detect a meaningful difference", "is_correct": false, "explanation": "Incorrect. The study found a statistically significant difference (p<0.001) with tight confidence intervals, indicating adequate statistical power."},
+      {"label": "C", "text": "The 10-year follow-up period was insufficient to assess cancer outcomes", "is_correct": false, "explanation": "Incorrect. A 10-year follow-up is generally adequate for colorectal cancer, which has a median development time of 10-15 years from adenoma to carcinoma. The study detected significant differences within this timeframe."},
+      {"label": "D", "text": "Using pathology reports to confirm cancer is unreliable", "is_correct": false, "explanation": "Incorrect. Pathological confirmation is the gold standard for cancer diagnosis. This is a strength, not a limitation, of the study."},
+      {"label": "E", "text": "Cox regression is not appropriate for time-to-event analysis", "is_correct": false, "explanation": "Incorrect. Cox proportional hazards regression is the standard and appropriate statistical method for time-to-event (survival) analysis in cohort studies."}
+    ]
+  }
+]
