@@ -83,6 +83,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/3 | Planning complete | - |
-| 2. Question Engine | 0/5 | Planning complete | - |
+| 2. Question Engine | 2/5 | In Progress|  |
 | 3. Study Modes | 0/TBD | Not started | - |
 | 4. Progress Tracking | 0/TBD | Not started | - |
