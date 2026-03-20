@@ -91,6 +91,7 @@ None yet.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260320-d4r | Generate JSON schema of USMLE exam structure | 2026-03-20 | 074de7b | [260320-d4r](./quick/260320-d4r-generate-json-schema-of-usmle-exam-struc/) |
+| 260320-ij6 | Add Redis caching for topics and questions endpoints | 2026-03-20 | 61d63d3 | [260320-ij6](./quick/260320-ij6-add-redis-caching-for-topics-and-questio/) |
 
 ## Session Continuity
 
