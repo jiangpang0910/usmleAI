@@ -1,0 +1,46 @@
+[
+  {
+    "topic": "Biostatistics",
+    "subtopic": "Study Design",
+    "stem": "A researcher wants to evaluate whether a new screening test for colon cancer reduces mortality in a community. She randomizes 10,000 adults aged 50-75 into two groups: one group receives the new screening test annually, and the other group receives standard care. Both groups are followed for 10 years, and colon cancer mortality rates are compared. Which of the following types of bias is this study design most susceptible to?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "The correct answer is C (Lead-time bias). When evaluating screening tests, lead-time bias is a major concern. Lead-time bias occurs when early detection through screening makes it appear that patients survive longer after diagnosis, when in reality the total lifespan is unchanged -- the diagnosis was simply made earlier. This study appropriately uses mortality as the outcome (which helps mitigate lead-time bias), but the design is still most susceptible to it compared to other biases listed.",
+    "learning_objectives": [
+      "Identify biases specific to screening studies",
+      "Understand lead-time bias and its impact on survival statistics",
+      "Distinguish between lead-time bias and length-time bias"
+    ],
+    "options": [
+      {"label": "A", "text": "Selection bias", "is_correct": false, "explanation": "Incorrect. Randomization minimizes selection bias by ensuring both groups are comparable at baseline. This is a strength of the RCT design."},
+      {"label": "B", "text": "Recall bias", "is_correct": false, "explanation": "Incorrect. Recall bias occurs in case-control studies when participants differentially recall past exposures. This prospective RCT does not rely on participant recall."},
+      {"label": "C", "text": "Lead-time bias", "is_correct": true, "explanation": "Correct. Lead-time bias is inherent to screening studies. Early detection advances the time of diagnosis, making survival appear longer even if treatment does not change the actual time of death. Using mortality (rather than survival from diagnosis) as the endpoint helps but does not eliminate this concern."},
+      {"label": "D", "text": "Confounding bias", "is_correct": false, "explanation": "Incorrect. Randomization controls for known and unknown confounders. While residual confounding is possible, it is not the bias most specific to this screening study design."},
+      {"label": "E", "text": "Hawthorne effect", "is_correct": false, "explanation": "Incorrect. The Hawthorne effect (behavior change due to being observed) could affect both groups equally and is not the bias most specific to screening test evaluation."}
+    ]
+  },
+  {
+    "topic": "Ethics",
+    "subtopic": "Informed Consent",
+    "stem": "A 78-year-old man with advanced pancreatic cancer is admitted to the hospital with worsening abdominal pain and jaundice. His oncologist recommends palliative biliary stenting. The patient's daughter, who holds durable power of attorney, insists on aggressive chemotherapy instead. The patient is alert and oriented and states clearly that he wants the stenting procedure and does not want more chemotherapy. Which of the following is the most appropriate course of action?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is B (Follow the patient's wishes and proceed with biliary stenting). A competent patient's autonomous decision takes precedence over the wishes of a surrogate decision-maker. The durable power of attorney (healthcare proxy) only becomes active when the patient loses decision-making capacity. Since this patient is alert, oriented, and clearly expressing his preferences, his wishes must be respected. The principle of autonomy is paramount.",
+    "learning_objectives": [
+      "Apply the principle of patient autonomy in clinical decision-making",
+      "Understand when a healthcare proxy's authority is and is not active",
+      "Recognize that a competent patient's wishes override surrogate decisions"
+    ],
+    "options": [
+      {"label": "A", "text": "Follow the daughter's wishes because she holds power of attorney", "is_correct": false, "explanation": "Incorrect. The durable power of attorney for healthcare is only activated when the patient lacks decision-making capacity. This patient is competent and can make his own decisions."},
+      {"label": "B", "text": "Follow the patient's wishes and proceed with biliary stenting", "is_correct": true, "explanation": "Correct. A competent patient has the right to make his own medical decisions regardless of what family members or surrogates prefer. Autonomy is the overriding ethical principle when the patient has capacity."},
+      {"label": "C", "text": "Seek a court order to resolve the disagreement", "is_correct": false, "explanation": "Incorrect. A court order is unnecessary when the patient is competent and clearly expressing his wishes. Courts are involved when there is dispute about capacity or when no surrogate is available for an incapacitated patient."},
+      {"label": "D", "text": "Request an ethics committee consultation before proceeding", "is_correct": false, "explanation": "Incorrect. While ethics consultations can be helpful for complex cases, this scenario is straightforward: the competent patient has clearly stated his preference. Delaying treatment for a consultation is not necessary."},
+      {"label": "E", "text": "Defer treatment until the patient and daughter reach agreement", "is_correct": false, "explanation": "Incorrect. Deferring necessary palliative treatment causes the patient unnecessary suffering. The patient's autonomous decision should be respected immediately."}
+    ]
+  }
+]

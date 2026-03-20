@@ -1,0 +1,68 @@
+[
+  {
+    "topic": "Pathology",
+    "subtopic": "General Pathology",
+    "stem": "A 45-year-old man presents with a 3-month history of progressive fatigue, weight loss, and night sweats. Physical examination reveals bilateral hilar lymphadenopathy and erythema nodosum on the anterior shins. A biopsy of an enlarged lymph node shows well-formed, non-caseating granulomas with multinucleated giant cells. Acid-fast bacilli stain is negative. Which of the following is the most likely diagnosis?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is B (Sarcoidosis). Sarcoidosis is a systemic granulomatous disease of unknown etiology characterized by non-caseating granulomas. The classic presentation includes bilateral hilar lymphadenopathy, erythema nodosum, and constitutional symptoms. The negative AFB stain helps exclude tuberculosis, which typically presents with caseating granulomas. Sarcoidosis most commonly affects young adults, particularly African Americans and Northern Europeans.",
+    "learning_objectives": [
+      "Identify key features of granulomatous inflammation",
+      "Distinguish between caseating and non-caseating granulomas",
+      "Recognize the classic clinical presentation of sarcoidosis"
+    ],
+    "options": [
+      {"label": "A", "text": "Tuberculosis", "is_correct": false, "explanation": "Incorrect. Tuberculosis causes caseating granulomas and would show positive acid-fast bacilli on stain. The non-caseating pattern and negative AFB stain argue against TB."},
+      {"label": "B", "text": "Sarcoidosis", "is_correct": true, "explanation": "Correct. Non-caseating granulomas with bilateral hilar lymphadenopathy and erythema nodosum are the hallmark of sarcoidosis. The negative AFB stain further supports this diagnosis."},
+      {"label": "C", "text": "Hodgkin lymphoma", "is_correct": false, "explanation": "Incorrect. While Hodgkin lymphoma can cause hilar lymphadenopathy, biopsy would show Reed-Sternberg cells in a mixed inflammatory background, not well-formed granulomas."},
+      {"label": "D", "text": "Berylliosis", "is_correct": false, "explanation": "Incorrect. Berylliosis can cause non-caseating granulomas but requires occupational exposure to beryllium (aerospace, electronics manufacturing). No occupational history is mentioned."},
+      {"label": "E", "text": "Fungal infection", "is_correct": false, "explanation": "Incorrect. Fungal infections such as histoplasmosis can cause granulomas, but special stains (GMS, PAS) would reveal fungal organisms. The clinical presentation is most consistent with sarcoidosis."}
+    ]
+  },
+  {
+    "topic": "Pharmacology",
+    "subtopic": "Cardiovascular Drugs",
+    "stem": "A 58-year-old woman with a history of congestive heart failure is started on a new medication. Two weeks later, she presents with gynecomastia and hyperkalemia. Her serum potassium is 6.1 mEq/L. Which of the following medications was most likely prescribed?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is C (Spironolactone). Spironolactone is a potassium-sparing diuretic and aldosterone receptor antagonist used in heart failure. Its anti-androgenic effects cause gynecomastia in up to 10% of male patients, and its potassium-sparing action leads to hyperkalemia. Spironolactone has been shown to reduce mortality in severe heart failure (RALES trial).",
+    "learning_objectives": [
+      "Identify the side effects of aldosterone antagonists",
+      "Understand the mechanism of potassium-sparing diuretics",
+      "Recognize drug-induced gynecomastia"
+    ],
+    "options": [
+      {"label": "A", "text": "Furosemide", "is_correct": false, "explanation": "Incorrect. Furosemide is a loop diuretic that causes hypokalemia (not hyperkalemia) by blocking the Na-K-2Cl cotransporter in the thick ascending limb. It does not cause gynecomastia."},
+      {"label": "B", "text": "Lisinopril", "is_correct": false, "explanation": "Incorrect. ACE inhibitors can cause mild hyperkalemia but do not cause gynecomastia. The combination of both findings points to spironolactone."},
+      {"label": "C", "text": "Spironolactone", "is_correct": true, "explanation": "Correct. Spironolactone is an aldosterone antagonist that causes both hyperkalemia (potassium-sparing effect) and gynecomastia (anti-androgenic effect at peripheral androgen receptors)."},
+      {"label": "D", "text": "Hydrochlorothiazide", "is_correct": false, "explanation": "Incorrect. HCTZ is a thiazide diuretic that causes hypokalemia by inhibiting the NaCl cotransporter in the distal convoluted tubule. It does not cause gynecomastia."},
+      {"label": "E", "text": "Digoxin", "is_correct": false, "explanation": "Incorrect. While digoxin can rarely cause gynecomastia due to estrogen-like steroid structure, it does not cause hyperkalemia at therapeutic doses. The combination of both findings is most characteristic of spironolactone."}
+    ]
+  },
+  {
+    "topic": "Physiology",
+    "subtopic": "Cardiovascular Physiology",
+    "stem": "A 30-year-old athlete undergoes cardiac testing during a sports physical. His resting heart rate is 52 bpm. An ECG shows sinus bradycardia with no other abnormalities. Which of the following best explains the mechanism of his low resting heart rate?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "The correct answer is D (Increased vagal tone to the SA node). Athletic training leads to enhanced parasympathetic (vagal) tone at rest, which slows the intrinsic rate of the sinoatrial node by increasing potassium conductance and decreasing the rate of diastolic depolarization. This is a physiological adaptation, not a pathological condition, and does not require treatment.",
+    "learning_objectives": [
+      "Understand autonomic regulation of heart rate",
+      "Explain physiological bradycardia in athletes",
+      "Describe the effect of vagal tone on the SA node"
+    ],
+    "options": [
+      {"label": "A", "text": "Decreased sympathetic tone to the AV node", "is_correct": false, "explanation": "Incorrect. While sympathetic withdrawal contributes, the primary mechanism is increased vagal tone to the SA node, not the AV node. The AV node primarily affects conduction velocity, not heart rate."},
+      {"label": "B", "text": "Increased intrinsic SA node firing rate", "is_correct": false, "explanation": "Incorrect. An increased intrinsic firing rate would cause tachycardia, not bradycardia. The SA node intrinsic rate (about 100 bpm without autonomic input) is slowed by vagal influence."},
+      {"label": "C", "text": "Hypertrophy of the left ventricle", "is_correct": false, "explanation": "Incorrect. While athletes develop physiologic left ventricular hypertrophy, this increases stroke volume. The reduced heart rate is primarily driven by enhanced vagal tone, not structural changes alone."},
+      {"label": "D", "text": "Increased vagal tone to the SA node", "is_correct": true, "explanation": "Correct. Chronic exercise training enhances resting parasympathetic (vagal) tone to the SA node. Acetylcholine released from vagal nerve endings binds to muscarinic M2 receptors, increasing potassium conductance and slowing the rate of phase 4 depolarization."},
+      {"label": "E", "text": "Decreased circulating catecholamines", "is_correct": false, "explanation": "Incorrect. While catecholamine levels may be slightly lower at rest in trained athletes, the dominant mechanism for resting bradycardia is the increased vagal tone, not reduced circulating catecholamines."}
+    ]
+  }
+]

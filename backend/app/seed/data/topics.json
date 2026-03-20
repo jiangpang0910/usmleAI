@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Anatomy",
+    "discipline": "basic_science",
+    "description": "Gross anatomy, embryology, histology, and neuroanatomy",
+    "subtopics": ["Gross Anatomy", "Embryology", "Histology", "Neuroanatomy"]
+  },
+  {
+    "name": "Physiology",
+    "discipline": "basic_science",
+    "description": "Organ system physiology and cellular mechanisms",
+    "subtopics": ["Cardiovascular Physiology", "Renal Physiology", "Respiratory Physiology", "Neurophysiology", "Endocrine Physiology", "GI Physiology"]
+  },
+  {
+    "name": "Biochemistry",
+    "discipline": "basic_science",
+    "description": "Molecular biology, metabolism, and genetics",
+    "subtopics": ["Metabolism", "Molecular Biology", "Genetics", "Nutrition"]
+  },
+  {
+    "name": "Pathology",
+    "discipline": "basic_science",
+    "description": "General and systemic pathology, laboratory medicine",
+    "subtopics": ["General Pathology", "Systemic Pathology", "Hematopathology", "Clinical Pathology"]
+  },
+  {
+    "name": "Pharmacology",
+    "discipline": "basic_science",
+    "description": "Drug mechanisms, pharmacokinetics, and therapeutics",
+    "subtopics": ["Autonomic Pharmacology", "Cardiovascular Drugs", "Antimicrobials", "CNS Pharmacology", "Endocrine Pharmacology"]
+  },
+  {
+    "name": "Microbiology",
+    "discipline": "basic_science",
+    "description": "Bacteriology, virology, mycology, parasitology, and immunology",
+    "subtopics": ["Bacteriology", "Virology", "Mycology", "Parasitology", "Immunology"]
+  },
+  {
+    "name": "Internal Medicine",
+    "discipline": "clinical_science",
+    "description": "Diagnosis and management of adult diseases",
+    "subtopics": ["Cardiology", "Pulmonology", "Gastroenterology", "Nephrology", "Hematology/Oncology", "Endocrinology", "Rheumatology", "Infectious Disease"]
+  },
+  {
+    "name": "Surgery",
+    "discipline": "clinical_science",
+    "description": "Surgical principles, trauma, and operative management",
+    "subtopics": ["General Surgery", "Trauma", "Surgical Emergencies", "Perioperative Care"]
+  },
+  {
+    "name": "Pediatrics",
+    "discipline": "clinical_science",
+    "description": "Growth, development, and pediatric disease management",
+    "subtopics": ["Neonatology", "Growth and Development", "Pediatric Infectious Disease", "Pediatric Cardiology"]
+  },
+  {
+    "name": "Obstetrics and Gynecology",
+    "discipline": "clinical_science",
+    "description": "Pregnancy, labor, reproductive health, and gynecologic disorders",
+    "subtopics": ["Obstetrics", "Gynecology", "Reproductive Endocrinology"]
+  },
+  {
+    "name": "Psychiatry",
+    "discipline": "clinical_science",
+    "description": "Mental health disorders, psychopharmacology, and behavioral science",
+    "subtopics": ["Mood Disorders", "Anxiety Disorders", "Psychotic Disorders", "Substance Use", "Psychopharmacology"]
+  },
+  {
+    "name": "Emergency Medicine",
+    "discipline": "clinical_science",
+    "description": "Acute care, resuscitation, and emergency procedures",
+    "subtopics": ["Trauma Management", "Cardiac Emergencies", "Toxicology", "Environmental Emergencies"]
+  },
+  {
+    "name": "Biostatistics",
+    "discipline": "behavioral_social",
+    "description": "Study design, statistical analysis, and evidence-based medicine",
+    "subtopics": ["Study Design", "Statistical Tests", "Evidence-Based Medicine", "Epidemiological Measures"]
+  },
+  {
+    "name": "Epidemiology",
+    "discipline": "behavioral_social",
+    "description": "Disease distribution, outbreak investigation, and population health",
+    "subtopics": ["Disease Surveillance", "Outbreak Investigation", "Screening", "Prevention"]
+  },
+  {
+    "name": "Ethics",
+    "discipline": "behavioral_social",
+    "description": "Medical ethics principles, informed consent, and end-of-life issues",
+    "subtopics": ["Autonomy", "Beneficence", "Informed Consent", "End-of-Life Care", "Confidentiality"]
+  },
+  {
+    "name": "Patient Safety",
+    "discipline": "behavioral_social",
+    "description": "Quality improvement, error prevention, and healthcare systems",
+    "subtopics": ["Quality Improvement", "Medical Errors", "Healthcare Systems", "Communication"]
+  }
+]

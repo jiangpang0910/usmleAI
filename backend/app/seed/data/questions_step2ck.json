@@ -1,0 +1,68 @@
+[
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Cardiology",
+    "stem": "A 62-year-old man with a history of type 2 diabetes mellitus and hypertension presents to the emergency department with crushing substernal chest pain radiating to his left arm for the past 45 minutes. He is diaphoretic and appears anxious. ECG shows ST-segment elevation in leads II, III, and aVF. Troponin I is elevated at 8.2 ng/mL (normal < 0.04 ng/mL). Which of the following is the most appropriate next step in management?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is B (Emergent percutaneous coronary intervention). This patient presents with an acute ST-elevation myocardial infarction (STEMI) involving the inferior wall (ST elevation in II, III, aVF). The standard of care for STEMI is primary PCI within 90 minutes of first medical contact (door-to-balloon time). PCI has been shown to be superior to fibrinolytic therapy when available in a timely manner.",
+    "learning_objectives": [
+      "Recognize STEMI on ECG by territory",
+      "Apply current STEMI management guidelines",
+      "Understand door-to-balloon time targets"
+    ],
+    "options": [
+      {"label": "A", "text": "Administer IV fibrinolytic therapy", "is_correct": false, "explanation": "Incorrect. Fibrinolytic therapy is reserved for STEMI patients when PCI cannot be performed within 120 minutes of first medical contact. When PCI is available, it is the preferred reperfusion strategy."},
+      {"label": "B", "text": "Emergent percutaneous coronary intervention", "is_correct": true, "explanation": "Correct. Primary PCI is the gold standard for STEMI reperfusion therapy. The goal is door-to-balloon time of 90 minutes or less. PCI achieves higher rates of TIMI 3 flow and lower rates of reocclusion compared to fibrinolysis."},
+      {"label": "C", "text": "Start heparin drip and observe in the ICU", "is_correct": false, "explanation": "Incorrect. Anticoagulation alone is insufficient for STEMI. The patient needs emergent reperfusion therapy (PCI or fibrinolysis) to restore blood flow to the infarcted myocardium."},
+      {"label": "D", "text": "Obtain a CT coronary angiogram", "is_correct": false, "explanation": "Incorrect. CT coronary angiography is used for evaluation of stable chest pain or intermediate-risk acute coronary syndrome, not for STEMI. The ECG and troponin findings already confirm the diagnosis."},
+      {"label": "E", "text": "Schedule elective coronary artery bypass grafting", "is_correct": false, "explanation": "Incorrect. CABG is not the initial management for acute STEMI. It may be considered if PCI reveals complex multi-vessel disease or left main stenosis, but emergent PCI is the first step."}
+    ]
+  },
+  {
+    "topic": "Pediatrics",
+    "subtopic": "Growth and Development",
+    "stem": "A 2-year-old boy is brought to the clinic for a well-child visit. His mother reports that he can walk up stairs with assistance, stack 6 blocks, and say 2-word phrases like 'want milk' and 'go outside.' He can point to body parts when named and follows two-step commands. His weight and height are at the 50th percentile. Which of the following developmental milestones would you expect this child to achieve next?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "The correct answer is C (Riding a tricycle). This child is meeting all developmental milestones for a 2-year-old: walking up stairs with help, stacking 6 blocks (fine motor), 2-word phrases (language), and following 2-step commands (cognitive). The next major gross motor milestone expected around age 3 is riding a tricycle. At age 3, children also begin speaking in 3-word sentences and can draw a circle.",
+    "learning_objectives": [
+      "Identify age-appropriate developmental milestones",
+      "Recognize normal progression of gross motor skills",
+      "Apply developmental screening in well-child visits"
+    ],
+    "options": [
+      {"label": "A", "text": "Walking independently", "is_correct": false, "explanation": "Incorrect. Independent walking is typically achieved by 12-15 months. This 2-year-old already walks up stairs with assistance, indicating he has passed this milestone."},
+      {"label": "B", "text": "Stacking 2 blocks", "is_correct": false, "explanation": "Incorrect. Stacking 2 blocks is a 15-month milestone. This child can already stack 6 blocks, which is age-appropriate for 2 years."},
+      {"label": "C", "text": "Riding a tricycle", "is_correct": true, "explanation": "Correct. Riding a tricycle is a 3-year milestone. Given that this child is on track at 2 years, tricycle riding would be the next expected gross motor achievement at approximately age 3."},
+      {"label": "D", "text": "Skipping", "is_correct": false, "explanation": "Incorrect. Skipping is a 5-year milestone. This is too advanced for the next expected milestone for a 2-year-old."},
+      {"label": "E", "text": "Speaking in complete sentences of 5+ words", "is_correct": false, "explanation": "Incorrect. Speaking in complete sentences of 5+ words is expected around age 4-5. The next language milestone would be 3-word phrases at age 3."}
+    ]
+  },
+  {
+    "topic": "Obstetrics and Gynecology",
+    "subtopic": "Obstetrics",
+    "stem": "A 28-year-old primigravida at 34 weeks gestation presents with sudden onset of painless bright red vaginal bleeding. She denies contractions, trauma, or abdominal pain. Vital signs show blood pressure 118/72 mmHg, heart rate 88 bpm. Fetal heart tracing is category I (reassuring). An ultrasound performed in the emergency department shows the placenta completely covering the internal cervical os. Which of the following is the most appropriate next step in management?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is D (Admit, monitor, and plan for cesarean delivery). This patient has placenta previa (placenta covering the internal os) presenting with painless vaginal bleeding. At 34 weeks with a stable mother and reassuring fetal status, the management is expectant: admit for monitoring, administer betamethasone for fetal lung maturity, and plan for cesarean delivery at 36-37 weeks if stable. Digital cervical exam is absolutely contraindicated as it can provoke massive hemorrhage.",
+    "learning_objectives": [
+      "Recognize the classic presentation of placenta previa",
+      "Understand that digital cervical exam is contraindicated in placenta previa",
+      "Apply expectant management principles for stable preterm placenta previa"
+    ],
+    "options": [
+      {"label": "A", "text": "Perform a digital cervical exam to assess dilation", "is_correct": false, "explanation": "Incorrect. Digital cervical exam is absolutely contraindicated in suspected placenta previa. It can disrupt the placenta and cause life-threatening hemorrhage."},
+      {"label": "B", "text": "Immediate cesarean delivery", "is_correct": false, "explanation": "Incorrect. At 34 weeks with a stable mother and reassuring fetal status, immediate delivery is not indicated. Expectant management to gain fetal maturity is preferred unless the mother or fetus becomes unstable."},
+      {"label": "C", "text": "Induce labor with oxytocin", "is_correct": false, "explanation": "Incorrect. Vaginal delivery is contraindicated with complete placenta previa because cervical dilation would disrupt the placenta and cause hemorrhage. Cesarean delivery is the only safe delivery route."},
+      {"label": "D", "text": "Admit, monitor, and plan for cesarean delivery", "is_correct": true, "explanation": "Correct. Expectant management is appropriate for stable placenta previa at 34 weeks. This includes hospital admission, fetal monitoring, betamethasone for lung maturity, and planned cesarean delivery at 36-37 weeks."},
+      {"label": "E", "text": "Discharge home with pelvic rest instructions", "is_correct": false, "explanation": "Incorrect. A patient with active bleeding from complete placenta previa should not be discharged. She requires inpatient monitoring for potential recurrent hemorrhage and possible emergent delivery."}
+    ]
+  }
+]
