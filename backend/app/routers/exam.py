@@ -232,5 +232,5 @@ def submit_block(
         block_number=request.block_number,
         total=len(request.answers),
         correct=correct_in_block,
-        results=results,
+        questions=results,
     )

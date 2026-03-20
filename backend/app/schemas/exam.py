@@ -200,4 +200,4 @@ class SubmitBlockResponse(BaseModel):
     correct: int
 
     # Per-question breakdown of results
-    results: list[BlockResultItem]
+    questions: list[BlockResultItem]
