@@ -45,7 +45,13 @@ Plans:
   3. User can complete a drag-and-drop or abstract format question and receive feedback
   4. User can submit a free-response answer and receive an AI evaluation of their response
   5. User can toggle between detailed explanation mode and Socratic mode, and the teaching style changes immediately for the next answer
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Backend API: answer submission endpoint, Claude explanation/Socratic endpoint, teaching schemas
+- [ ] 02-02-PLAN.md — Frontend SBA flow: topic picker, question view, answer options, teaching panel with mode toggle
+- [ ] 02-03-PLAN.md — Sequential item sets: seed data and multi-part case UI with locking
+- [ ] 02-04-PLAN.md — Drag-and-drop, abstract, and free-response: seed data, evaluation endpoint, and format-specific UIs
 
 ### Phase 3: Study Modes
 **Goal**: Users can structure their practice the way they want — by topic, by AI-driven weak area targeting, or in a timed full exam simulation
@@ -76,6 +82,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/3 | Planning complete | - |
-| 2. Question Engine | 0/TBD | Not started | - |
+| 2. Question Engine | 0/4 | Planning complete | - |
 | 3. Study Modes | 0/TBD | Not started | - |
 | 4. Progress Tracking | 0/TBD | Not started | - |
