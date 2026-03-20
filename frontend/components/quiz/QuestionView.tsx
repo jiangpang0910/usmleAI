@@ -102,6 +102,11 @@ export default function QuestionView({ questions }: QuestionViewProps) {
   /** The question currently being displayed */
   const currentQuestion = questions[currentIndex];
 
+  // Guard: if questions haven't loaded yet, index is out of bounds, or data is incomplete
+  if (!currentQuestion || !currentQuestion.stem || !currentQuestion.answer_options) {
+    return <div className="flex justify-center items-center h-64 text-muted-foreground">Loading question...</div>;
+  }
+
   /** Get the state for the current question (if it has been answered) */
   const currentState = questionStates.get(currentIndex);
 
@@ -243,7 +248,8 @@ export default function QuestionView({ questions }: QuestionViewProps) {
    * Supports markdown image syntax ![alt](url) and renders images
    * for X-rays, ECGs, pathology slides, etc.
    */
-  function renderStemContent(stem: string) {
+  function renderStemContent(stem: string | undefined) {
+    if (!stem) return null;
     // Match markdown image patterns: ![alt text](url)
     const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
     const parts: (string | { alt: string; url: string })[] = [];
