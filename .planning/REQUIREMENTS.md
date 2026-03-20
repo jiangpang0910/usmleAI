@@ -14,7 +14,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **QGEN-03**: User can practice drag-and-drop/abstract format questions
 - [ ] **QGEN-04**: User can submit free-response answers and get AI evaluation
 - [x] **QGEN-05**: Questions cover all USMLE Steps (1, 2 CK, 3)
-- [ ] **QGEN-06**: Questions generated from hybrid knowledge bank (curated content + Claude AI)
+- [x] **QGEN-06**: Questions generated from hybrid knowledge bank (curated content + Claude AI)
 
 ### Teaching
 
@@ -65,7 +65,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | QGEN-05 | Phase 1 | Complete |
-| QGEN-06 | Phase 1 | Pending |
+| QGEN-06 | Phase 1 | Complete |
 | QGEN-01 | Phase 2 | Pending |
 | QGEN-02 | Phase 2 | Pending |
 | QGEN-03 | Phase 2 | Pending |
