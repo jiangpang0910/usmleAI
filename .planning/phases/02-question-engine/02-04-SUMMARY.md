@@ -106,10 +106,23 @@ Each task was committed atomically:
 
 ## Deviations from Plan
 
-None - plan executed exactly as written. All files were created during a prior background execution and verified to meet all acceptance criteria.
+### Auto-fixed Issues
+
+**1. [Rule 3 - Blocking] Fixed TypeScript Map iteration error in DragDropView**
+- **Found during:** Task 2 (DragDropView component)
+- **Issue:** Using `for...of map.entries()` caused TS2802 error requiring `--downlevelIteration` flag
+- **Fix:** Wrapped all Map.entries() calls with Array.from() to produce a standard iterable
+- **Files modified:** frontend/components/quiz/DragDropView.tsx
+- **Verification:** `npx tsc --noEmit` passes cleanly
+- **Committed in:** 4d1d69b (Task 2 commit)
+
+---
+
+**Total deviations:** 1 auto-fixed (1 blocking)
+**Impact on plan:** Minor TypeScript compatibility fix. No scope creep.
 
 ## Issues Encountered
-None - all TypeScript compilation passes cleanly. All seed data validates correctly.
+None beyond the Map iteration TypeScript fix documented above.
 
 ## User Setup Required
 None - no external service configuration required.
