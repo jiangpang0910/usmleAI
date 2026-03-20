@@ -1,67 +1,59 @@
 "use client";
 
+/**
+ * TopicPicker — Displays all available study topics grouped by discipline.
+ *
+ * Fetches topics from the backend API and organizes them into three categories:
+ * - Basic Sciences (anatomy, physiology, pathology, etc.)
+ * - Clinical Sciences (internal medicine, surgery, pediatrics, etc.)
+ * - Behavioral & Social Sciences (biostatistics, ethics, etc.)
+ *
+ * Each topic renders as a clickable card that navigates to the quiz page
+ * for that topic at /quiz/[topicId].
+ */
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { fetchTopics } from "@/lib/api";
+import type { Topic } from "@/lib/types";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardContent,
+  CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { fetchTopics } from "@/lib/api";
-import type { Topic } from "@/lib/types";
 
 /**
- * Mapping from backend discipline values to human-readable group labels.
- * Topics are grouped by these categories for organized display.
+ * Discipline group configuration — maps backend discipline values
+ * to human-readable labels for section headings.
  */
-const DISCIPLINE_LABELS: Record<string, string> = {
-  basic_science: "Basic Sciences",
-  clinical_science: "Clinical Sciences",
-  behavioral_social: "Behavioral & Social Sciences",
-};
+const DISCIPLINE_GROUPS = [
+  { key: "basic_science", label: "Basic Sciences" },
+  { key: "clinical_science", label: "Clinical Sciences" },
+  { key: "behavioral_social", label: "Behavioral & Social Sciences" },
+] as const;
 
-/**
- * Ordered list of discipline keys to control the display order.
- * Basic sciences first, then clinical, then behavioral/social.
- */
-const DISCIPLINE_ORDER = [
-  "basic_science",
-  "clinical_science",
-  "behavioral_social",
-];
-
-/**
- * TopicPicker — displays all study topics grouped by discipline category.
- *
- * Fetches topics from the backend API and renders them in a three-section layout:
- * 1. Basic Sciences (Anatomy, Physiology, etc.)
- * 2. Clinical Sciences (Internal Medicine, Surgery, etc.)
- * 3. Behavioral & Social Sciences (Ethics, Biostatistics, etc.)
- *
- * Each topic is shown as a clickable card that navigates to the quiz page.
- */
 export default function TopicPicker() {
-  /** Router instance for programmatic navigation to quiz pages */
+  /** Router for navigating to quiz pages when a topic is selected */
   const router = useRouter();
 
-  /** Array of all topics fetched from the API */
+  /** All topics fetched from the API */
   const [topics, setTopics] = useState<Topic[]>([]);
-
-  /** Loading state while topics are being fetched */
+  /** Whether topics are currently being loaded */
   const [isLoading, setIsLoading] = useState(true);
-
   /** Error message if topic fetch fails */
   const [error, setError] = useState<string | null>(null);
 
   /**
-   * Fetch topics from the backend on component mount.
-   * Updates loading/error state accordingly.
+   * Fetch all topics on component mount.
+   * Sets loading/error states appropriately.
    */
   useEffect(() => {
     async function loadTopics() {
       try {
+        setIsLoading(true);
         const data = await fetchTopics();
         setTopics(data);
       } catch (err) {
@@ -77,24 +69,16 @@ export default function TopicPicker() {
 
   /**
    * Group topics by their discipline field.
-   * Returns a record mapping discipline keys to arrays of topics.
+   * Returns only topics matching the given discipline key.
    */
-  const groupedTopics = topics.reduce<Record<string, Topic[]>>(
-    (groups, topic) => {
-      const key = topic.discipline;
-      if (!groups[key]) {
-        groups[key] = [];
-      }
-      groups[key].push(topic);
-      return groups;
-    },
-    {}
-  );
+  function getTopicsByDiscipline(disciplineKey: string): Topic[] {
+    return topics.filter((t) => t.discipline === disciplineKey);
+  }
 
   return (
     <div className="min-h-screen bg-background">
       {/* ===== Navy Header Bar ===== */}
-      {/* Same dark navy header as Dashboard for visual consistency */}
+      {/* Matches the Dashboard header for visual consistency */}
       <header className="bg-[hsl(217,71%,20%)] text-white py-6 px-8 shadow-md">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-2xl font-bold tracking-tight">usmleAI</h1>
@@ -107,73 +91,68 @@ export default function TopicPicker() {
       {/* ===== Main Content ===== */}
       <div className="max-w-5xl mx-auto p-8 space-y-8">
         {/* Page title and back navigation */}
-        <div className="space-y-2">
-          <Button
-            variant="ghost"
-            onClick={() => router.push("/")}
-            className="text-sm text-muted-foreground -ml-2"
-          >
-            &larr; Back to Dashboard
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-bold">Choose a Topic</h2>
+          <Button variant="outline" onClick={() => router.push("/")}>
+            Back to Dashboard
           </Button>
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Choose a Topic
-          </h2>
-          <p className="text-muted-foreground">
-            Select a discipline to start practicing USMLE-style questions.
-          </p>
         </div>
 
-        {/* Loading state */}
+        {/* Loading state — shown while topics are being fetched */}
         {isLoading && (
           <p className="text-muted-foreground">Loading topics...</p>
         )}
 
-        {/* Error state */}
-        {error && <p className="text-red-600">{error}</p>}
+        {/* Error state — shown if the API call fails */}
+        {error && (
+          <p className="text-red-600">Error: {error}</p>
+        )}
 
-        {/* Topic groups organized by discipline */}
-        {!isLoading &&
-          !error &&
-          DISCIPLINE_ORDER.map((discipline) => {
-            const disciplineTopics = groupedTopics[discipline];
-            // Skip disciplines with no topics
-            if (!disciplineTopics || disciplineTopics.length === 0) {
-              return null;
-            }
+        {/* Topic cards grouped by discipline */}
+        {!isLoading && !error && (
+          <>
+            {DISCIPLINE_GROUPS.map((group) => {
+              const groupTopics = getTopicsByDiscipline(group.key);
+              // Skip empty groups (no topics in this discipline)
+              if (groupTopics.length === 0) return null;
 
-            return (
-              <section key={discipline} className="space-y-4">
-                {/* Discipline group heading */}
-                <h3 className="text-xl font-semibold">
-                  {DISCIPLINE_LABELS[discipline] || discipline}
-                </h3>
+              return (
+                <section key={group.key} className="space-y-4">
+                  {/* Discipline group heading */}
+                  <h3 className="text-xl font-semibold">{group.label}</h3>
 
-                {/* Grid of topic cards: 1 column on mobile, 3 on desktop */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {disciplineTopics.map((topic) => (
-                    <Card
-                      key={topic.id}
-                      className="shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                      onClick={() => router.push(`/quiz/${topic.id}`)}
-                    >
-                      <CardHeader>
-                        <CardTitle className="text-lg">
-                          {topic.name}
-                        </CardTitle>
-                      </CardHeader>
-                      {topic.description && (
+                  {/* Responsive grid: 1 column on mobile, 3 on desktop */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {groupTopics.map((topic) => (
+                      <Card key={topic.id} className="shadow-sm">
+                        <CardHeader>
+                          <CardTitle className="text-lg">
+                            {topic.name}
+                          </CardTitle>
+                        </CardHeader>
                         <CardContent>
+                          {/* Show description if available, otherwise a fallback */}
                           <p className="text-sm text-muted-foreground">
-                            {topic.description}
+                            {topic.description || "Practice questions in this topic"}
                           </p>
                         </CardContent>
-                      )}
-                    </Card>
-                  ))}
-                </div>
-              </section>
-            );
-          })}
+                        <CardFooter>
+                          {/* Navigate to the quiz page for this topic */}
+                          <Button
+                            className="w-full"
+                            onClick={() => router.push(`/quiz/${topic.id}`)}
+                          >
+                            Start Quiz
+                          </Button>
+                        </CardFooter>
+                      </Card>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+          </>
+        )}
       </div>
     </div>
   );
