@@ -24,8 +24,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Study Modes
 
-- [ ] **STUDY-01**: User can pick a topic/subject and get a set of practice questions
-- [ ] **STUDY-02**: AI adapts question selection based on user's weak areas and adjusts difficulty
+- [x] **STUDY-01**: User can pick a topic/subject and get a set of practice questions
+- [x] **STUDY-02**: AI adapts question selection based on user's weak areas and adjusts difficulty
 - [ ] **STUDY-03**: User can take timed exam simulations mimicking real USMLE format
 
 ### Progress Tracking
@@ -73,8 +73,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TEACH-01 | Phase 2 | Complete |
 | TEACH-02 | Phase 2 | Complete |
 | TEACH-03 | Phase 2 | Complete |
-| STUDY-01 | Phase 3 | Pending |
-| STUDY-02 | Phase 3 | Pending |
+| STUDY-01 | Phase 3 | Complete |
+| STUDY-02 | Phase 3 | Complete |
 | STUDY-03 | Phase 3 | Pending |
 | TRACK-01 | Phase 4 | Pending |
 | TRACK-02 | Phase 4 | Pending |

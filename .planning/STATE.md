@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-04-PLAN.md (re-executed with TypeScript fix)
-last_updated: "2026-03-20T05:41:03.759Z"
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-03-20T06:04:59.903Z"
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 13
-  completed_plans: 8
+  completed_plans: 10
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-19)
 
 **Core value:** Medical students can practice USMLE-style questions in every format and learn *why* answers are right or wrong through AI-powered teaching
-**Current focus:** Phase 02 — question-engine
+**Current focus:** Phase 03 — study-modes
 
 ## Current Position
 
-Phase: 02 (question-engine) — EXECUTING
-Plan: 5 of 5
+Phase: 03 (study-modes) — EXECUTING
+Plan: 2 of 5
 
 ## Performance Metrics
 
@@ -55,6 +55,7 @@ Plan: 5 of 5
 | Phase 02 P05 | 278s | 2 tasks | 3 files |
 | Phase 02 P04 | 4min | 2 tasks | 12 files |
 | Phase 02 P04 | 24min | 2 tasks | 12 files |
+| Phase 03 P01 | 4min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -86,6 +87,8 @@ Recent decisions affecting current work:
 - [Phase 02]: Free-response: 20-char minimum, AI scoring via Claude with regex score extraction
 - [Phase 02]: Mobile DnD fallback uses dropdown selects instead of touch DnD library
 - [Phase 02]: Used Array.from(map.entries()) for Map iteration to avoid TypeScript downlevelIteration requirement
+- [Phase 03]: Denormalized topic_id on UserAnswer for fast per-topic aggregation
+- [Phase 03]: 60% accuracy threshold for weak topic identification, 70/30 weak/other ratio for adaptive questions
 
 ### Pending Todos
 
@@ -105,6 +108,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-20T05:40:57.021Z
-Stopped at: Completed 02-04-PLAN.md (re-executed with TypeScript fix)
+Last session: 2026-03-20T06:04:59.898Z
+Stopped at: Completed 03-01-PLAN.md
 Resume file: None
