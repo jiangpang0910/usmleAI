@@ -64,10 +64,12 @@ class Topic(Base):
     )
 
     # One-to-many: a topic has many subtopics (e.g., Cardiology -> Heart Failure, Arrhythmias)
-    subtopics = relationship("Subtopic", back_populates="topic", lazy="selectin")
+    # lazy="select" (default) avoids eagerly loading subtopics on every topic query
+    subtopics = relationship("Subtopic", back_populates="topic", lazy="select")
 
     # One-to-many: a topic has many questions directly associated with it
-    questions = relationship("Question", back_populates="topic", lazy="selectin")
+    # lazy="select" prevents loading all questions when we only need topic metadata
+    questions = relationship("Question", back_populates="topic", lazy="select")
 
 
 class Subtopic(Base):
@@ -114,7 +116,7 @@ class Subtopic(Base):
     topic = relationship("Topic", back_populates="subtopics")
 
     # One-to-many: a subtopic can have many questions
-    questions = relationship("Question", back_populates="subtopic", lazy="selectin")
+    questions = relationship("Question", back_populates="subtopic", lazy="select")
 
 
 class Question(Base):
