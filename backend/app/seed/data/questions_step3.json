@@ -42,5 +42,291 @@
       {"label": "D", "text": "Request an ethics committee consultation before proceeding", "is_correct": false, "explanation": "Incorrect. While ethics consultations can be helpful for complex cases, this scenario is straightforward: the competent patient has clearly stated his preference. Delaying treatment for a consultation is not necessary."},
       {"label": "E", "text": "Defer treatment until the patient and daughter reach agreement", "is_correct": false, "explanation": "Incorrect. Deferring necessary palliative treatment causes the patient unnecessary suffering. The patient's autonomous decision should be respected immediately."}
     ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Chronic Disease Management",
+    "stem": "A 62-year-old man with type 2 diabetes mellitus, hypertension, and hyperlipidemia presents for a routine outpatient follow-up. His current medications include metformin 1000 mg twice daily, lisinopril 20 mg daily, and atorvastatin 40 mg daily. His HbA1c is 8.4% (goal <7%), blood pressure is 128/78 mmHg, and LDL cholesterol is 68 mg/dL. His BMI is 34 kg/m2. He reports increased urinary frequency and a recent 5-pound unintentional weight gain. His serum creatinine is 1.0 mg/dL, and urinalysis shows no proteinuria. Which of the following is the most appropriate next step in managing his diabetes?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is B (Add an SGLT2 inhibitor such as empagliflozin). Per current guidelines, for patients with type 2 diabetes on metformin who are not meeting HbA1c goals and have cardiovascular risk factors or obesity, an SGLT2 inhibitor is the preferred second-line agent. SGLT2 inhibitors provide cardiovascular and renal benefits, promote weight loss, and lower HbA1c. This patient has multiple cardiovascular risk factors (hypertension, hyperlipidemia, obesity) making an SGLT2 inhibitor the ideal choice.",
+    "learning_objectives": [
+      "Apply current guidelines for step-wise management of type 2 diabetes",
+      "Identify the benefits of SGLT2 inhibitors in patients with cardiovascular risk factors",
+      "Select appropriate second-line agents based on patient comorbidities"
+    ],
+    "options": [
+      {"label": "A", "text": "Increase metformin to 1500 mg twice daily", "is_correct": false, "explanation": "Incorrect. While metformin can be titrated, he is already on a standard therapeutic dose (2000 mg/day). The maximum dose is 2550 mg/day, and increasing it alone is unlikely to achieve adequate glycemic control with an HbA1c of 8.4%."},
+      {"label": "B", "text": "Add empagliflozin 10 mg daily", "is_correct": true, "explanation": "Correct. An SGLT2 inhibitor is the preferred add-on therapy for this patient with multiple cardiovascular risk factors and obesity. SGLT2 inhibitors reduce HbA1c, promote weight loss, lower blood pressure, and provide proven cardiovascular and renal benefits."},
+      {"label": "C", "text": "Add glipizide 5 mg daily", "is_correct": false, "explanation": "Incorrect. Sulfonylureas lower HbA1c but cause weight gain and hypoglycemia. In an obese patient with cardiovascular risk factors, an SGLT2 inhibitor or GLP-1 receptor agonist is preferred over a sulfonylurea."},
+      {"label": "D", "text": "Start insulin glargine at bedtime", "is_correct": false, "explanation": "Incorrect. Insulin is generally reserved for patients who fail oral combination therapy or who have very high HbA1c (>10%) with symptoms of hyperglycemia. This patient should first trial a second oral or injectable non-insulin agent."},
+      {"label": "E", "text": "Add pioglitazone 30 mg daily", "is_correct": false, "explanation": "Incorrect. Pioglitazone causes weight gain and fluid retention, which could worsen this patient's obesity and recent weight gain. It is also associated with an increased risk of heart failure."}
+    ]
+  },
+  {
+    "topic": "Biostatistics",
+    "subtopic": "Number Needed to Treat",
+    "stem": "A large randomized controlled trial evaluates a new antihypertensive drug for prevention of stroke. Over 5 years, 4% of patients in the treatment group experienced a stroke compared to 12% in the placebo group. Which of the following is the number needed to treat (NNT) to prevent one stroke over 5 years?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "The correct answer is C (12.5). The NNT is calculated as 1 / Absolute Risk Reduction (ARR). The ARR = Control event rate - Treatment event rate = 0.12 - 0.04 = 0.08. Therefore, NNT = 1 / 0.08 = 12.5. This means 12.5 patients need to be treated for 5 years to prevent one stroke.",
+    "learning_objectives": [
+      "Calculate the number needed to treat (NNT)",
+      "Understand absolute risk reduction versus relative risk reduction",
+      "Interpret NNT in clinical decision-making"
+    ],
+    "options": [
+      {"label": "A", "text": "3", "is_correct": false, "explanation": "Incorrect. This would correspond to an ARR of 33%, which is not the case here."},
+      {"label": "B", "text": "8", "is_correct": false, "explanation": "Incorrect. This likely results from miscalculating the ARR. The ARR is 0.08 (8%), and NNT = 1/0.08 = 12.5, not 8."},
+      {"label": "C", "text": "12.5", "is_correct": true, "explanation": "Correct. ARR = 12% - 4% = 8% = 0.08. NNT = 1 / 0.08 = 12.5. This means you need to treat approximately 13 patients for 5 years to prevent one stroke."},
+      {"label": "D", "text": "25", "is_correct": false, "explanation": "Incorrect. This would correspond to an ARR of 4%, which would mean only the treatment group rate was used rather than the difference between groups."},
+      {"label": "E", "text": "67", "is_correct": false, "explanation": "Incorrect. This value does not correspond to the correct calculation. It may result from using the relative risk reduction incorrectly."}
+    ]
+  },
+  {
+    "topic": "Patient Safety",
+    "subtopic": "Quality Improvement",
+    "stem": "A hospital quality improvement committee reviews data showing that central line-associated bloodstream infection (CLABSI) rates have increased over the past quarter. They implement a bundle that includes hand hygiene, full barrier precautions, chlorhexidine skin antisepsis, optimal catheter site selection, and daily review of line necessity. After 6 months, the CLABSI rate drops significantly. The committee wants to ensure the improvement is sustained. Which of the following is the most appropriate next step?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "The correct answer is D (Implement ongoing monitoring with a control chart). Sustained quality improvement requires continuous monitoring. A control chart (statistical process control) tracks performance over time, identifies special-cause variation, and signals when the process drifts out of control. This is the cornerstone of the 'Control' phase in quality improvement methodology (e.g., DMAIC: Define, Measure, Analyze, Improve, Control).",
+    "learning_objectives": [
+      "Understand the phases of quality improvement methodology",
+      "Recognize the importance of ongoing monitoring to sustain improvements",
+      "Apply statistical process control concepts in healthcare quality"
+    ],
+    "options": [
+      {"label": "A", "text": "Publish the results and discontinue the bundle since the goal was achieved", "is_correct": false, "explanation": "Incorrect. Discontinuing the intervention would likely result in regression to previous infection rates. Sustained improvement requires ongoing adherence to the bundle."},
+      {"label": "B", "text": "Conduct a randomized trial to confirm the effectiveness of the bundle", "is_correct": false, "explanation": "Incorrect. The central line bundle is already evidence-based and widely recommended. A randomized trial is unnecessary and would be unethical given the known benefit."},
+      {"label": "C", "text": "Repeat the intervention cycle with a different bundle of interventions", "is_correct": false, "explanation": "Incorrect. Since the current bundle is effective, changing interventions is not warranted. The focus should be on sustaining the current gains."},
+      {"label": "D", "text": "Implement ongoing monitoring with a control chart", "is_correct": true, "explanation": "Correct. A control chart provides continuous, real-time monitoring of infection rates, helping to detect any drift or special-cause variation. This ensures that improvements are maintained and allows early intervention if rates begin to rise."},
+      {"label": "E", "text": "Survey ICU nurses to assess satisfaction with the new protocol", "is_correct": false, "explanation": "Incorrect. While staff satisfaction is important, it does not directly ensure that clinical outcomes (CLABSI rates) remain improved. Objective outcome monitoring is the priority."}
+    ]
+  },
+  {
+    "topic": "Epidemiology",
+    "subtopic": "Screening",
+    "stem": "A new rapid test for hepatitis C has a sensitivity of 95% and a specificity of 90%. The prevalence of hepatitis C in the population being screened is 2%. A patient tests positive on this screening test. Which of the following is closest to the positive predictive value (PPV) of this test in this population?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "The correct answer is B (16%). Using Bayes' theorem or a 2x2 table with a population of 10,000: Prevalence 2% means 200 have disease and 9,800 do not. True positives = 200 x 0.95 = 190. False positives = 9,800 x 0.10 = 980. PPV = TP / (TP + FP) = 190 / (190 + 980) = 190 / 1170 = 16.2%. This demonstrates that even with a good test, a low prevalence dramatically reduces the PPV.",
+    "learning_objectives": [
+      "Calculate positive predictive value from sensitivity, specificity, and prevalence",
+      "Understand the effect of disease prevalence on positive predictive value",
+      "Apply Bayesian reasoning to interpret screening test results"
+    ],
+    "options": [
+      {"label": "A", "text": "2%", "is_correct": false, "explanation": "Incorrect. This is the prevalence, not the PPV. The PPV is higher than prevalence because a positive test does increase the post-test probability of disease."},
+      {"label": "B", "text": "16%", "is_correct": true, "explanation": "Correct. PPV = 190 / (190 + 980) = 16.2%. Despite high sensitivity and specificity, the low prevalence (2%) means most positive results are false positives, yielding a PPV of only about 16%."},
+      {"label": "C", "text": "50%", "is_correct": false, "explanation": "Incorrect. A PPV of 50% would require a much higher prevalence or a much higher specificity."},
+      {"label": "D", "text": "90%", "is_correct": false, "explanation": "Incorrect. This is the specificity of the test, not the PPV. PPV depends on prevalence in addition to test characteristics."},
+      {"label": "E", "text": "95%", "is_correct": false, "explanation": "Incorrect. This is the sensitivity of the test. Sensitivity and PPV are different measures, and PPV is heavily influenced by prevalence."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Outpatient Preventive Medicine",
+    "stem": "A 55-year-old woman presents to her primary care physician for an annual wellness visit. She has no significant past medical history, no family history of cancer, and takes no medications. She has never smoked, drinks alcohol socially, and has a BMI of 24 kg/m2. Her blood pressure is 118/74 mmHg and fasting glucose is 92 mg/dL. She is up to date on mammography and Pap smear screening. Which of the following screening tests is most appropriate to recommend at this visit?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "The correct answer is C (Colonoscopy). The USPSTF recommends colorectal cancer screening for all average-risk adults beginning at age 45 and continuing through age 75. Colonoscopy every 10 years is one of several recommended screening strategies. At age 55 with no prior screening mentioned, this is the most important recommendation.",
+    "learning_objectives": [
+      "Apply USPSTF screening guidelines for colorectal cancer",
+      "Identify age-appropriate cancer screening recommendations",
+      "Distinguish between screening recommendations based on risk factors"
+    ],
+    "options": [
+      {"label": "A", "text": "Low-dose CT of the chest", "is_correct": false, "explanation": "Incorrect. Low-dose CT screening for lung cancer is recommended for adults aged 50-80 with a 20+ pack-year smoking history who currently smoke or quit within the past 15 years. This patient has never smoked."},
+      {"label": "B", "text": "Transvaginal ultrasound for ovarian cancer screening", "is_correct": false, "explanation": "Incorrect. The USPSTF recommends against routine screening for ovarian cancer in average-risk asymptomatic women. Transvaginal ultrasound has not been shown to reduce ovarian cancer mortality in this population."},
+      {"label": "C", "text": "Colonoscopy", "is_correct": true, "explanation": "Correct. Colorectal cancer screening is recommended for all average-risk adults aged 45-75. This patient is 55 and should have colorectal cancer screening. Colonoscopy every 10 years is a standard option."},
+      {"label": "D", "text": "DEXA scan for osteoporosis", "is_correct": false, "explanation": "Incorrect. The USPSTF recommends bone density screening with DEXA for women aged 65 and older, or for younger postmenopausal women with risk factors. At age 55 with no risk factors, routine DEXA is not indicated."},
+      {"label": "E", "text": "CA-125 for ovarian cancer screening", "is_correct": false, "explanation": "Incorrect. CA-125 is not recommended for ovarian cancer screening in average-risk women. It lacks adequate sensitivity and specificity and has not been shown to reduce mortality."}
+    ]
+  },
+  {
+    "topic": "Pediatrics",
+    "subtopic": "Vaccination Schedule",
+    "stem": "A 2-month-old infant is brought to the pediatrician for her first well-child visit. She was born at term, is healthy, and has no contraindications to vaccination. Her mother reports that the infant received the hepatitis B vaccine at birth. Which of the following combination of vaccines should be administered at this visit?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "The correct answer is B. At the 2-month visit, the recommended vaccines include DTaP (diphtheria, tetanus, acellular pertussis), IPV (inactivated polio vaccine), Hib (Haemophilus influenzae type b), PCV13 (pneumococcal conjugate vaccine), rotavirus (oral), and the second dose of hepatitis B. This is a core knowledge point for well-child care in independent practice.",
+    "learning_objectives": [
+      "Know the recommended childhood vaccination schedule at 2 months of age",
+      "Identify the vaccines given at the 2-month well-child visit",
+      "Understand the importance of timely vaccination in infants"
+    ],
+    "options": [
+      {"label": "A", "text": "DTaP, IPV, and MMR", "is_correct": false, "explanation": "Incorrect. MMR (measles, mumps, rubella) is not given until 12-15 months of age. It would be inappropriate to administer MMR at 2 months."},
+      {"label": "B", "text": "DTaP, IPV, Hib, PCV13, rotavirus, and hepatitis B", "is_correct": true, "explanation": "Correct. This is the standard set of vaccines recommended at the 2-month visit per the CDC immunization schedule. Rotavirus is given orally; the others are injected."},
+      {"label": "C", "text": "DTaP, IPV, Hib, and varicella", "is_correct": false, "explanation": "Incorrect. Varicella vaccine is not given until 12-15 months of age. This combination also omits PCV13, rotavirus, and the second hepatitis B dose."},
+      {"label": "D", "text": "Hepatitis A, DTaP, and IPV", "is_correct": false, "explanation": "Incorrect. Hepatitis A vaccine is recommended starting at 12 months of age, not at 2 months. This combination also omits several required 2-month vaccines."},
+      {"label": "E", "text": "DTaP, IPV, Hib, and influenza", "is_correct": false, "explanation": "Incorrect. Influenza vaccine is not recommended until 6 months of age. This combination also omits PCV13, rotavirus, and hepatitis B."}
+    ]
+  },
+  {
+    "topic": "Obstetrics and Gynecology",
+    "subtopic": "Prenatal Care",
+    "stem": "A 28-year-old primigravida at 10 weeks gestation presents for her first prenatal visit. She has no significant medical history and takes only prenatal vitamins with folic acid. Her blood type is O negative, and her indirect Coombs test (antibody screen) is negative. Her rubella IgG is positive, and her hepatitis B surface antigen is negative. Which of the following is the most appropriate management regarding her Rh-negative status?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is C (Administer Rho(D) immune globulin at 28 weeks gestation). For Rh-negative mothers with a negative antibody screen, anti-D immune globulin (RhoGAM) is routinely administered at 28 weeks gestation to prevent Rh alloimmunization. Additional doses are given within 72 hours of delivery if the newborn is Rh-positive, and after any sensitizing event (e.g., amniocentesis, trauma, miscarriage).",
+    "learning_objectives": [
+      "Manage Rh-negative status in pregnancy",
+      "Know the timing of Rho(D) immune globulin administration",
+      "Understand the rationale for preventing Rh alloimmunization"
+    ],
+    "options": [
+      {"label": "A", "text": "Administer Rho(D) immune globulin now at 10 weeks", "is_correct": false, "explanation": "Incorrect. Routine anti-D prophylaxis is given at 28 weeks, not at 10 weeks. Early administration would be indicated only if a sensitizing event (e.g., threatened abortion, ectopic pregnancy) occurred."},
+      {"label": "B", "text": "No intervention needed since the antibody screen is negative", "is_correct": false, "explanation": "Incorrect. A negative antibody screen means she has not yet been sensitized, which is exactly why prophylaxis is needed. RhoGAM prevents sensitization from occurring."},
+      {"label": "C", "text": "Administer Rho(D) immune globulin at 28 weeks gestation", "is_correct": true, "explanation": "Correct. Routine anti-D immune globulin at 28 weeks prevents alloimmunization during the third trimester when the risk of fetomaternal hemorrhage increases. This is standard of care for all Rh-negative pregnant women with a negative antibody screen."},
+      {"label": "D", "text": "Check the father's blood type before making a decision", "is_correct": false, "explanation": "Incorrect. While knowing the father's Rh status can be informative, current guidelines recommend anti-D prophylaxis for all Rh-negative pregnant women regardless of the father's blood type, due to potential uncertainty about paternity and the safety of the intervention."},
+      {"label": "E", "text": "Administer Rho(D) immune globulin only after delivery if the newborn is Rh-positive", "is_correct": false, "explanation": "Incorrect. While postpartum administration is also required, waiting until delivery alone is insufficient. Antepartum prophylaxis at 28 weeks is essential to prevent third-trimester sensitization."}
+    ]
+  },
+  {
+    "topic": "Ethics",
+    "subtopic": "Confidentiality",
+    "stem": "A 17-year-old girl presents to her primary care physician requesting a pregnancy test and information about contraception. She asks that her parents not be informed. The pregnancy test is negative. She is sexually active with one male partner and uses condoms inconsistently. She denies any abuse or coercion. Which of the following is the most appropriate course of action?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is B (Provide contraceptive counseling and maintain confidentiality). In most US states, minors can consent to reproductive health services, including contraception, pregnancy testing, and STI testing, without parental involvement. The physician should provide appropriate care and maintain the patient's confidentiality. There is no indication of abuse, which would change the obligation.",
+    "learning_objectives": [
+      "Know the exceptions to parental consent requirements for minors",
+      "Apply confidentiality principles in adolescent reproductive health",
+      "Distinguish between situations requiring mandatory reporting and those requiring confidentiality"
+    ],
+    "options": [
+      {"label": "A", "text": "Inform her parents because she is a minor", "is_correct": false, "explanation": "Incorrect. Reproductive health services are an exception to the general requirement for parental consent in minors. Informing her parents without her permission would violate her confidentiality and may deter her from seeking care."},
+      {"label": "B", "text": "Provide contraceptive counseling and maintain confidentiality", "is_correct": true, "explanation": "Correct. Minors can consent to reproductive health care in most jurisdictions. The physician should provide comprehensive contraceptive counseling, discuss STI prevention, and respect the patient's request for confidentiality."},
+      {"label": "C", "text": "Refuse to provide care until parental consent is obtained", "is_correct": false, "explanation": "Incorrect. Refusing care would be inappropriate and potentially harmful. Minors have the legal right to access reproductive health services without parental consent."},
+      {"label": "D", "text": "Report to child protective services", "is_correct": false, "explanation": "Incorrect. There is no indication of abuse or coercion. Mandatory reporting is required when abuse is suspected, but consensual sexual activity in a 17-year-old does not automatically trigger a report."},
+      {"label": "E", "text": "Provide contraception only if she agrees to inform her parents", "is_correct": false, "explanation": "Incorrect. Making care contingent on parental notification violates the minor's right to confidential reproductive health services and may deter her from seeking necessary care."}
+    ]
+  },
+  {
+    "topic": "Emergency Medicine",
+    "subtopic": "Ambulatory Setting Decisions",
+    "stem": "A 45-year-old man presents to an urgent care clinic with acute onset chest pain that began 30 minutes ago. He describes the pain as substernal pressure radiating to his left arm. He is diaphoretic and appears anxious. His vital signs are: blood pressure 148/92 mmHg, heart rate 102 bpm, respiratory rate 20/min, and oxygen saturation 97% on room air. An ECG obtained at the clinic shows 2-mm ST-segment elevation in leads II, III, and aVF. Which of the following is the most appropriate immediate action?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is D (Administer aspirin 325 mg and activate emergency medical services for transfer to a PCI-capable hospital). This patient is presenting with an ST-elevation myocardial infarction (STEMI). In an ambulatory or urgent care setting without catheterization capability, the priority is to administer aspirin immediately and arrange rapid transfer to a hospital with percutaneous coronary intervention (PCI) capability. Time to reperfusion is critical -- door-to-balloon time should be under 90 minutes.",
+    "learning_objectives": [
+      "Recognize STEMI on ECG in an ambulatory setting",
+      "Know the initial management of STEMI outside a hospital",
+      "Understand the importance of rapid transfer for primary PCI"
+    ],
+    "options": [
+      {"label": "A", "text": "Administer sublingual nitroglycerin and observe for 30 minutes", "is_correct": false, "explanation": "Incorrect. While nitroglycerin may be given for symptom relief, observation in an urgent care clinic is inappropriate for a STEMI. The patient requires emergent transfer for reperfusion therapy."},
+      {"label": "B", "text": "Start IV heparin and admit to the clinic's observation unit", "is_correct": false, "explanation": "Incorrect. An urgent care clinic is not equipped to manage a STEMI. The patient needs emergent cardiac catheterization, which requires transfer to a PCI-capable facility."},
+      {"label": "C", "text": "Order troponin levels and wait for results before deciding", "is_correct": false, "explanation": "Incorrect. In the setting of ST elevation on ECG with classic symptoms, waiting for troponin results delays life-saving treatment. The diagnosis of STEMI is made clinically and by ECG, not by troponin."},
+      {"label": "D", "text": "Administer aspirin 325 mg and activate emergency medical services for transfer to a PCI-capable hospital", "is_correct": true, "explanation": "Correct. Immediate aspirin administration and rapid transfer for primary PCI is the standard of care for STEMI. Every minute of delay increases myocardial damage and mortality."},
+      {"label": "E", "text": "Administer aspirin and schedule an outpatient stress test within 48 hours", "is_correct": false, "explanation": "Incorrect. An outpatient stress test is completely inappropriate for an acute STEMI. This patient needs emergent reperfusion therapy, not outpatient evaluation."}
+    ]
+  },
+  {
+    "topic": "Patient Safety",
+    "subtopic": "Medical Errors",
+    "stem": "A physician prescribes warfarin 5 mg daily for a patient with new-onset atrial fibrillation. The pharmacist dispenses warfarin 50 mg tablets by mistake due to a look-alike packaging error, but a nurse catches the error before the medication reaches the patient. No harm occurs. Which of the following best describes this event?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "The correct answer is C (Near miss). A near miss (also called a close call) is an event that could have caused harm but was caught before reaching the patient. In this case, the dispensing error was intercepted by the nurse. Understanding near misses is crucial because they reveal system vulnerabilities and provide opportunities for improvement without actual patient harm.",
+    "learning_objectives": [
+      "Distinguish between adverse events, near misses, and sentinel events",
+      "Recognize the importance of reporting near misses for system improvement",
+      "Understand the role of safety barriers in preventing medical errors"
+    ],
+    "options": [
+      {"label": "A", "text": "Adverse drug event", "is_correct": false, "explanation": "Incorrect. An adverse drug event involves actual harm to the patient from a medication. Since the medication never reached the patient and no harm occurred, this is not an adverse drug event."},
+      {"label": "B", "text": "Sentinel event", "is_correct": false, "explanation": "Incorrect. A sentinel event is an unexpected occurrence resulting in death or serious physical or psychological injury. No harm occurred in this scenario."},
+      {"label": "C", "text": "Near miss", "is_correct": true, "explanation": "Correct. A near miss is an error that is caught before it reaches the patient. The dispensing error was intercepted by the nurse, preventing potential harm. Near misses should be reported and analyzed to prevent future errors."},
+      {"label": "D", "text": "Never event", "is_correct": false, "explanation": "Incorrect. Never events are serious, preventable adverse events that should never occur (e.g., wrong-site surgery). This situation involved an intercepted error, not an actual preventable adverse event."},
+      {"label": "E", "text": "Medication side effect", "is_correct": false, "explanation": "Incorrect. A side effect is a known pharmacologic effect of a drug given at the correct dose. This was a dispensing error, and the medication was never administered."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Outpatient Chronic Disease",
+    "stem": "A 68-year-old woman with a history of COPD (FEV1 45% predicted) presents for outpatient follow-up. She reports 3 exacerbations requiring oral corticosteroids in the past year and persistent dyspnea on exertion despite using tiotropium and a rescue albuterol inhaler. She quit smoking 5 years ago. Her oxygen saturation is 93% at rest. She has not been vaccinated against pneumococcus or influenza this season. Which of the following is the most appropriate change to her maintenance therapy?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The correct answer is B (Add an inhaled corticosteroid/long-acting beta-agonist combination inhaler). This patient has severe COPD (GOLD stage III based on FEV1 45%) with frequent exacerbations (3 per year) despite LAMA monotherapy. Per GOLD guidelines, patients with frequent exacerbations on LAMA monotherapy should be escalated to triple therapy (LAMA + LABA + ICS) or at minimum LABA/ICS added to the LAMA. Adding ICS/LABA combination therapy is the most appropriate step.",
+    "learning_objectives": [
+      "Apply GOLD guidelines for COPD step-up therapy",
+      "Identify indications for adding inhaled corticosteroids in COPD",
+      "Manage frequent COPD exacerbations in the outpatient setting"
+    ],
+    "options": [
+      {"label": "A", "text": "Switch tiotropium to umeclidinium, a newer LAMA", "is_correct": false, "explanation": "Incorrect. Switching between LAMAs of the same class is unlikely to provide meaningful benefit. The patient needs escalation of therapy, not substitution within the same drug class."},
+      {"label": "B", "text": "Add an inhaled corticosteroid/long-acting beta-agonist combination inhaler", "is_correct": true, "explanation": "Correct. With an FEV1 of 45% and 3 exacerbations per year on LAMA monotherapy, this patient needs escalation to include both an ICS and a LABA. Triple therapy (LAMA + LABA + ICS) significantly reduces exacerbation frequency and improves lung function."},
+      {"label": "C", "text": "Start daily oral prednisone 10 mg", "is_correct": false, "explanation": "Incorrect. Chronic systemic corticosteroids are not recommended for COPD maintenance due to significant side effects (osteoporosis, diabetes, adrenal suppression, infections) without proven long-term benefit in reducing exacerbations."},
+      {"label": "D", "text": "Begin continuous home oxygen therapy", "is_correct": false, "explanation": "Incorrect. Continuous home oxygen is indicated when resting PaO2 is ≤55 mmHg or SpO2 ≤88%. This patient's resting SpO2 of 93% does not meet criteria. She may benefit from ambulatory oxygen assessment, but this does not address her exacerbation frequency."},
+      {"label": "E", "text": "Add oral theophylline", "is_correct": false, "explanation": "Incorrect. Theophylline is a fourth-line agent with a narrow therapeutic index and significant drug interactions. ICS/LABA therapy is preferred over theophylline for exacerbation reduction."}
+    ]
+  },
+  {
+    "topic": "Obstetrics and Gynecology",
+    "subtopic": "Contraception",
+    "stem": "A 32-year-old woman with a BMI of 38 kg/m2, a history of migraines with aura, and well-controlled type 2 diabetes presents to discuss contraception. She desires a long-acting reversible method. She has two children and does not want permanent sterilization. Which of the following is the most appropriate contraceptive recommendation?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "The correct answer is D (Levonorgestrel IUD). This patient has multiple contraindications to estrogen-containing contraceptives: migraine with aura (increased stroke risk), obesity, and diabetes. The CDC Medical Eligibility Criteria (MEC) classify combined hormonal contraceptives as Category 4 (unacceptable risk) for women with migraine with aura. Progestin-only methods are safe. Among the long-acting reversible options, the levonorgestrel IUD is an excellent choice -- it is highly effective, does not contain estrogen, and has the added benefit of reducing menstrual bleeding.",
+    "learning_objectives": [
+      "Identify contraindications to estrogen-containing contraceptives",
+      "Apply CDC Medical Eligibility Criteria for contraceptive selection",
+      "Recommend appropriate long-acting reversible contraception based on patient comorbidities"
+    ],
+    "options": [
+      {"label": "A", "text": "Combined oral contraceptive pill", "is_correct": false, "explanation": "Incorrect. Combined OCPs contain estrogen, which is contraindicated (CDC MEC Category 4) in women with migraine with aura due to significantly increased risk of ischemic stroke."},
+      {"label": "B", "text": "Transdermal contraceptive patch", "is_correct": false, "explanation": "Incorrect. The contraceptive patch contains estrogen and carries the same contraindications as combined OCPs. It is also less effective in women with BMI >30 kg/m2."},
+      {"label": "C", "text": "Combined vaginal ring", "is_correct": false, "explanation": "Incorrect. The vaginal ring contains estrogen and is contraindicated in women with migraine with aura, same as other combined hormonal methods."},
+      {"label": "D", "text": "Levonorgestrel intrauterine device (IUD)", "is_correct": true, "explanation": "Correct. The levonorgestrel IUD is a progestin-only long-acting reversible method that is safe in women with migraine with aura, obesity, and diabetes. It is highly effective (>99%) and does not contain estrogen."},
+      {"label": "E", "text": "Depot medroxyprogesterone acetate (DMPA) injection", "is_correct": false, "explanation": "Incorrect. While DMPA is progestin-only and safe regarding migraine, it is associated with weight gain and potential worsening of glucose control in diabetic patients. The patient also requested a long-acting reversible method, and DMPA requires injections every 3 months. The IUD better meets her stated preference."}
+    ]
+  },
+  {
+    "topic": "Epidemiology",
+    "subtopic": "Disease Surveillance and Prevention",
+    "stem": "A state health department observes a cluster of 12 cases of hepatitis A in a county over 2 weeks, compared to a baseline of 2 cases per month. Investigation reveals that 10 of the 12 affected individuals ate at the same restaurant during the preceding 4 weeks. A food handler at the restaurant is found to have serologic evidence of acute hepatitis A. In addition to closing the restaurant for sanitation, which of the following is the most important public health intervention?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step3",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "The correct answer is C (Administer hepatitis A vaccine or immune globulin to exposed restaurant patrons within 2 weeks of exposure). Post-exposure prophylaxis (PEP) with hepatitis A vaccine (preferred for healthy individuals aged 1-40) or immune globulin (for those >40, immunocompromised, or with chronic liver disease) is effective if given within 14 days of exposure. Identifying and notifying exposed patrons for PEP is the most critical intervention to prevent secondary cases.",
+    "learning_objectives": [
+      "Apply principles of outbreak investigation and management",
+      "Know the indications and timing for hepatitis A post-exposure prophylaxis",
+      "Understand the role of public health interventions in controlling infectious disease outbreaks"
+    ],
+    "options": [
+      {"label": "A", "text": "Begin antibiotic prophylaxis for all exposed patrons", "is_correct": false, "explanation": "Incorrect. Hepatitis A is a viral infection; antibiotics are ineffective. Post-exposure prophylaxis uses vaccine or immune globulin, not antibiotics."},
+      {"label": "B", "text": "Quarantine all exposed patrons for 28 days", "is_correct": false, "explanation": "Incorrect. Quarantine of all exposed individuals is impractical and not the standard approach for hepatitis A. The focus should be on PEP and hygiene measures, not quarantine."},
+      {"label": "C", "text": "Administer hepatitis A vaccine or immune globulin to exposed restaurant patrons within 2 weeks of exposure", "is_correct": true, "explanation": "Correct. Post-exposure prophylaxis with hepatitis A vaccine (or immune globulin for certain populations) within 14 days of exposure is the most effective intervention to prevent disease in exposed individuals and halt the outbreak."},
+      {"label": "D", "text": "Test all restaurant employees for hepatitis A IgM and isolate positive individuals only", "is_correct": false, "explanation": "Incorrect. While testing employees is important, focusing only on employee testing neglects the exposed patrons who are at risk of developing disease. PEP for patrons is the priority."},
+      {"label": "E", "text": "Notify the CDC and wait for federal guidance before acting", "is_correct": false, "explanation": "Incorrect. While CDC notification may be appropriate, waiting for federal guidance delays critical time-sensitive PEP. State and local health departments have the authority and responsibility to act immediately."}
+    ]
   }
 ]

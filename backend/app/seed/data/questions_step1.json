@@ -1,5 +1,475 @@
 [
   {
+    "topic": "Anatomy",
+    "subtopic": "Gross Anatomy",
+    "stem": "A 62-year-old man undergoes a left radical nephrectomy for renal cell carcinoma. During the procedure, the surgeon ligates the left renal vein. Postoperatively, the patient develops a left-sided varicocele. Which of the following anatomical relationships best explains this finding?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The left testicular vein drains into the left renal vein, unlike the right testicular vein which drains directly into the inferior vena cava. Ligation of the left renal vein disrupts venous drainage from the left testicular vein, leading to engorgement of the pampiniform plexus and varicocele formation. This anatomical asymmetry is also the reason left-sided varicoceles are more common than right-sided ones.",
+    "learning_objectives": [
+      "Describe the venous drainage of the testes",
+      "Explain the anatomical basis for left-sided varicocele",
+      "Identify complications of renal surgery related to venous anatomy"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "The left testicular vein drains into the left renal vein",
+        "is_correct": true,
+        "explanation": "Correct. The left testicular vein drains into the left renal vein, so ligation of the left renal vein obstructs venous outflow from the left testis, causing dilation of the pampiniform plexus (varicocele)."
+      },
+      {
+        "label": "B",
+        "text": "The left testicular vein drains into the inferior vena cava",
+        "is_correct": false,
+        "explanation": "Incorrect. The right testicular vein drains directly into the IVC, not the left. The left testicular vein drains into the left renal vein, which explains why left renal vein ligation causes a left varicocele."
+      },
+      {
+        "label": "C",
+        "text": "The left testicular artery was inadvertently ligated",
+        "is_correct": false,
+        "explanation": "Incorrect. Ligation of the testicular artery would cause ischemia and atrophy of the testis, not a varicocele. A varicocele is a venous dilation phenomenon."
+      },
+      {
+        "label": "D",
+        "text": "The left ureter was damaged during surgery",
+        "is_correct": false,
+        "explanation": "Incorrect. Ureteral damage would lead to urine leak or hydronephrosis, not varicocele. Varicocele results from disrupted venous drainage."
+      },
+      {
+        "label": "E",
+        "text": "The left gonadal vein drains into the left common iliac vein",
+        "is_correct": false,
+        "explanation": "Incorrect. The left gonadal vein does not drain into the left common iliac vein. It drains into the left renal vein, which is the key anatomical fact in this scenario."
+      }
+    ]
+  },
+  {
+    "topic": "Anatomy",
+    "subtopic": "Embryology",
+    "stem": "A newborn infant is found to have a mass protruding from the base of the umbilical cord. The mass contains loops of small bowel covered by a translucent membranous sac. There are no other visible anomalies. Which of the following embryological processes most likely failed in this patient?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "This presentation describes an omphalocele, where abdominal contents herniate through the umbilical ring and are covered by a peritoneal sac. Omphalocele results from failure of the midgut to return to the abdominal cavity during the 10th week of development. Normally, the midgut herniates into the umbilical cord around week 6 for physiologic herniation, undergoes rotation, and returns by week 10. Failure of this return causes omphalocele.",
+    "learning_objectives": [
+      "Distinguish omphalocele from gastroschisis",
+      "Understand the embryology of midgut development and rotation",
+      "Recognize the significance of the peritoneal covering in congenital abdominal wall defects"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Lateral body wall folding",
+        "is_correct": false,
+        "explanation": "Incorrect. Failure of lateral body wall folding results in gastroschisis, where bowel herniates through a defect lateral to the umbilicus and is NOT covered by a membrane. This infant has a membrane-covered defect at the umbilicus."
+      },
+      {
+        "label": "B",
+        "text": "Return of the midgut to the abdominal cavity",
+        "is_correct": true,
+        "explanation": "Correct. Omphalocele results from failure of the physiologically herniated midgut to return to the abdominal cavity by week 10. The herniated bowel remains within the umbilical cord, covered by peritoneum and amnion."
+      },
+      {
+        "label": "C",
+        "text": "Closure of the urachus",
+        "is_correct": false,
+        "explanation": "Incorrect. Failure of urachal closure leads to urachal fistula, patent urachus, or urachal cyst, not an omphalocele. The urachus connects the bladder to the allantois."
+      },
+      {
+        "label": "D",
+        "text": "Septation of the cloaca",
+        "is_correct": false,
+        "explanation": "Incorrect. Failure of cloacal septation by the urorectal septum leads to persistent cloaca or rectourethral/rectovesical fistulas, not abdominal wall defects."
+      },
+      {
+        "label": "E",
+        "text": "Obliteration of the vitelline duct",
+        "is_correct": false,
+        "explanation": "Incorrect. Failure of vitelline duct obliteration leads to Meckel diverticulum (most common), vitelline fistula, or vitelline cyst, not omphalocele."
+      }
+    ]
+  },
+  {
+    "topic": "Anatomy",
+    "subtopic": "Neuroanatomy",
+    "stem": "A 68-year-old woman presents to the emergency department with sudden onset of left-sided weakness and difficulty speaking. MRI reveals an infarct in the right posterior limb of the internal capsule. Which of the following deficits is most likely present on neurological examination?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The posterior limb of the internal capsule contains the corticospinal tract fibers. A lesion here causes contralateral upper motor neuron weakness (left-sided hemiparesis from a right-sided lesion). The corticospinal fibers in the posterior limb are somatotopically organized. A pure motor hemiparesis is one of the classic lacunar syndromes caused by small vessel infarction in the posterior limb of the internal capsule.",
+    "learning_objectives": [
+      "Identify the contents of the posterior limb of the internal capsule",
+      "Predict neurological deficits from lesions in specific white matter tracts",
+      "Recognize lacunar stroke syndromes"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Left-sided upper and lower extremity weakness",
+        "is_correct": true,
+        "explanation": "Correct. The posterior limb of the internal capsule carries corticospinal tract fibers. A right-sided lesion here causes contralateral (left) upper motor neuron hemiparesis affecting both upper and lower extremities."
+      },
+      {
+        "label": "B",
+        "text": "Right-sided upper and lower extremity weakness",
+        "is_correct": false,
+        "explanation": "Incorrect. The corticospinal tract crosses at the medullary pyramids, so a right internal capsule lesion produces left (contralateral) weakness, not right (ipsilateral) weakness."
+      },
+      {
+        "label": "C",
+        "text": "Loss of pain and temperature sensation on the left face",
+        "is_correct": false,
+        "explanation": "Incorrect. Facial pain and temperature are carried by the trigeminal nerve and its central pathways in the brainstem, not through the posterior limb of the internal capsule."
+      },
+      {
+        "label": "D",
+        "text": "Left homonymous hemianopia without motor deficits",
+        "is_correct": false,
+        "explanation": "Incorrect. The optic radiations pass through the retrolenticular portion of the internal capsule, posterior to the motor fibers. While visual field deficits can occur, the posterior limb primarily carries motor fibers, making hemiparesis the most likely deficit."
+      },
+      {
+        "label": "E",
+        "text": "Bilateral lower extremity weakness",
+        "is_correct": false,
+        "explanation": "Incorrect. Bilateral weakness would require bilateral lesions. A unilateral internal capsule infarct produces contralateral hemiparesis, not bilateral deficits."
+      }
+    ]
+  },
+  {
+    "topic": "Physiology",
+    "subtopic": "Cardiovascular Physiology",
+    "stem": "A 55-year-old man with long-standing hypertension has an echocardiogram showing concentric left ventricular hypertrophy with preserved ejection fraction. Compared to a normal heart, which of the following hemodynamic changes is most likely present in this patient?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "Chronic pressure overload from hypertension causes concentric left ventricular hypertrophy, which increases wall thickness without changing chamber size. According to the Laplace relationship (wall stress = pressure x radius / 2 x wall thickness), increased wall thickness helps normalize wall stress. The thickened, stiffened ventricle has decreased compliance, meaning higher pressures are needed to fill it to the same volume. This results in diastolic dysfunction with preserved systolic function (HFpEF).",
+    "learning_objectives": [
+      "Apply the Law of Laplace to cardiac physiology",
+      "Differentiate concentric from eccentric hypertrophy",
+      "Understand the pathophysiology of diastolic dysfunction"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Increased left ventricular compliance",
+        "is_correct": false,
+        "explanation": "Incorrect. Concentric hypertrophy increases wall stiffness, thereby decreasing (not increasing) ventricular compliance. This is the hallmark of diastolic dysfunction."
+      },
+      {
+        "label": "B",
+        "text": "Decreased left ventricular compliance",
+        "is_correct": true,
+        "explanation": "Correct. The thickened ventricular wall in concentric hypertrophy is stiffer and less compliant, requiring higher filling pressures to achieve the same end-diastolic volume. This is the basis of heart failure with preserved ejection fraction (HFpEF)."
+      },
+      {
+        "label": "C",
+        "text": "Increased left ventricular end-diastolic volume",
+        "is_correct": false,
+        "explanation": "Incorrect. Concentric hypertrophy involves inward thickening of the wall, which may actually reduce the chamber cavity size. Increased end-diastolic volume is seen in eccentric hypertrophy from volume overload."
+      },
+      {
+        "label": "D",
+        "text": "Decreased systemic vascular resistance",
+        "is_correct": false,
+        "explanation": "Incorrect. Chronic hypertension is characterized by increased (not decreased) systemic vascular resistance, which is the driving force behind pressure overload and concentric hypertrophy."
+      },
+      {
+        "label": "E",
+        "text": "Decreased left ventricular wall thickness",
+        "is_correct": false,
+        "explanation": "Incorrect. Concentric hypertrophy by definition involves increased wall thickness. Decreased wall thickness would be seen in dilated cardiomyopathy."
+      }
+    ]
+  },
+  {
+    "topic": "Physiology",
+    "subtopic": "Renal Physiology",
+    "stem": "A 40-year-old woman is brought to the emergency department after being found unresponsive. Laboratory studies show serum sodium of 115 mEq/L, serum osmolality of 250 mOsm/kg, urine osmolality of 600 mOsm/kg, and urine sodium of 40 mEq/L. She has no history of diuretic use, renal disease, or heart failure. CT of the chest reveals a lung mass. Which of the following best explains the pathophysiology of her hyponatremia?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "This patient has hypotonic hyponatremia (low serum osmolality) with inappropriately concentrated urine (high urine osmolality) and elevated urine sodium, consistent with the syndrome of inappropriate antidiuretic hormone secretion (SIADH). The lung mass is likely small cell lung carcinoma, the most common cause of ectopic ADH production. Excess ADH causes water retention by inserting aquaporin-2 channels in the collecting duct principal cells, leading to dilutional hyponatremia. Volume expansion from water retention also suppresses aldosterone and enhances natriuresis, explaining the high urine sodium.",
+    "learning_objectives": [
+      "Diagnose SIADH from laboratory findings",
+      "Explain the mechanism of ADH action on the collecting duct",
+      "Identify paraneoplastic causes of SIADH"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Decreased aldosterone secretion from adrenal insufficiency",
+        "is_correct": false,
+        "explanation": "Incorrect. Adrenal insufficiency can cause hyponatremia due to cortisol deficiency (loss of ADH suppression) and aldosterone deficiency, but the primary pathophysiology here is ectopic ADH from the lung mass, not adrenal failure."
+      },
+      {
+        "label": "B",
+        "text": "Ectopic production of ADH causing increased water reabsorption",
+        "is_correct": true,
+        "explanation": "Correct. The lung mass (likely small cell carcinoma) produces ADH ectopically, causing insertion of aquaporin-2 channels in collecting duct cells, increasing water reabsorption, and resulting in dilutional hyponatremia with inappropriately concentrated urine."
+      },
+      {
+        "label": "C",
+        "text": "Excessive sodium loss from renal tubular damage",
+        "is_correct": false,
+        "explanation": "Incorrect. There is no history of renal disease, and renal tubular damage would not explain the inappropriately concentrated urine. In SIADH, the high urine sodium is a consequence of volume expansion-mediated natriuresis."
+      },
+      {
+        "label": "D",
+        "text": "Decreased renal blood flow from heart failure",
+        "is_correct": false,
+        "explanation": "Incorrect. The patient has no history of heart failure. In heart failure, urine sodium is typically low (<20 mEq/L) due to activation of the renin-angiotensin-aldosterone system, unlike this patient's urine sodium of 40 mEq/L."
+      },
+      {
+        "label": "E",
+        "text": "Primary polydipsia with excessive water intake",
+        "is_correct": false,
+        "explanation": "Incorrect. In primary polydipsia, the kidneys can dilute urine appropriately, so urine osmolality should be low (<100 mOsm/kg). This patient has concentrated urine (600 mOsm/kg), indicating that ADH is driving water reabsorption."
+      }
+    ]
+  },
+  {
+    "topic": "Physiology",
+    "subtopic": "Respiratory Physiology",
+    "stem": "A 28-year-old woman undergoes pulmonary function testing as part of a research study. She is at sea level and breathing room air. Her arterial blood gas shows PaO2 of 100 mmHg and PaCO2 of 40 mmHg. Her alveolar-arterial (A-a) oxygen gradient is calculated to be 5 mmHg. Which of the following conditions would most likely INCREASE her A-a gradient?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "The A-a gradient measures the difference between alveolar and arterial oxygen tension. A normal A-a gradient is 5-15 mmHg. Conditions that increase the A-a gradient involve a defect in oxygen transfer from alveoli to blood: ventilation-perfusion mismatch, diffusion impairment, or right-to-left shunt. Pulmonary embolism causes V/Q mismatch (perfusion to affected areas is blocked, so ventilated alveoli are not perfused), increasing the A-a gradient. Hypoventilation and high altitude decrease PaO2 but maintain a normal A-a gradient because the problem is in delivering air to alveoli, not in oxygen transfer across the alveolar membrane.",
+    "learning_objectives": [
+      "Calculate and interpret the alveolar-arterial oxygen gradient",
+      "Differentiate causes of hypoxemia by A-a gradient",
+      "Understand ventilation-perfusion mismatch"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Hypoventilation from opioid overdose",
+        "is_correct": false,
+        "explanation": "Incorrect. Pure hypoventilation decreases both alveolar and arterial oxygen proportionally, maintaining a normal A-a gradient. The problem is reduced ventilation to all alveoli, not impaired gas exchange."
+      },
+      {
+        "label": "B",
+        "text": "Traveling to high altitude",
+        "is_correct": false,
+        "explanation": "Incorrect. High altitude reduces inspired oxygen pressure, decreasing PAO2 and PaO2 proportionally. The A-a gradient remains normal because gas exchange across the alveolar membrane is unimpaired."
+      },
+      {
+        "label": "C",
+        "text": "Pulmonary embolism",
+        "is_correct": true,
+        "explanation": "Correct. Pulmonary embolism blocks perfusion to ventilated lung segments, creating dead space and redistributing blood flow, leading to ventilation-perfusion mismatch. This impairs gas exchange efficiency, increasing the A-a gradient."
+      },
+      {
+        "label": "D",
+        "text": "Breathing a hypoxic gas mixture",
+        "is_correct": false,
+        "explanation": "Incorrect. Breathing a hypoxic gas mixture reduces the FiO2, which lowers alveolar oxygen and arterial oxygen proportionally. The A-a gradient remains normal because the lung parenchyma is normal."
+      },
+      {
+        "label": "E",
+        "text": "Anxiety-induced hyperventilation",
+        "is_correct": false,
+        "explanation": "Incorrect. Hyperventilation increases alveolar oxygen and decreases PaCO2 but does not significantly change the A-a gradient because the gas exchange surface is functioning normally."
+      }
+    ]
+  },
+  {
+    "topic": "Physiology",
+    "subtopic": "Neurophysiology",
+    "stem": "A 35-year-old man sustains a complete transection of the spinal cord at the T10 level in a motor vehicle accident. Three months after the injury, which of the following findings is most likely present on examination of his lower extremities?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "A complete spinal cord transection at T10 disrupts all descending upper motor neuron (UMN) pathways to the lower extremities. After the initial period of spinal shock (flaccidity and areflexia lasting days to weeks), UMN signs develop below the level of the lesion. These include spastic paralysis, hyperreflexia, and a positive Babinski sign (upgoing plantar response). The hyperreflexia occurs because the spinal reflex arcs below the lesion are intact but no longer modulated by inhibitory descending pathways.",
+    "learning_objectives": [
+      "Differentiate upper from lower motor neuron lesion findings",
+      "Understand the concept of spinal shock and its resolution",
+      "Predict neurological findings after spinal cord transection"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Flaccid paralysis with muscle fasciculations",
+        "is_correct": false,
+        "explanation": "Incorrect. Flaccid paralysis and fasciculations are signs of lower motor neuron (LMN) lesions. After resolution of spinal shock, a UMN lesion from cord transection produces spasticity, not flaccidity."
+      },
+      {
+        "label": "B",
+        "text": "Hyperreflexia with spastic paralysis",
+        "is_correct": true,
+        "explanation": "Correct. Three months after injury, spinal shock has resolved. Loss of descending inhibitory input leads to hyperactive spinal reflexes, increased muscle tone (spasticity), and upper motor neuron pattern weakness in the lower extremities."
+      },
+      {
+        "label": "C",
+        "text": "Muscle atrophy with absent deep tendon reflexes",
+        "is_correct": false,
+        "explanation": "Incorrect. Muscle atrophy and absent DTRs are characteristic of LMN lesions (denervation atrophy). In UMN lesions, disuse atrophy may occur over time but is less prominent, and reflexes are hyperactive, not absent."
+      },
+      {
+        "label": "D",
+        "text": "Normal motor function with loss of pain sensation only",
+        "is_correct": false,
+        "explanation": "Incorrect. A complete transection disrupts all tracts, causing both motor and sensory deficits below the lesion. Isolated loss of pain sensation suggests a partial cord syndrome."
+      },
+      {
+        "label": "E",
+        "text": "Intact voluntary movement with loss of proprioception",
+        "is_correct": false,
+        "explanation": "Incorrect. A complete transection eliminates all voluntary movement below the lesion. Isolated proprioception loss would suggest a posterior column lesion (e.g., tabes dorsalis), not a complete transection."
+      }
+    ]
+  },
+  {
+    "topic": "Biochemistry",
+    "subtopic": "Metabolism",
+    "stem": "A 3-day-old neonate is brought to the hospital with poor feeding, vomiting, and lethargy. Physical examination reveals hepatomegaly and jaundice. Laboratory studies show hypoglycemia, elevated liver enzymes, and the presence of reducing substances in the urine that do not react with glucose oxidase. The infant was breastfed but symptoms began after introduction of a milk-based formula. Which of the following enzyme deficiencies is most likely responsible?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This presentation is classic for classic galactosemia caused by galactose-1-phosphate uridylyltransferase deficiency. Galactose from lactose in milk cannot be properly metabolized, leading to accumulation of galactose-1-phosphate and galactitol. The reducing substances in urine are galactose (which is a reducing sugar but does not react with glucose oxidase, which is specific for glucose). Symptoms begin after milk feeding (breast milk and formula both contain lactose). Complications include hepatotoxicity, cataracts, intellectual disability, and E. coli sepsis.",
+    "learning_objectives": [
+      "Recognize the clinical presentation of galactosemia",
+      "Identify the enzyme deficiency in classic galactosemia",
+      "Distinguish reducing sugars using glucose oxidase specificity"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Aldolase B",
+        "is_correct": false,
+        "explanation": "Incorrect. Aldolase B deficiency causes hereditary fructose intolerance, which presents similarly but is triggered by fructose/sucrose exposure (fruit juices, honey), not milk-based formulas. Symptoms would not begin with introduction of lactose-containing formula."
+      },
+      {
+        "label": "B",
+        "text": "Galactokinase",
+        "is_correct": false,
+        "explanation": "Incorrect. Galactokinase deficiency causes a milder form of galactosemia with galactose accumulation leading to galactitol formation and cataracts, but it does not cause the severe hepatotoxicity and failure to thrive seen in this patient."
+      },
+      {
+        "label": "C",
+        "text": "Galactose-1-phosphate uridylyltransferase",
+        "is_correct": true,
+        "explanation": "Correct. Deficiency of this enzyme causes classic galactosemia. Galactose-1-phosphate accumulates in liver, brain, and kidneys, causing hepatomegaly, jaundice, intellectual disability, and renal tubular dysfunction. Urine reducing substances are positive (galactose) but glucose oxidase negative."
+      },
+      {
+        "label": "D",
+        "text": "Glucose-6-phosphatase",
+        "is_correct": false,
+        "explanation": "Incorrect. Glucose-6-phosphatase deficiency causes von Gierke disease (glycogen storage disease type I), presenting with hypoglycemia and hepatomegaly but also with lactic acidosis, hyperuricemia, and hyperlipidemia. It is not associated with urine reducing substances after milk introduction."
+      },
+      {
+        "label": "E",
+        "text": "Fructose-1,6-bisphosphatase",
+        "is_correct": false,
+        "explanation": "Incorrect. Fructose-1,6-bisphosphatase deficiency impairs gluconeogenesis, causing fasting hypoglycemia and lactic acidosis, but does not produce urine reducing substances triggered specifically by milk feeding."
+      }
+    ]
+  },
+  {
+    "topic": "Biochemistry",
+    "subtopic": "Molecular Biology",
+    "stem": "A research team is studying gene expression in a cell line. They observe that a particular mRNA transcript is 8,000 nucleotides long, but the corresponding gene in the genomic DNA spans 45,000 base pairs. Which of the following processes is most directly responsible for this size difference?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "The primary reason that mature mRNA is much shorter than the corresponding genomic DNA is RNA splicing, which removes introns from the pre-mRNA. Eukaryotic genes contain non-coding sequences (introns) interspersed among coding sequences (exons). The spliceosome complex recognizes splice sites at intron-exon boundaries and catalyzes removal of introns, joining the exons to form the mature mRNA. In many human genes, introns account for over 90% of the gene length.",
+    "learning_objectives": [
+      "Explain the role of RNA splicing in gene expression",
+      "Distinguish between introns and exons",
+      "Understand why eukaryotic genes are larger than their mRNA products"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Addition of the 5' cap and 3' poly-A tail",
+        "is_correct": false,
+        "explanation": "Incorrect. The 5' cap (7-methylguanosine) and poly-A tail (100-250 adenine residues) are added to the mRNA, making it slightly longer than the coding sequence. They do not explain why the mRNA is shorter than the gene."
+      },
+      {
+        "label": "B",
+        "text": "RNA splicing to remove introns",
+        "is_correct": true,
+        "explanation": "Correct. RNA splicing removes intronic sequences from the pre-mRNA transcript, leaving only exons in the mature mRNA. Since introns typically constitute the majority of eukaryotic gene length, this explains the large size difference between genomic DNA and mRNA."
+      },
+      {
+        "label": "C",
+        "text": "DNA methylation of CpG islands",
+        "is_correct": false,
+        "explanation": "Incorrect. DNA methylation is an epigenetic modification that regulates gene transcription (typically silencing genes) but does not affect the length difference between genomic DNA and mRNA."
+      },
+      {
+        "label": "D",
+        "text": "Degradation of mRNA by exonucleases",
+        "is_correct": false,
+        "explanation": "Incorrect. While mRNA degradation is a normal regulatory process, the consistent size of the mRNA product from a gene is determined by splicing, not random degradation. Exonuclease activity degrades entire mRNA molecules, not specific sequences."
+      },
+      {
+        "label": "E",
+        "text": "Reverse transcription of mRNA into cDNA",
+        "is_correct": false,
+        "explanation": "Incorrect. Reverse transcription is not a normal step in gene expression; it is a laboratory technique or a process used by retroviruses. It does not explain the size difference between a gene and its mRNA."
+      }
+    ]
+  },
+  {
+    "topic": "Biochemistry",
+    "subtopic": "Genetics",
+    "stem": "A couple seeks genetic counseling because their first child was diagnosed with cystic fibrosis. Both parents are unaffected carriers. They want to know the probability that their next child will be an unaffected carrier of the cystic fibrosis gene. Which of the following is the correct probability?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "Cystic fibrosis is an autosomal recessive disease. Both parents are heterozygous carriers (Cc x Cc). Using a Punnett square: 25% CC (homozygous normal), 50% Cc (carrier), and 25% cc (affected). The probability that their next child will be an unaffected carrier (heterozygous, Cc) is 1/2, or 50%. Each pregnancy is an independent event, so the outcome for the first child does not affect probabilities for subsequent children.",
+    "learning_objectives": [
+      "Apply Mendelian genetics to autosomal recessive inheritance",
+      "Calculate carrier probabilities using a Punnett square",
+      "Understand that each pregnancy is an independent genetic event"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "25%",
+        "is_correct": false,
+        "explanation": "Incorrect. 25% is the probability of being homozygous affected (cc) or homozygous normal (CC), not the probability of being a carrier."
+      },
+      {
+        "label": "B",
+        "text": "50%",
+        "is_correct": true,
+        "explanation": "Correct. In a cross between two carriers (Cc x Cc), 50% of offspring are expected to be heterozygous carriers (Cc). This is the probability of being an unaffected carrier."
+      },
+      {
+        "label": "C",
+        "text": "67%",
+        "is_correct": false,
+        "explanation": "Incorrect. 67% (2/3) would be the probability of being a carrier given that the child is unaffected, but the question asks for the overall probability of being a carrier without any conditions."
+      },
+      {
+        "label": "D",
+        "text": "75%",
+        "is_correct": false,
+        "explanation": "Incorrect. 75% is the probability of being unaffected (either CC or Cc), not specifically a carrier. The question asks specifically about being a carrier (Cc)."
+      },
+      {
+        "label": "E",
+        "text": "100%",
+        "is_correct": false,
+        "explanation": "Incorrect. There is no scenario in a Cc x Cc cross where all children are carriers. Each child has a 50% chance of being a carrier."
+      }
+    ]
+  },
+  {
     "topic": "Pathology",
     "subtopic": "General Pathology",
     "stem": "A 45-year-old man presents with a 3-month history of progressive fatigue, weight loss, and night sweats. Physical examination reveals bilateral hilar lymphadenopathy and erythema nodosum on the anterior shins. A biopsy of an enlarged lymph node shows well-formed, non-caseating granulomas with multinucleated giant cells. Acid-fast bacilli stain is negative. Which of the following is the most likely diagnosis?",
@@ -7,18 +477,184 @@
     "usmle_step": "step1",
     "difficulty": "medium",
     "source": "curated",
-    "explanation": "The correct answer is B (Sarcoidosis). Sarcoidosis is a systemic granulomatous disease of unknown etiology characterized by non-caseating granulomas. The classic presentation includes bilateral hilar lymphadenopathy, erythema nodosum, and constitutional symptoms. The negative AFB stain helps exclude tuberculosis, which typically presents with caseating granulomas. Sarcoidosis most commonly affects young adults, particularly African Americans and Northern Europeans.",
+    "explanation": "The correct answer is Sarcoidosis. Sarcoidosis is a systemic granulomatous disease of unknown etiology characterized by non-caseating granulomas. The classic presentation includes bilateral hilar lymphadenopathy, erythema nodosum, and constitutional symptoms. The negative AFB stain helps exclude tuberculosis, which typically presents with caseating granulomas. Sarcoidosis most commonly affects young adults, particularly African Americans and Northern Europeans.",
     "learning_objectives": [
       "Identify key features of granulomatous inflammation",
       "Distinguish between caseating and non-caseating granulomas",
       "Recognize the classic clinical presentation of sarcoidosis"
     ],
     "options": [
-      {"label": "A", "text": "Tuberculosis", "is_correct": false, "explanation": "Incorrect. Tuberculosis causes caseating granulomas and would show positive acid-fast bacilli on stain. The non-caseating pattern and negative AFB stain argue against TB."},
-      {"label": "B", "text": "Sarcoidosis", "is_correct": true, "explanation": "Correct. Non-caseating granulomas with bilateral hilar lymphadenopathy and erythema nodosum are the hallmark of sarcoidosis. The negative AFB stain further supports this diagnosis."},
-      {"label": "C", "text": "Hodgkin lymphoma", "is_correct": false, "explanation": "Incorrect. While Hodgkin lymphoma can cause hilar lymphadenopathy, biopsy would show Reed-Sternberg cells in a mixed inflammatory background, not well-formed granulomas."},
-      {"label": "D", "text": "Berylliosis", "is_correct": false, "explanation": "Incorrect. Berylliosis can cause non-caseating granulomas but requires occupational exposure to beryllium (aerospace, electronics manufacturing). No occupational history is mentioned."},
-      {"label": "E", "text": "Fungal infection", "is_correct": false, "explanation": "Incorrect. Fungal infections such as histoplasmosis can cause granulomas, but special stains (GMS, PAS) would reveal fungal organisms. The clinical presentation is most consistent with sarcoidosis."}
+      {
+        "label": "A",
+        "text": "Tuberculosis",
+        "is_correct": false,
+        "explanation": "Incorrect. Tuberculosis causes caseating granulomas and would show positive acid-fast bacilli on stain. The non-caseating pattern and negative AFB stain argue against TB."
+      },
+      {
+        "label": "B",
+        "text": "Sarcoidosis",
+        "is_correct": true,
+        "explanation": "Correct. Non-caseating granulomas with bilateral hilar lymphadenopathy and erythema nodosum are the hallmark of sarcoidosis. The negative AFB stain further supports this diagnosis."
+      },
+      {
+        "label": "C",
+        "text": "Hodgkin lymphoma",
+        "is_correct": false,
+        "explanation": "Incorrect. While Hodgkin lymphoma can cause hilar lymphadenopathy, biopsy would show Reed-Sternberg cells in a mixed inflammatory background, not well-formed granulomas."
+      },
+      {
+        "label": "D",
+        "text": "Berylliosis",
+        "is_correct": false,
+        "explanation": "Incorrect. Berylliosis can cause non-caseating granulomas but requires occupational exposure to beryllium (aerospace, electronics manufacturing). No occupational history is mentioned."
+      },
+      {
+        "label": "E",
+        "text": "Fungal infection",
+        "is_correct": false,
+        "explanation": "Incorrect. Fungal infections such as histoplasmosis can cause granulomas, but special stains (GMS, PAS) would reveal fungal organisms. The clinical presentation is most consistent with sarcoidosis."
+      }
+    ]
+  },
+  {
+    "topic": "Pathology",
+    "subtopic": "Systemic Pathology",
+    "stem": "A 52-year-old man with a 30-pack-year smoking history presents with hemoptysis and a 7-kg weight loss over 2 months. Chest CT reveals a 4-cm central lung mass with hilar lymphadenopathy. Biopsy shows nests of malignant cells with intercellular bridges and keratin pearls. Which of the following is the most likely diagnosis?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "Intercellular bridges and keratin pearls are histological hallmarks of squamous cell carcinoma. Squamous cell carcinoma of the lung is strongly associated with smoking and typically presents as a central (hilar) mass. It arises from the bronchial epithelium, which undergoes squamous metaplasia in response to chronic irritation from cigarette smoke. Squamous cell carcinoma can produce PTHrP, causing hypercalcemia as a paraneoplastic syndrome.",
+    "learning_objectives": [
+      "Identify histological features of squamous cell carcinoma",
+      "Associate central lung masses with squamous cell carcinoma and small cell carcinoma",
+      "Understand the relationship between smoking and lung cancer subtypes"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Adenocarcinoma",
+        "is_correct": false,
+        "explanation": "Incorrect. Adenocarcinoma is the most common lung cancer overall and typically presents as a peripheral mass with glandular differentiation (acinar, papillary, or mucinous patterns), not keratin pearls and intercellular bridges."
+      },
+      {
+        "label": "B",
+        "text": "Squamous cell carcinoma",
+        "is_correct": true,
+        "explanation": "Correct. Keratin pearls and intercellular bridges are pathognomonic for squamous cell carcinoma. Central location and strong smoking association further support this diagnosis."
+      },
+      {
+        "label": "C",
+        "text": "Small cell carcinoma",
+        "is_correct": false,
+        "explanation": "Incorrect. Small cell carcinoma also presents centrally in smokers, but histology shows small round blue cells with scant cytoplasm, nuclear molding, and crush artifact, not keratin pearls."
+      },
+      {
+        "label": "D",
+        "text": "Large cell carcinoma",
+        "is_correct": false,
+        "explanation": "Incorrect. Large cell carcinoma is a diagnosis of exclusion showing large undifferentiated cells without the specific features of squamous, adenocarcinoma, or small cell differentiation."
+      },
+      {
+        "label": "E",
+        "text": "Carcinoid tumor",
+        "is_correct": false,
+        "explanation": "Incorrect. Carcinoid tumors are neuroendocrine neoplasms that show nests of uniform cells with salt-and-pepper chromatin. They are not strongly associated with smoking and lack keratin pearls."
+      }
+    ]
+  },
+  {
+    "topic": "Pathology",
+    "subtopic": "Hematopathology",
+    "stem": "A 6-year-old boy is brought to the pediatrician because of easy bruising, pallor, and recurrent infections over the past 3 weeks. Physical examination reveals petechiae, hepatosplenomegaly, and nontender cervical lymphadenopathy. Complete blood count shows WBC 45,000/mm3 with 80% blasts, hemoglobin 7.2 g/dL, and platelets 22,000/mm3. Flow cytometry of the blasts is positive for CD10, CD19, and TdT. Which of the following is the most likely diagnosis?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This presentation is classic for acute lymphoblastic leukemia (ALL), the most common childhood malignancy. The child presents with signs of bone marrow failure: anemia (pallor), thrombocytopenia (petechiae, bruising), and leukocytosis with blasts. CD10 (CALLA), CD19, and TdT are markers of B-cell precursor ALL. TdT (terminal deoxynucleotidyl transferase) is a DNA polymerase expressed in immature lymphoid cells and is a hallmark of lymphoblast immaturity. ALL in children has an excellent prognosis, with cure rates exceeding 85%.",
+    "learning_objectives": [
+      "Recognize the clinical and laboratory features of acute lymphoblastic leukemia",
+      "Interpret flow cytometry markers for lymphoid lineage",
+      "Identify the most common childhood malignancy"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Acute myeloid leukemia",
+        "is_correct": false,
+        "explanation": "Incorrect. AML blasts express myeloid markers such as CD13, CD33, and myeloperoxidase (MPO). They are TdT-negative and CD10-negative. The flow cytometry markers in this case (CD10, CD19, TdT) are lymphoid, not myeloid."
+      },
+      {
+        "label": "B",
+        "text": "Acute lymphoblastic leukemia",
+        "is_correct": true,
+        "explanation": "Correct. The combination of CD10 (CALLA), CD19 (B-cell marker), and TdT (marker of immature lymphoid cells) identifies B-cell precursor ALL, the most common leukemia in children aged 2-10 years."
+      },
+      {
+        "label": "C",
+        "text": "Chronic lymphocytic leukemia",
+        "is_correct": false,
+        "explanation": "Incorrect. CLL is a disease of older adults (median age 70) characterized by mature-appearing small lymphocytes that express CD5, CD20, and CD23. It does not present with blasts or TdT positivity."
+      },
+      {
+        "label": "D",
+        "text": "Burkitt lymphoma",
+        "is_correct": false,
+        "explanation": "Incorrect. Burkitt lymphoma typically presents as an extranodal mass (jaw in endemic, abdomen in sporadic form). While it is a B-cell neoplasm, Burkitt cells express surface IgM and are TdT-negative, and show a characteristic starry-sky pattern on histology."
+      },
+      {
+        "label": "E",
+        "text": "Infectious mononucleosis",
+        "is_correct": false,
+        "explanation": "Incorrect. Infectious mononucleosis (EBV infection) causes atypical lymphocytes (reactive T cells), not blasts. It does not cause severe anemia or thrombocytopenia, and the atypical lymphocytes would not express TdT or CD10."
+      }
+    ]
+  },
+  {
+    "topic": "Pharmacology",
+    "subtopic": "Autonomic Pharmacology",
+    "stem": "A 70-year-old man with benign prostatic hyperplasia is started on a new medication. Two days later, he stands up quickly from a seated position and feels dizzy and lightheaded. His blood pressure drops from 140/85 mmHg seated to 105/65 mmHg standing. Which of the following medications was most likely prescribed?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "This patient exhibits orthostatic hypotension after starting treatment for BPH. Tamsulosin is an alpha-1 adrenergic receptor antagonist commonly used for BPH. By blocking alpha-1 receptors on vascular smooth muscle, it causes vasodilation and can lead to orthostatic hypotension, particularly after the first dose (first-dose phenomenon). Tamsulosin is relatively selective for alpha-1A receptors (predominant in the prostate) over alpha-1B receptors (predominant in blood vessels), but orthostatic hypotension still occurs, especially in elderly patients.",
+    "learning_objectives": [
+      "Identify alpha-1 antagonists used for BPH",
+      "Explain the mechanism of orthostatic hypotension from alpha-1 blockade",
+      "Recognize the first-dose phenomenon with alpha-1 antagonists"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Tamsulosin",
+        "is_correct": true,
+        "explanation": "Correct. Tamsulosin is an alpha-1 adrenergic antagonist used for BPH that causes orthostatic hypotension by blocking alpha-1 receptors on blood vessels, preventing sympathetic-mediated vasoconstriction on standing."
+      },
+      {
+        "label": "B",
+        "text": "Finasteride",
+        "is_correct": false,
+        "explanation": "Incorrect. Finasteride is a 5-alpha reductase inhibitor that blocks conversion of testosterone to dihydrotestosterone. It does not affect adrenergic receptors and does not cause orthostatic hypotension. Its side effects include decreased libido and gynecomastia."
+      },
+      {
+        "label": "C",
+        "text": "Oxybutynin",
+        "is_correct": false,
+        "explanation": "Incorrect. Oxybutynin is an antimuscarinic used for overactive bladder, not BPH. Its side effects include dry mouth, constipation, and urinary retention, not orthostatic hypotension."
+      },
+      {
+        "label": "D",
+        "text": "Bethanechol",
+        "is_correct": false,
+        "explanation": "Incorrect. Bethanechol is a muscarinic agonist used for urinary retention (not BPH). It stimulates bladder contraction and does not cause orthostatic hypotension."
+      },
+      {
+        "label": "E",
+        "text": "Dutasteride",
+        "is_correct": false,
+        "explanation": "Incorrect. Dutasteride, like finasteride, is a 5-alpha reductase inhibitor (inhibits both type 1 and type 2 isoforms). It does not block adrenergic receptors and does not cause orthostatic hypotension."
+      }
     ]
   },
   {
@@ -29,40 +665,278 @@
     "usmle_step": "step1",
     "difficulty": "medium",
     "source": "curated",
-    "explanation": "The correct answer is C (Spironolactone). Spironolactone is a potassium-sparing diuretic and aldosterone receptor antagonist used in heart failure. Its anti-androgenic effects cause gynecomastia in up to 10% of male patients, and its potassium-sparing action leads to hyperkalemia. Spironolactone has been shown to reduce mortality in severe heart failure (RALES trial).",
+    "explanation": "The correct answer is Spironolactone. Spironolactone is a potassium-sparing diuretic and aldosterone receptor antagonist used in heart failure. Its anti-androgenic effects cause gynecomastia in up to 10% of patients, and its potassium-sparing action leads to hyperkalemia. Spironolactone has been shown to reduce mortality in severe heart failure (RALES trial).",
     "learning_objectives": [
       "Identify the side effects of aldosterone antagonists",
       "Understand the mechanism of potassium-sparing diuretics",
       "Recognize drug-induced gynecomastia"
     ],
     "options": [
-      {"label": "A", "text": "Furosemide", "is_correct": false, "explanation": "Incorrect. Furosemide is a loop diuretic that causes hypokalemia (not hyperkalemia) by blocking the Na-K-2Cl cotransporter in the thick ascending limb. It does not cause gynecomastia."},
-      {"label": "B", "text": "Lisinopril", "is_correct": false, "explanation": "Incorrect. ACE inhibitors can cause mild hyperkalemia but do not cause gynecomastia. The combination of both findings points to spironolactone."},
-      {"label": "C", "text": "Spironolactone", "is_correct": true, "explanation": "Correct. Spironolactone is an aldosterone antagonist that causes both hyperkalemia (potassium-sparing effect) and gynecomastia (anti-androgenic effect at peripheral androgen receptors)."},
-      {"label": "D", "text": "Hydrochlorothiazide", "is_correct": false, "explanation": "Incorrect. HCTZ is a thiazide diuretic that causes hypokalemia by inhibiting the NaCl cotransporter in the distal convoluted tubule. It does not cause gynecomastia."},
-      {"label": "E", "text": "Digoxin", "is_correct": false, "explanation": "Incorrect. While digoxin can rarely cause gynecomastia due to estrogen-like steroid structure, it does not cause hyperkalemia at therapeutic doses. The combination of both findings is most characteristic of spironolactone."}
+      {
+        "label": "A",
+        "text": "Furosemide",
+        "is_correct": false,
+        "explanation": "Incorrect. Furosemide is a loop diuretic that causes hypokalemia (not hyperkalemia) by blocking the Na-K-2Cl cotransporter in the thick ascending limb. It does not cause gynecomastia."
+      },
+      {
+        "label": "B",
+        "text": "Lisinopril",
+        "is_correct": false,
+        "explanation": "Incorrect. ACE inhibitors can cause mild hyperkalemia but do not cause gynecomastia. The combination of both findings points to spironolactone."
+      },
+      {
+        "label": "C",
+        "text": "Spironolactone",
+        "is_correct": true,
+        "explanation": "Correct. Spironolactone is an aldosterone antagonist that causes both hyperkalemia (potassium-sparing effect) and gynecomastia (anti-androgenic effect at peripheral androgen receptors)."
+      },
+      {
+        "label": "D",
+        "text": "Hydrochlorothiazide",
+        "is_correct": false,
+        "explanation": "Incorrect. HCTZ is a thiazide diuretic that causes hypokalemia by inhibiting the NaCl cotransporter in the distal convoluted tubule. It does not cause gynecomastia."
+      },
+      {
+        "label": "E",
+        "text": "Digoxin",
+        "is_correct": false,
+        "explanation": "Incorrect. While digoxin can rarely cause gynecomastia due to estrogen-like steroid structure, it does not cause hyperkalemia at therapeutic doses. The combination of both findings is most characteristic of spironolactone."
+      }
     ]
   },
   {
-    "topic": "Physiology",
-    "subtopic": "Cardiovascular Physiology",
-    "stem": "A 30-year-old athlete undergoes cardiac testing during a sports physical. His resting heart rate is 52 bpm. An ECG shows sinus bradycardia with no other abnormalities. Which of the following best explains the mechanism of his low resting heart rate?",
+    "topic": "Pharmacology",
+    "subtopic": "Antimicrobials",
+    "stem": "A 22-year-old college student is diagnosed with community-acquired pneumonia caused by Mycoplasma pneumoniae. She reports a severe allergic reaction to penicillin (anaphylaxis). The physician prescribes azithromycin. Which of the following best describes the mechanism of action of this drug?",
     "question_type": "single_best_answer",
     "usmle_step": "step1",
     "difficulty": "easy",
     "source": "curated",
-    "explanation": "The correct answer is D (Increased vagal tone to the SA node). Athletic training leads to enhanced parasympathetic (vagal) tone at rest, which slows the intrinsic rate of the sinoatrial node by increasing potassium conductance and decreasing the rate of diastolic depolarization. This is a physiological adaptation, not a pathological condition, and does not require treatment.",
+    "explanation": "Azithromycin is a macrolide antibiotic that inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit. Specifically, it blocks translocation by binding to the 23S rRNA component of the 50S subunit, preventing the ribosome from moving along the mRNA. Macrolides are effective against atypical organisms including Mycoplasma, Chlamydia, and Legionella, making them first-line for atypical pneumonia.",
     "learning_objectives": [
-      "Understand autonomic regulation of heart rate",
-      "Explain physiological bradycardia in athletes",
-      "Describe the effect of vagal tone on the SA node"
+      "Classify antibiotics by mechanism of action",
+      "Identify the ribosomal target of macrolide antibiotics",
+      "Select appropriate antibiotics for atypical pneumonia"
     ],
     "options": [
-      {"label": "A", "text": "Decreased sympathetic tone to the AV node", "is_correct": false, "explanation": "Incorrect. While sympathetic withdrawal contributes, the primary mechanism is increased vagal tone to the SA node, not the AV node. The AV node primarily affects conduction velocity, not heart rate."},
-      {"label": "B", "text": "Increased intrinsic SA node firing rate", "is_correct": false, "explanation": "Incorrect. An increased intrinsic firing rate would cause tachycardia, not bradycardia. The SA node intrinsic rate (about 100 bpm without autonomic input) is slowed by vagal influence."},
-      {"label": "C", "text": "Hypertrophy of the left ventricle", "is_correct": false, "explanation": "Incorrect. While athletes develop physiologic left ventricular hypertrophy, this increases stroke volume. The reduced heart rate is primarily driven by enhanced vagal tone, not structural changes alone."},
-      {"label": "D", "text": "Increased vagal tone to the SA node", "is_correct": true, "explanation": "Correct. Chronic exercise training enhances resting parasympathetic (vagal) tone to the SA node. Acetylcholine released from vagal nerve endings binds to muscarinic M2 receptors, increasing potassium conductance and slowing the rate of phase 4 depolarization."},
-      {"label": "E", "text": "Decreased circulating catecholamines", "is_correct": false, "explanation": "Incorrect. While catecholamine levels may be slightly lower at rest in trained athletes, the dominant mechanism for resting bradycardia is the increased vagal tone, not reduced circulating catecholamines."}
+      {
+        "label": "A",
+        "text": "Inhibition of cell wall synthesis by binding to penicillin-binding proteins",
+        "is_correct": false,
+        "explanation": "Incorrect. This describes the mechanism of beta-lactam antibiotics (penicillins, cephalosporins, carbapenems). This patient has a penicillin allergy, so beta-lactams are contraindicated."
+      },
+      {
+        "label": "B",
+        "text": "Binding to the 50S ribosomal subunit to inhibit protein synthesis",
+        "is_correct": true,
+        "explanation": "Correct. Azithromycin (a macrolide) binds to the 23S rRNA of the 50S ribosomal subunit, blocking translocation and inhibiting bacterial protein synthesis. Other 50S subunit inhibitors include chloramphenicol, clindamycin, and linezolid."
+      },
+      {
+        "label": "C",
+        "text": "Inhibition of DNA gyrase and topoisomerase IV",
+        "is_correct": false,
+        "explanation": "Incorrect. This is the mechanism of fluoroquinolones (ciprofloxacin, levofloxacin). These drugs target bacterial DNA replication enzymes, not ribosomes."
+      },
+      {
+        "label": "D",
+        "text": "Binding to the 30S ribosomal subunit to prevent aminoacyl-tRNA attachment",
+        "is_correct": false,
+        "explanation": "Incorrect. This describes the mechanism of tetracyclines (doxycycline). While tetracyclines also cover Mycoplasma, they bind to the 30S subunit, not the 50S subunit where azithromycin acts."
+      },
+      {
+        "label": "E",
+        "text": "Inhibition of folic acid synthesis by blocking dihydrofolate reductase",
+        "is_correct": false,
+        "explanation": "Incorrect. This describes the mechanism of trimethoprim. Sulfonamides inhibit dihydropteroate synthase. Neither of these is the mechanism of azithromycin."
+      }
+    ]
+  },
+  {
+    "topic": "Pharmacology",
+    "subtopic": "CNS Drugs",
+    "stem": "A 32-year-old woman with a history of generalized tonic-clonic seizures is found to be pregnant at 8 weeks gestation. She has been taking valproic acid for seizure control. Her neurologist is concerned about teratogenicity. Which of the following congenital malformations is most strongly associated with first-trimester valproic acid exposure?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "Valproic acid is a well-known teratogen that is strongly associated with neural tube defects, particularly spina bifida. The risk of neural tube defects with valproic acid exposure during the first trimester is approximately 1-2% (10-20 times higher than the general population risk). Valproic acid inhibits histone deacetylase and interferes with folate metabolism, which is critical for neural tube closure during weeks 3-4 of embryonic development. Other teratogenic effects include craniofacial anomalies, cardiovascular defects, and cognitive impairment.",
+    "learning_objectives": [
+      "Identify teratogenic effects of antiepileptic drugs",
+      "Understand the critical period of neural tube closure",
+      "Recognize the importance of folate supplementation with valproic acid use"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Neural tube defects",
+        "is_correct": true,
+        "explanation": "Correct. Valproic acid is most strongly associated with neural tube defects, especially spina bifida. It interferes with folate metabolism and inhibits histone deacetylase, disrupting neural tube closure during early embryogenesis."
+      },
+      {
+        "label": "B",
+        "text": "Phocomelia",
+        "is_correct": false,
+        "explanation": "Incorrect. Phocomelia (shortened or absent limbs) is classically associated with thalidomide exposure, not valproic acid. Thalidomide disrupts angiogenesis in developing limb buds."
+      },
+      {
+        "label": "C",
+        "text": "Ebstein anomaly",
+        "is_correct": false,
+        "explanation": "Incorrect. Ebstein anomaly (apical displacement of the tricuspid valve) is associated with first-trimester lithium exposure, not valproic acid."
+      },
+      {
+        "label": "D",
+        "text": "Cleft lip and palate only",
+        "is_correct": false,
+        "explanation": "Incorrect. While orofacial clefts can occur with various teratogens, cleft lip and palate are more classically associated with phenytoin (fetal hydantoin syndrome). Neural tube defects are the most strongly associated malformation with valproic acid."
+      },
+      {
+        "label": "E",
+        "text": "Pulmonary hypoplasia",
+        "is_correct": false,
+        "explanation": "Incorrect. Pulmonary hypoplasia is associated with oligohydramnios, often caused by ACE inhibitors or bilateral renal agenesis (Potter sequence), not valproic acid."
+      }
+    ]
+  },
+  {
+    "topic": "Microbiology",
+    "subtopic": "Bacteriology",
+    "stem": "A 19-year-old college student presents with fever, severe headache, stiff neck, and photophobia that developed over 12 hours. Physical examination shows a positive Kernig sign and a petechial rash on the trunk and lower extremities. Lumbar puncture reveals cloudy CSF with 2,500 WBC/mm3 (95% neutrophils), glucose of 20 mg/dL (serum glucose 100 mg/dL), and protein of 250 mg/dL. Gram stain of the CSF shows gram-negative diplococci. Which of the following is the most likely causative organism?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This is a classic presentation of bacterial meningitis caused by Neisseria meningitidis. The key clues are: college-age student (close-quarters living), rapid onset, petechial/purpuric rash (characteristic of meningococcemia), and gram-negative diplococci on CSF Gram stain. The CSF findings (high WBC with neutrophil predominance, very low glucose, elevated protein) are consistent with bacterial meningitis. N. meningitidis is the second most common cause of bacterial meningitis in this age group (after S. pneumoniae) and is the most common cause associated with petechial rash and outbreaks in close-quarters settings.",
+    "learning_objectives": [
+      "Identify CSF findings in bacterial meningitis",
+      "Recognize the clinical features of meningococcal meningitis",
+      "Associate gram-negative diplococci with Neisseria species"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Streptococcus pneumoniae",
+        "is_correct": false,
+        "explanation": "Incorrect. S. pneumoniae is the most common cause of bacterial meningitis overall but appears as gram-positive lancet-shaped diplococci on Gram stain. The organism shown is gram-negative diplococci."
+      },
+      {
+        "label": "B",
+        "text": "Neisseria meningitidis",
+        "is_correct": true,
+        "explanation": "Correct. Gram-negative diplococci in CSF with a petechial rash in a college-age student is pathognomonic for N. meningitidis meningitis. The organism is kidney-bean shaped on Gram stain and is transmitted by respiratory droplets."
+      },
+      {
+        "label": "C",
+        "text": "Haemophilus influenzae",
+        "is_correct": false,
+        "explanation": "Incorrect. H. influenzae is a gram-negative coccobacillus (not diplococcus). Since widespread vaccination, it is an uncommon cause of meningitis. The morphology on Gram stain does not match."
+      },
+      {
+        "label": "D",
+        "text": "Listeria monocytogenes",
+        "is_correct": false,
+        "explanation": "Incorrect. Listeria is a gram-positive rod that causes meningitis in neonates, the elderly, and immunocompromised patients. It does not appear as gram-negative diplococci."
+      },
+      {
+        "label": "E",
+        "text": "Escherichia coli",
+        "is_correct": false,
+        "explanation": "Incorrect. E. coli is a gram-negative rod (bacillus), not a diplococcus. It is a common cause of neonatal meningitis but rare in adolescents."
+      }
+    ]
+  },
+  {
+    "topic": "Microbiology",
+    "subtopic": "Virology",
+    "stem": "A 25-year-old man presents with a 2-week history of fatigue, sore throat, and low-grade fever. Physical examination reveals posterior cervical lymphadenopathy, pharyngeal erythema with tonsillar exudates, and splenomegaly. A complete blood count shows leukocytosis with 60% atypical lymphocytes. A heterophile antibody test (Monospot) is positive. Which of the following best describes the atypical lymphocytes seen on the peripheral blood smear?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "Infectious mononucleosis is caused by Epstein-Barr virus (EBV), which infects B lymphocytes via the CD21 receptor. The atypical lymphocytes (Downey cells) seen on peripheral smear are reactive CD8+ cytotoxic T cells responding to the EBV-infected B cells, not the infected B cells themselves. These atypical lymphocytes are large with abundant cytoplasm that appears to wrap around adjacent red blood cells. The heterophile antibodies (detected by Monospot) are IgM antibodies produced by infected B cells that cross-react with antigens on horse, sheep, and bovine red blood cells.",
+    "learning_objectives": [
+      "Identify the cellular origin of atypical lymphocytes in infectious mononucleosis",
+      "Understand the immunopathogenesis of EBV infection",
+      "Interpret the heterophile antibody test"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "Reactive CD8+ T lymphocytes responding to EBV-infected B cells",
+        "is_correct": true,
+        "explanation": "Correct. The atypical lymphocytes in infectious mononucleosis are activated CD8+ cytotoxic T lymphocytes that are mounting an immune response against EBV-infected B lymphocytes. They are not the virus-infected cells themselves."
+      },
+      {
+        "label": "B",
+        "text": "EBV-infected B lymphocytes undergoing malignant transformation",
+        "is_correct": false,
+        "explanation": "Incorrect. While EBV infects B cells and can drive their proliferation, the atypical lymphocytes seen on smear are reactive T cells, not the infected B cells. Malignant transformation of EBV-infected B cells occurs in conditions like Burkitt lymphoma, not acute mononucleosis."
+      },
+      {
+        "label": "C",
+        "text": "Natural killer cells activated by viral infection",
+        "is_correct": false,
+        "explanation": "Incorrect. While NK cells do play a role in the initial innate immune response to EBV, the characteristic atypical lymphocytes on peripheral smear are predominantly CD8+ cytotoxic T lymphocytes, not NK cells."
+      },
+      {
+        "label": "D",
+        "text": "Monocytes phagocytosing viral particles",
+        "is_correct": false,
+        "explanation": "Incorrect. The atypical lymphocytes are not monocytes. They are lymphocytes with abundant pale blue cytoplasm. Monocytes have kidney-shaped or folded nuclei and are not the predominant atypical cell in mononucleosis."
+      },
+      {
+        "label": "E",
+        "text": "Transformed CD4+ T helper cells producing antiviral cytokines",
+        "is_correct": false,
+        "explanation": "Incorrect. The atypical lymphocytes are predominantly CD8+ cytotoxic T cells, not CD4+ T helper cells. CD8+ T cells are the primary adaptive immune effectors against virally infected cells."
+      }
+    ]
+  },
+  {
+    "topic": "Microbiology",
+    "subtopic": "Immunology",
+    "stem": "A 4-year-old boy has a history of recurrent pyogenic infections with Staphylococcus aureus and Streptococcus pneumoniae since infancy. Laboratory testing reveals undetectable serum IgG, IgA, and IgM levels. Flow cytometry of peripheral blood shows absence of CD19+ and CD20+ cells but normal numbers of CD3+ cells. Which of the following is the most likely diagnosis?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step1",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "This presentation is classic for X-linked (Bruton) agammaglobulinemia, caused by a mutation in Bruton tyrosine kinase (BTK), which is essential for B-cell maturation. The disease presents after 6 months of age (when maternal IgG wanes) with recurrent sinopulmonary infections by encapsulated bacteria. All immunoglobulin classes are absent because B cells fail to mature beyond the pre-B cell stage. CD19 and CD20 are B-cell markers, and their absence confirms the lack of mature B cells. T cells (CD3+) are normal because their development is BTK-independent.",
+    "learning_objectives": [
+      "Recognize the clinical features of X-linked agammaglobulinemia",
+      "Understand the role of Bruton tyrosine kinase in B-cell development",
+      "Differentiate primary immunodeficiencies based on laboratory findings"
+    ],
+    "options": [
+      {
+        "label": "A",
+        "text": "X-linked (Bruton) agammaglobulinemia",
+        "is_correct": true,
+        "explanation": "Correct. Absent B cells (no CD19/CD20), absent immunoglobulins of all classes, normal T cells, and recurrent bacterial infections beginning after 6 months of age are diagnostic of Bruton agammaglobulinemia due to BTK mutation."
+      },
+      {
+        "label": "B",
+        "text": "Common variable immunodeficiency",
+        "is_correct": false,
+        "explanation": "Incorrect. CVID presents with low immunoglobulins but patients have normal numbers of B cells (normal CD19/CD20). The B cells are present but fail to differentiate into antibody-secreting plasma cells. This patient has absent B cells."
+      },
+      {
+        "label": "C",
+        "text": "DiGeorge syndrome",
+        "is_correct": false,
+        "explanation": "Incorrect. DiGeorge syndrome (22q11.2 deletion) is a T-cell deficiency due to thymic aplasia. Patients have decreased CD3+ T cells but normal B-cell numbers. This patient has normal T cells and absent B cells."
+      },
+      {
+        "label": "D",
+        "text": "Selective IgA deficiency",
+        "is_correct": false,
+        "explanation": "Incorrect. Selective IgA deficiency is the most common primary immunodeficiency and involves decreased IgA only, with normal IgG and IgM levels. This patient has panhypogammaglobulinemia."
+      },
+      {
+        "label": "E",
+        "text": "Severe combined immunodeficiency",
+        "is_correct": false,
+        "explanation": "Incorrect. SCID involves defects in both T and B cell function and presents within the first few months of life with severe opportunistic infections. This patient has normal T-cell numbers (CD3+), making SCID unlikely."
+      }
     ]
   }
 ]

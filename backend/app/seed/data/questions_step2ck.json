@@ -2,67 +2,463 @@
   {
     "topic": "Internal Medicine",
     "subtopic": "Cardiology",
-    "stem": "A 62-year-old man with a history of type 2 diabetes mellitus and hypertension presents to the emergency department with crushing substernal chest pain radiating to his left arm for the past 45 minutes. He is diaphoretic and appears anxious. ECG shows ST-segment elevation in leads II, III, and aVF. Troponin I is elevated at 8.2 ng/mL (normal < 0.04 ng/mL). Which of the following is the most appropriate next step in management?",
+    "stem": "A 58-year-old woman with a history of hypertension and hyperlipidemia presents to the emergency department with 2 hours of substernal chest pressure radiating to her jaw. She is diaphoretic and nauseated. Vital signs: blood pressure 142/88 mmHg, heart rate 102 bpm, respiratory rate 20/min, oxygen saturation 96% on room air. ECG shows 2 mm ST-segment depression in leads V3-V6 with T-wave inversions. Initial troponin I is 0.12 ng/mL (normal < 0.04 ng/mL). She is given aspirin, heparin, and sublingual nitroglycerin with partial relief. Which of the following is the most appropriate next step in management?",
     "question_type": "single_best_answer",
     "usmle_step": "step2ck",
     "difficulty": "medium",
     "source": "curated",
-    "explanation": "The correct answer is B (Emergent percutaneous coronary intervention). This patient presents with an acute ST-elevation myocardial infarction (STEMI) involving the inferior wall (ST elevation in II, III, aVF). The standard of care for STEMI is primary PCI within 90 minutes of first medical contact (door-to-balloon time). PCI has been shown to be superior to fibrinolytic therapy when available in a timely manner.",
+    "explanation": "This patient presents with a non-ST-elevation myocardial infarction (NSTEMI), evidenced by ischemic symptoms, ST depressions with T-wave inversions, and an elevated troponin. After initial medical therapy (aspirin, heparin, nitroglycerin), the next step is early invasive strategy with cardiac catheterization within 24 hours, as she has high-risk features including ongoing symptoms, dynamic ECG changes, and positive troponin. A P2Y12 inhibitor (such as ticagrelor or clopidogrel) should also be added, but catheterization is the key management step.",
     "learning_objectives": [
-      "Recognize STEMI on ECG by territory",
-      "Apply current STEMI management guidelines",
-      "Understand door-to-balloon time targets"
+      "Differentiate NSTEMI from STEMI based on ECG findings",
+      "Apply risk stratification in acute coronary syndromes",
+      "Identify indications for early invasive strategy in NSTEMI"
     ],
     "options": [
-      {"label": "A", "text": "Administer IV fibrinolytic therapy", "is_correct": false, "explanation": "Incorrect. Fibrinolytic therapy is reserved for STEMI patients when PCI cannot be performed within 120 minutes of first medical contact. When PCI is available, it is the preferred reperfusion strategy."},
-      {"label": "B", "text": "Emergent percutaneous coronary intervention", "is_correct": true, "explanation": "Correct. Primary PCI is the gold standard for STEMI reperfusion therapy. The goal is door-to-balloon time of 90 minutes or less. PCI achieves higher rates of TIMI 3 flow and lower rates of reocclusion compared to fibrinolysis."},
-      {"label": "C", "text": "Start heparin drip and observe in the ICU", "is_correct": false, "explanation": "Incorrect. Anticoagulation alone is insufficient for STEMI. The patient needs emergent reperfusion therapy (PCI or fibrinolysis) to restore blood flow to the infarcted myocardium."},
-      {"label": "D", "text": "Obtain a CT coronary angiogram", "is_correct": false, "explanation": "Incorrect. CT coronary angiography is used for evaluation of stable chest pain or intermediate-risk acute coronary syndrome, not for STEMI. The ECG and troponin findings already confirm the diagnosis."},
-      {"label": "E", "text": "Schedule elective coronary artery bypass grafting", "is_correct": false, "explanation": "Incorrect. CABG is not the initial management for acute STEMI. It may be considered if PCI reveals complex multi-vessel disease or left main stenosis, but emergent PCI is the first step."}
+      {"label": "A", "text": "Administer IV fibrinolytic therapy", "is_correct": false, "explanation": "Incorrect. Fibrinolytic therapy is indicated for STEMI when PCI is not available within 120 minutes. It is contraindicated in NSTEMI because it does not improve outcomes and increases bleeding risk."},
+      {"label": "B", "text": "Cardiac catheterization within 24 hours", "is_correct": true, "explanation": "Correct. This patient has high-risk NSTEMI features (positive troponin, ST changes, ongoing symptoms). Current guidelines recommend an early invasive strategy with cardiac catheterization within 24 hours for such patients."},
+      {"label": "C", "text": "Discharge with outpatient stress testing in 72 hours", "is_correct": false, "explanation": "Incorrect. This patient has confirmed myocardial injury with positive troponin and ischemic ECG changes. Discharge with outpatient evaluation would be inappropriate and dangerous."},
+      {"label": "D", "text": "Obtain CT pulmonary angiogram", "is_correct": false, "explanation": "Incorrect. The clinical presentation with ischemic ECG changes and elevated troponin is classic for ACS. CT pulmonary angiography would be appropriate if pulmonary embolism were suspected, but this presentation points to acute coronary syndrome."},
+      {"label": "E", "text": "Start IV amiodarone drip", "is_correct": false, "explanation": "Incorrect. Amiodarone is an antiarrhythmic used for ventricular or atrial arrhythmias. There is no indication for antiarrhythmic therapy in this patient who is in sinus tachycardia."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Pulmonology",
+    "stem": "A 67-year-old man with a 40-pack-year smoking history presents with progressive dyspnea on exertion over the past year. He now becomes short of breath walking one block. He has a chronic productive cough with white sputum. Vital signs: blood pressure 130/80 mmHg, heart rate 78 bpm, respiratory rate 18/min, oxygen saturation 89% on room air. Physical examination reveals bilateral expiratory wheezes, prolonged expiratory phase, and use of accessory muscles. Pulmonary function tests show FEV1 35% predicted, FEV1/FVC ratio 0.55, with minimal bronchodilator reversibility. ABG shows pH 7.36, pCO2 52 mmHg, pO2 56 mmHg. Which of the following is the most appropriate long-term management?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This patient has severe COPD (GOLD stage III-IV, FEV1 35% predicted) with chronic hypoxemia (PaO2 56 mmHg) and CO2 retention. Long-term continuous oxygen therapy (>15 hours/day) is the only intervention in COPD proven to reduce mortality, and it is indicated when resting PaO2 is ≤55 mmHg or PaO2 56-59 mmHg with evidence of cor pulmonale, polycythemia, or right heart failure. This patient qualifies with PaO2 56 mmHg and severe airflow limitation.",
+    "learning_objectives": [
+      "Classify COPD severity using GOLD criteria",
+      "Identify indications for long-term oxygen therapy in COPD",
+      "Recognize that supplemental oxygen reduces mortality in hypoxemic COPD"
+    ],
+    "options": [
+      {"label": "A", "text": "Inhaled corticosteroid monotherapy", "is_correct": false, "explanation": "Incorrect. Inhaled corticosteroid monotherapy is not recommended in COPD. ICS is used in combination with long-acting bronchodilators in patients with frequent exacerbations and eosinophilic phenotype."},
+      {"label": "B", "text": "Oral theophylline", "is_correct": false, "explanation": "Incorrect. Theophylline is a third-line agent with a narrow therapeutic index and significant side effects. It is not the most important intervention for this patient's severe hypoxemic COPD."},
+      {"label": "C", "text": "Continuous home oxygen therapy", "is_correct": true, "explanation": "Correct. Long-term oxygen therapy (≥15 hours/day) is indicated for COPD patients with PaO2 ≤55 mmHg (or ≤59 mmHg with cor pulmonale/polycythemia). It is the only therapy proven to improve survival in hypoxemic COPD."},
+      {"label": "D", "text": "Prophylactic azithromycin 250 mg daily", "is_correct": false, "explanation": "Incorrect. Prophylactic macrolide therapy may reduce exacerbation frequency in select COPD patients, but it does not address the critical issue of chronic hypoxemia and does not improve mortality like oxygen therapy."},
+      {"label": "E", "text": "High-dose systemic corticosteroids indefinitely", "is_correct": false, "explanation": "Incorrect. Long-term systemic corticosteroids are not recommended in COPD due to significant side effects (osteoporosis, myopathy, adrenal suppression) without proven mortality benefit."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Gastroenterology",
+    "stem": "A 45-year-old woman presents with a 3-month history of progressive dysphagia to both solids and liquids, regurgitation of undigested food, and a 10-pound weight loss. She denies heartburn or odynophagia. She has no significant past medical history. Vital signs are normal. Barium swallow shows a dilated esophagus with smooth tapering at the gastroesophageal junction ('bird's beak' sign). Esophageal manometry demonstrates absent peristalsis in the esophageal body and incomplete relaxation of the lower esophageal sphincter. Which of the following is the best initial treatment?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This patient has classic achalasia, characterized by dysphagia to both solids and liquids (suggesting a motility disorder rather than mechanical obstruction), regurgitation of undigested food, bird's beak sign on barium swallow, and absent peristalsis with incomplete LES relaxation on manometry. Pneumatic balloon dilation and laparoscopic Heller myotomy are the two most effective definitive treatments. For a young, healthy patient, Heller myotomy (often with partial fundoplication) provides the most durable long-term results.",
+    "learning_objectives": [
+      "Recognize the classic presentation and diagnostic findings of achalasia",
+      "Distinguish motility-related dysphagia from mechanical obstruction",
+      "Select appropriate definitive therapy for achalasia"
+    ],
+    "options": [
+      {"label": "A", "text": "Proton pump inhibitor therapy", "is_correct": false, "explanation": "Incorrect. PPIs treat GERD by reducing acid secretion. Achalasia is a motility disorder caused by loss of inhibitory neurons in the myenteric plexus, and PPIs do not address the underlying pathology."},
+      {"label": "B", "text": "Laparoscopic Heller myotomy with partial fundoplication", "is_correct": true, "explanation": "Correct. Heller myotomy is the most effective and durable treatment for achalasia, especially in young, otherwise healthy patients. It involves surgical division of the LES muscle fibers and is typically combined with a partial fundoplication to prevent reflux."},
+      {"label": "C", "text": "Oral nifedipine before meals", "is_correct": false, "explanation": "Incorrect. Calcium channel blockers like nifedipine can provide modest symptom relief by relaxing the LES, but they are considered temporizing measures for patients who are not candidates for definitive therapy."},
+      {"label": "D", "text": "Esophagectomy", "is_correct": false, "explanation": "Incorrect. Esophagectomy is a last-resort procedure reserved for end-stage achalasia with megaesophagus or when other treatments have failed. It is not appropriate as initial therapy."},
+      {"label": "E", "text": "Oral metoclopramide", "is_correct": false, "explanation": "Incorrect. Metoclopramide is a prokinetic agent that increases gastric motility. It is ineffective in achalasia because the problem is failure of LES relaxation and absent esophageal peristalsis, not gastroparesis."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Nephrology",
+    "stem": "A 52-year-old man with type 2 diabetes mellitus and hypertension presents for a routine follow-up. His medications include metformin 1000 mg twice daily and amlodipine 10 mg daily. Blood pressure is 148/92 mmHg. Labs: serum creatinine 1.4 mg/dL (baseline 1.2 mg/dL 6 months ago), BUN 28 mg/dL, potassium 4.2 mEq/L, HbA1c 7.8%. Urinalysis shows 2+ protein. Urine albumin-to-creatinine ratio is 350 mg/g (normal < 30 mg/g). Which of the following is the most appropriate addition to this patient's medication regimen?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "This diabetic patient has hypertension, moderately increased albuminuria (UACR 350 mg/g), and progressive renal impairment. ACE inhibitors (or ARBs) are first-line antihypertensives in diabetic nephropathy because they reduce intraglomerular pressure, slow the progression of diabetic kidney disease, and reduce proteinuria. An SGLT2 inhibitor would also be beneficial and should be added, but an ACE inhibitor is the most important initial addition given the uncontrolled hypertension with significant proteinuria.",
+    "learning_objectives": [
+      "Identify diabetic nephropathy based on clinical and laboratory findings",
+      "Recognize the renoprotective effects of ACE inhibitors in diabetic kidney disease",
+      "Apply guideline-directed therapy for hypertension in diabetic patients with proteinuria"
+    ],
+    "options": [
+      {"label": "A", "text": "Hydrochlorothiazide 25 mg daily", "is_correct": false, "explanation": "Incorrect. While thiazide diuretics can lower blood pressure, they do not provide the same renoprotective benefit as ACE inhibitors in patients with diabetic nephropathy and significant proteinuria."},
+      {"label": "B", "text": "Lisinopril 10 mg daily", "is_correct": true, "explanation": "Correct. ACE inhibitors are first-line therapy for hypertensive diabetic patients with proteinuria. They reduce efferent arteriolar tone, decrease intraglomerular pressure, and have been shown to slow progression of diabetic nephropathy."},
+      {"label": "C", "text": "Metoprolol succinate 50 mg daily", "is_correct": false, "explanation": "Incorrect. Beta-blockers can lower blood pressure but are not first-line for diabetic nephropathy. They do not provide the same antiproteinuric and renoprotective effects as ACE inhibitors."},
+      {"label": "D", "text": "Spironolactone 25 mg daily", "is_correct": false, "explanation": "Incorrect. Spironolactone can reduce proteinuria and may be used as an adjunct, but ACE inhibitors are the cornerstone of therapy for diabetic nephropathy and should be initiated first."},
+      {"label": "E", "text": "Increase amlodipine to 15 mg daily", "is_correct": false, "explanation": "Incorrect. The maximum dose of amlodipine is 10 mg daily. Moreover, dihydropyridine calcium channel blockers do not reduce proteinuria or slow progression of diabetic nephropathy as effectively as ACE inhibitors."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Hematology/Oncology",
+    "stem": "A 72-year-old man presents with fatigue, unintentional 15-pound weight loss over 3 months, and night sweats. Physical examination reveals painless cervical, axillary, and inguinal lymphadenopathy. Spleen is palpable 4 cm below the left costal margin. CBC shows WBC 4,200/μL, hemoglobin 9.8 g/dL, platelets 118,000/μL. LDH is elevated at 480 U/L (normal 140-280 U/L). CT scan reveals widespread lymphadenopathy above and below the diaphragm with a splenic mass. An excisional lymph node biopsy shows large, atypical lymphoid cells with a high Ki-67 proliferation index of 85%. Flow cytometry confirms CD20-positive B-cell lymphoma. Which of the following is the most likely diagnosis?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "This elderly patient presents with B symptoms (weight loss, night sweats, fatigue), widespread lymphadenopathy, splenomegaly, cytopenias, elevated LDH, and a lymph node biopsy showing large atypical B cells with a very high Ki-67 (85%). These features are classic for diffuse large B-cell lymphoma (DLBCL), the most common aggressive non-Hodgkin lymphoma. The high Ki-67 index indicates rapid proliferation, distinguishing it from indolent lymphomas like follicular lymphoma.",
+    "learning_objectives": [
+      "Recognize the clinical and histological features of diffuse large B-cell lymphoma",
+      "Differentiate aggressive from indolent non-Hodgkin lymphomas",
+      "Understand the significance of Ki-67 proliferation index in lymphoma classification"
+    ],
+    "options": [
+      {"label": "A", "text": "Chronic lymphocytic leukemia", "is_correct": false, "explanation": "Incorrect. CLL typically presents with lymphocytosis (elevated WBC with mature small lymphocytes), not cytopenias. The biopsy showing large atypical cells with high Ki-67 is inconsistent with CLL, which is an indolent neoplasm of small mature B cells."},
+      {"label": "B", "text": "Follicular lymphoma", "is_correct": false, "explanation": "Incorrect. Follicular lymphoma is an indolent lymphoma with a low Ki-67 index (typically <30%). It shows a follicular growth pattern with small cleaved cells. The high Ki-67 of 85% and large cell morphology are inconsistent with follicular lymphoma."},
+      {"label": "C", "text": "Diffuse large B-cell lymphoma", "is_correct": true, "explanation": "Correct. DLBCL is the most common aggressive NHL, presenting with rapidly enlarging lymphadenopathy, B symptoms, elevated LDH, and biopsy showing large B cells with high proliferative index. Standard treatment is R-CHOP (rituximab, cyclophosphamide, doxorubicin, vincristine, prednisone)."},
+      {"label": "D", "text": "Hodgkin lymphoma", "is_correct": false, "explanation": "Incorrect. Hodgkin lymphoma is characterized by Reed-Sternberg cells (CD15+, CD30+) in a background of reactive inflammatory cells. The biopsy here shows large atypical CD20+ B cells without mention of Reed-Sternberg cells."},
+      {"label": "E", "text": "Marginal zone lymphoma", "is_correct": false, "explanation": "Incorrect. Marginal zone lymphoma is an indolent B-cell lymphoma that typically presents with localized disease (e.g., MALT lymphoma of the stomach). The aggressive clinical presentation and high Ki-67 are inconsistent with this diagnosis."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Endocrinology",
+    "stem": "A 35-year-old woman presents with palpitations, heat intolerance, tremor, and a 12-pound weight loss over 2 months despite increased appetite. She also notes eye irritation and a sensation of 'bulging eyes.' Vital signs: blood pressure 138/62 mmHg, heart rate 112 bpm (irregular), temperature 37.2°C. Physical examination reveals a diffusely enlarged, nontender thyroid gland, lid lag, proptosis, and a fine resting tremor. ECG shows atrial fibrillation with rapid ventricular response. Labs: TSH < 0.01 mIU/L (normal 0.4-4.0), free T4 4.8 ng/dL (normal 0.8-1.8), free T3 12.2 pg/mL (normal 2.3-4.2). Which of the following is the best initial step in management?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This patient has Graves disease (diffuse goiter, ophthalmopathy, suppressed TSH, elevated T4/T3) complicated by atrial fibrillation with rapid ventricular response. The best initial step is a beta-blocker (propranolol) to control the heart rate and alleviate sympathetic symptoms (tremor, palpitations, tachycardia). Propranolol also inhibits peripheral conversion of T4 to T3. Definitive antithyroid therapy (methimazole or radioactive iodine) should be started concurrently but takes weeks to lower thyroid hormone levels.",
+    "learning_objectives": [
+      "Recognize Graves disease with its classic triad of goiter, ophthalmopathy, and thyrotoxicosis",
+      "Prioritize beta-blocker therapy for acute symptom management in thyrotoxicosis",
+      "Understand the role of propranolol in inhibiting T4 to T3 conversion"
+    ],
+    "options": [
+      {"label": "A", "text": "Start propranolol and methimazole", "is_correct": true, "explanation": "Correct. Beta-blockers provide immediate symptomatic relief and rate control for atrial fibrillation, while methimazole inhibits thyroid hormone synthesis. Both should be started together. Propranolol is preferred because it also blocks peripheral T4-to-T3 conversion."},
+      {"label": "B", "text": "Immediate radioactive iodine ablation", "is_correct": false, "explanation": "Incorrect. RAI ablation is a definitive treatment but should not be given immediately in a thyrotoxic patient with atrial fibrillation. The patient needs rate control and symptom management first. RAI can also transiently worsen thyrotoxicosis due to release of stored hormone."},
+      {"label": "C", "text": "Emergent thyroidectomy", "is_correct": false, "explanation": "Incorrect. Surgery is a definitive option for Graves disease but requires the patient to be rendered euthyroid first to avoid thyroid storm. It is not the initial management step."},
+      {"label": "D", "text": "Start levothyroxine", "is_correct": false, "explanation": "Incorrect. Levothyroxine is thyroid hormone replacement used for hypothyroidism. This patient is thyrotoxic with elevated T4 and T3; adding more thyroid hormone would be dangerous."},
+      {"label": "E", "text": "Prednisone 60 mg daily", "is_correct": false, "explanation": "Incorrect. High-dose corticosteroids may be used for severe Graves ophthalmopathy or thyroid storm, but they are not the initial step for managing uncomplicated thyrotoxicosis with atrial fibrillation. Rate control and antithyroid drugs take priority."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Rheumatology",
+    "stem": "A 30-year-old woman presents with a 4-month history of symmetric joint pain and swelling involving the metacarpophalangeal joints and proximal interphalangeal joints of both hands, as well as both wrists. She reports 90 minutes of morning stiffness that improves with activity. She has no rash, oral ulcers, or eye symptoms. Vital signs are normal. Physical examination reveals boggy synovitis of the MCP and PIP joints bilaterally with decreased grip strength. Labs: ESR 58 mm/hr, CRP 3.2 mg/dL, rheumatoid factor positive at 1:160, anti-CCP antibody positive. Hand X-rays show periarticular osteopenia without erosions. Which of the following is the most appropriate initial treatment?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "This patient meets criteria for rheumatoid arthritis (symmetric small joint polyarthritis, prolonged morning stiffness, positive RF and anti-CCP, elevated inflammatory markers). Current guidelines strongly recommend early initiation of disease-modifying antirheumatic drug (DMARD) therapy, with methotrexate as the first-line agent. Early DMARD therapy prevents irreversible joint erosion and disability. NSAIDs may be used as adjunctive symptomatic therapy but do not alter disease progression.",
+    "learning_objectives": [
+      "Recognize the classic clinical presentation of rheumatoid arthritis",
+      "Understand the importance of early DMARD initiation to prevent joint destruction",
+      "Identify methotrexate as first-line DMARD therapy for rheumatoid arthritis"
+    ],
+    "options": [
+      {"label": "A", "text": "Ibuprofen 600 mg three times daily", "is_correct": false, "explanation": "Incorrect. NSAIDs provide symptomatic relief but do not modify disease progression or prevent joint erosion. They should not be used as sole therapy for RA."},
+      {"label": "B", "text": "Methotrexate 15 mg weekly with folic acid supplementation", "is_correct": true, "explanation": "Correct. Methotrexate is the first-line DMARD for rheumatoid arthritis. It should be started early to prevent irreversible joint damage. Folic acid supplementation reduces methotrexate side effects (oral ulcers, hepatotoxicity, cytopenias)."},
+      {"label": "C", "text": "Prednisone 40 mg daily as monotherapy", "is_correct": false, "explanation": "Incorrect. While low-dose glucocorticoids may be used as bridge therapy while waiting for DMARDs to take effect, long-term high-dose corticosteroid monotherapy is inappropriate due to serious side effects and failure to prevent joint erosion."},
+      {"label": "D", "text": "Adalimumab (anti-TNF biologic) monotherapy", "is_correct": false, "explanation": "Incorrect. Biologic DMARDs like anti-TNF agents are generally reserved for patients who have inadequate response to conventional DMARDs like methotrexate. They are not first-line therapy."},
+      {"label": "E", "text": "Hydroxychloroquine and physical therapy only", "is_correct": false, "explanation": "Incorrect. While hydroxychloroquine is a mild DMARD and physical therapy is beneficial, hydroxychloroquine alone is insufficient for seropositive RA with high inflammatory markers and significant synovitis. Methotrexate is preferred as the anchor drug."}
+    ]
+  },
+  {
+    "topic": "Internal Medicine",
+    "subtopic": "Infectious Disease",
+    "stem": "A 32-year-old man who recently immigrated from Southeast Asia presents with 3 weeks of productive cough with blood-streaked sputum, night sweats, and 8 kg weight loss. He reports no prior medical history and takes no medications. Vital signs: temperature 38.3°C, blood pressure 110/70 mmHg, heart rate 92 bpm, respiratory rate 20/min, oxygen saturation 95% on room air. Chest X-ray shows a right upper lobe cavitary lesion with surrounding infiltrate. Three sputum samples are collected; the first AFB smear comes back positive for acid-fast bacilli. Which of the following is the most appropriate initial treatment regimen?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "This patient has classic pulmonary tuberculosis: immigrant from endemic area, chronic productive cough with hemoptysis, constitutional symptoms (night sweats, weight loss, fever), upper lobe cavitary lesion, and AFB smear-positive sputum. Standard initial treatment for active pulmonary TB is RIPE therapy: Rifampin, Isoniazid, Pyrazinamide, and Ethambutol for the first 2 months (intensive phase), followed by Rifampin and Isoniazid for 4 more months (continuation phase). The patient should also be placed in airborne isolation.",
+    "learning_objectives": [
+      "Recognize the classic clinical and radiographic presentation of pulmonary tuberculosis",
+      "Recall the standard RIPE regimen for initial treatment of active TB",
+      "Understand the importance of multi-drug therapy to prevent resistance"
+    ],
+    "options": [
+      {"label": "A", "text": "Isoniazid monotherapy for 9 months", "is_correct": false, "explanation": "Incorrect. Isoniazid monotherapy is used for treatment of latent TB infection, not active disease. Using a single drug for active TB promotes drug resistance."},
+      {"label": "B", "text": "Azithromycin and ceftriaxone for community-acquired pneumonia", "is_correct": false, "explanation": "Incorrect. This presentation is inconsistent with typical community-acquired pneumonia. The chronic course, upper lobe cavitary lesion, and positive AFB smear point to tuberculosis, not bacterial pneumonia."},
+      {"label": "C", "text": "Rifampin, isoniazid, pyrazinamide, and ethambutol", "is_correct": true, "explanation": "Correct. RIPE therapy is the standard initial regimen for active pulmonary TB. All four drugs are used for the first 2 months to rapidly reduce bacterial burden and prevent resistance, followed by rifampin and isoniazid for 4 additional months."},
+      {"label": "D", "text": "Levofloxacin and metronidazole", "is_correct": false, "explanation": "Incorrect. Fluoroquinolones have activity against Mycobacterium tuberculosis but are reserved for drug-resistant TB or patients who cannot tolerate first-line agents. They are not part of standard initial therapy."},
+      {"label": "E", "text": "Amphotericin B", "is_correct": false, "explanation": "Incorrect. Amphotericin B is an antifungal agent used for severe fungal infections. While cavitary lung lesions can be caused by fungi (histoplasmosis, aspergillosis), the positive AFB smear confirms mycobacterial infection."}
+    ]
+  },
+  {
+    "topic": "Surgery",
+    "subtopic": "General Surgery",
+    "stem": "A 48-year-old woman presents with 12 hours of progressively worsening right upper quadrant abdominal pain, nausea, and vomiting. She reports similar but milder episodes after fatty meals over the past year. Vital signs: temperature 38.6°C, blood pressure 132/78 mmHg, heart rate 104 bpm. Physical examination reveals right upper quadrant tenderness with a positive Murphy sign. Labs: WBC 14,800/μL with 82% neutrophils, total bilirubin 1.1 mg/dL, AST 42 U/L, ALT 48 U/L, alkaline phosphatase 110 U/L, lipase 45 U/L. Right upper quadrant ultrasound shows gallbladder wall thickening (5 mm), pericholecystic fluid, and multiple gallstones with a sonographic Murphy sign. The common bile duct measures 4 mm. Which of the following is the most appropriate next step?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "This patient presents with acute cholecystitis (fever, RUQ tenderness, positive Murphy sign, leukocytosis, ultrasound showing gallbladder wall thickening, pericholecystic fluid, stones, and sonographic Murphy sign). The standard of care is early laparoscopic cholecystectomy, ideally within 24-72 hours of presentation. The normal CBD diameter (4 mm) and near-normal bilirubin and liver enzymes make choledocholithiasis unlikely, so ERCP is not indicated.",
+    "learning_objectives": [
+      "Recognize the clinical and ultrasound criteria for acute cholecystitis",
+      "Understand that early laparoscopic cholecystectomy is the definitive treatment",
+      "Differentiate acute cholecystitis from choledocholithiasis"
+    ],
+    "options": [
+      {"label": "A", "text": "IV antibiotics and early laparoscopic cholecystectomy", "is_correct": true, "explanation": "Correct. Acute cholecystitis is managed with IV antibiotics (to cover enteric organisms) and early laparoscopic cholecystectomy within 24-72 hours. Early surgery reduces total hospital stay, complications, and costs compared to delayed surgery."},
+      {"label": "B", "text": "Endoscopic retrograde cholangiopancreatography (ERCP)", "is_correct": false, "explanation": "Incorrect. ERCP is indicated for suspected choledocholithiasis (dilated CBD, elevated bilirubin, jaundice). This patient has a normal CBD diameter and near-normal bilirubin, making CBD stones unlikely."},
+      {"label": "C", "text": "Ursodeoxycholic acid for gallstone dissolution", "is_correct": false, "explanation": "Incorrect. Ursodeoxycholic acid may be used for small cholesterol stones in patients who are not surgical candidates, but it is ineffective for acute cholecystitis and takes months to dissolve stones."},
+      {"label": "D", "text": "CT abdomen with IV contrast", "is_correct": false, "explanation": "Incorrect. The diagnosis of acute cholecystitis is already established by clinical presentation and ultrasound findings. CT would add unnecessary cost and radiation without changing management."},
+      {"label": "E", "text": "Conservative management with IV antibiotics and outpatient follow-up in 6-8 weeks for elective cholecystectomy", "is_correct": false, "explanation": "Incorrect. Delayed cholecystectomy (interval approach) is associated with higher rates of recurrent symptoms, emergency admissions, and gallstone complications. Early cholecystectomy during the index admission is preferred."}
+    ]
+  },
+  {
+    "topic": "Surgery",
+    "subtopic": "Trauma",
+    "stem": "A 25-year-old man is brought to the trauma bay after a high-speed motorcycle collision. On primary survey: airway is patent, breath sounds are diminished on the left, blood pressure is 78/50 mmHg, heart rate is 132 bpm. He has distended neck veins and tracheal deviation to the right. Oxygen saturation is 82% on 15L non-rebreather mask. Which of the following is the most appropriate immediate intervention?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "This patient has the classic presentation of a tension pneumothorax: hypotension, tachycardia, distended neck veins, tracheal deviation away from the affected side, diminished breath sounds on the affected side, and hypoxemia. Tension pneumothorax is a clinical diagnosis that requires immediate needle decompression (large-bore needle in the 2nd intercostal space, midclavicular line, or 4th-5th intercostal space, anterior axillary line) followed by tube thoracostomy. This is a life-threatening emergency that should not be delayed for imaging.",
+    "learning_objectives": [
+      "Recognize the clinical features of tension pneumothorax",
+      "Understand that tension pneumothorax is a clinical diagnosis requiring immediate intervention",
+      "Know the technique for needle decompression"
+    ],
+    "options": [
+      {"label": "A", "text": "Obtain a chest X-ray", "is_correct": false, "explanation": "Incorrect. Tension pneumothorax is a clinical diagnosis. Delaying treatment for imaging in a hemodynamically unstable patient can be fatal. Immediate decompression is required."},
+      {"label": "B", "text": "Needle decompression of the left chest", "is_correct": true, "explanation": "Correct. Needle decompression of the left chest (2nd intercostal space, midclavicular line) is the immediate life-saving intervention for tension pneumothorax. This converts the tension pneumothorax to a simple pneumothorax. A chest tube should be placed immediately afterward."},
+      {"label": "C", "text": "Emergent pericardiocentesis", "is_correct": false, "explanation": "Incorrect. Pericardiocentesis is indicated for cardiac tamponade, which also presents with hypotension and distended neck veins (Beck triad). However, the tracheal deviation, diminished breath sounds, and hyperresonance distinguish tension pneumothorax from tamponade."},
+      {"label": "D", "text": "Rapid infusion of 2 liters of crystalloid", "is_correct": false, "explanation": "Incorrect. While fluid resuscitation is important in trauma, the primary problem here is obstructive shock from tension pneumothorax. Decompression of the chest must occur first to restore venous return and cardiac output."},
+      {"label": "E", "text": "Emergent intubation", "is_correct": false, "explanation": "Incorrect. The airway is patent. Intubation with positive pressure ventilation before decompression could worsen the tension pneumothorax by further increasing intrathoracic pressure, potentially causing cardiac arrest."}
+    ]
+  },
+  {
+    "topic": "Surgery",
+    "subtopic": "Surgical Emergencies",
+    "stem": "A 68-year-old man with a history of atrial fibrillation (not on anticoagulation) presents with sudden onset of severe diffuse abdominal pain 6 hours ago. He describes the pain as out of proportion to the physical examination findings. Vital signs: temperature 37.8°C, blood pressure 100/60 mmHg, heart rate 118 bpm (irregular), respiratory rate 24/min. Abdomen is mildly tender diffusely without peritoneal signs. Labs: WBC 22,000/μL, lactate 6.8 mmol/L (normal < 2.0), LDH 520 U/L, pH 7.28. CT angiography of the abdomen reveals a filling defect in the superior mesenteric artery. Which of the following is the most appropriate next step?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "This patient has acute mesenteric ischemia due to arterial embolism (SMA filling defect on CTA), likely from atrial fibrillation. Classic features include 'pain out of proportion to exam,' elevated lactate indicating tissue ischemia, leukocytosis, and metabolic acidosis. With evidence of severe ischemia (elevated lactate, acidosis) 6 hours after symptom onset, emergent surgical exploration with embolectomy and assessment of bowel viability is required. Resection of necrotic bowel may also be necessary.",
+    "learning_objectives": [
+      "Recognize the classic presentation of acute mesenteric ischemia",
+      "Identify atrial fibrillation as a risk factor for SMA embolism",
+      "Understand the urgency of surgical intervention in acute mesenteric ischemia with signs of bowel compromise"
+    ],
+    "options": [
+      {"label": "A", "text": "Start IV heparin and observe for 24 hours", "is_correct": false, "explanation": "Incorrect. While anticoagulation with heparin is part of the management, observation alone is inadequate given the elevated lactate, acidosis, and 6-hour duration suggesting bowel ischemia or necrosis. Emergent intervention is necessary."},
+      {"label": "B", "text": "Emergent surgical exploration with embolectomy", "is_correct": true, "explanation": "Correct. Given the SMA embolism with signs of severe ischemia (markedly elevated lactate, metabolic acidosis, 6-hour duration), emergent laparotomy with SMA embolectomy and assessment of bowel viability is the most appropriate step. Necrotic bowel must be resected."},
+      {"label": "C", "text": "Schedule elective mesenteric angioplasty and stenting", "is_correct": false, "explanation": "Incorrect. Elective endovascular intervention is inappropriate in the setting of acute mesenteric ischemia with hemodynamic compromise and metabolic derangements. This patient requires emergent surgery."},
+      {"label": "D", "text": "Obtain a mesenteric duplex ultrasound", "is_correct": false, "explanation": "Incorrect. CT angiography has already confirmed the diagnosis with an SMA filling defect. Additional imaging with duplex ultrasound would delay definitive treatment without adding useful information."},
+      {"label": "E", "text": "IV broad-spectrum antibiotics and TPN", "is_correct": false, "explanation": "Incorrect. While antibiotics are appropriate adjunctive therapy, they do not address the vascular occlusion and ischemic bowel. Without revascularization and resection of necrotic bowel, the patient will develop bowel infarction, perforation, and sepsis."}
+    ]
+  },
+  {
+    "topic": "Pediatrics",
+    "subtopic": "Neonatology",
+    "stem": "A newborn boy is delivered at 39 weeks gestation via uncomplicated vaginal delivery. Birth weight is 3.4 kg. At 18 hours of life, the nursery nurse notes that the infant appears jaundiced. Total serum bilirubin is 12.5 mg/dL. The mother is blood type O positive, and the infant is blood type A positive. Direct Coombs test on the infant is positive. CBC shows hemoglobin 14.2 g/dL with reticulocyte count of 8.2%. Peripheral smear shows spherocytes and polychromasia. Which of the following is the most likely cause of this newborn's jaundice?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This newborn has jaundice within the first 24 hours of life, which is always pathological. The key findings are: mother is type O and infant is type A (ABO incompatibility), positive direct Coombs test (indicating antibody-coated neonatal red blood cells), elevated reticulocyte count (hemolysis), and spherocytes on peripheral smear. ABO hemolytic disease of the newborn occurs when maternal anti-A or anti-B IgG antibodies cross the placenta and attack fetal red blood cells.",
+    "learning_objectives": [
+      "Recognize ABO hemolytic disease of the newborn",
+      "Interpret the direct Coombs test in the context of neonatal jaundice",
+      "Differentiate pathological from physiological neonatal jaundice"
+    ],
+    "options": [
+      {"label": "A", "text": "Physiological jaundice", "is_correct": false, "explanation": "Incorrect. Physiological jaundice typically appears after 24 hours of life (usually day 2-3) and does not cause a positive direct Coombs test or evidence of hemolysis. Jaundice within 24 hours is always pathological."},
+      {"label": "B", "text": "ABO hemolytic disease of the newborn", "is_correct": true, "explanation": "Correct. The combination of ABO incompatibility (mother O, baby A), positive direct Coombs test, reticulocytosis, and spherocytes on smear is classic for ABO hemolytic disease. Treatment depends on bilirubin levels using the Bhutani nomogram, and may include phototherapy or exchange transfusion."},
+      {"label": "C", "text": "Breast milk jaundice", "is_correct": false, "explanation": "Incorrect. Breast milk jaundice appears later (after day 5-7) and causes prolonged unconjugated hyperbilirubinemia. It does not cause a positive Coombs test or evidence of hemolysis."},
+      {"label": "D", "text": "Gilbert syndrome", "is_correct": false, "explanation": "Incorrect. Gilbert syndrome causes mild unconjugated hyperbilirubinemia due to reduced UGT activity. It does not cause hemolysis, positive Coombs test, or spherocytes and typically presents later in life."},
+      {"label": "E", "text": "Biliary atresia", "is_correct": false, "explanation": "Incorrect. Biliary atresia causes conjugated (direct) hyperbilirubinemia, typically presenting at 2-8 weeks of life with pale stools and dark urine. It does not cause hemolysis or a positive Coombs test."}
     ]
   },
   {
     "topic": "Pediatrics",
     "subtopic": "Growth and Development",
-    "stem": "A 2-year-old boy is brought to the clinic for a well-child visit. His mother reports that he can walk up stairs with assistance, stack 6 blocks, and say 2-word phrases like 'want milk' and 'go outside.' He can point to body parts when named and follows two-step commands. His weight and height are at the 50th percentile. Which of the following developmental milestones would you expect this child to achieve next?",
+    "stem": "A 4-year-old boy is brought by his parents for evaluation of behavioral concerns. His preschool teacher reports that he does not engage in interactive play with other children, preferring to line up toy cars in a specific pattern. He becomes extremely distressed with any changes in his daily routine and covers his ears when the class sings loudly. He has limited eye contact and uses very few words, mostly repeating phrases he has heard on television. His hearing screen is normal. Developmental evaluation shows his receptive and expressive language skills are at the 18-month level. Which of the following is the most likely diagnosis?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This child demonstrates the core features of autism spectrum disorder (ASD): deficits in social communication and interaction (limited eye contact, failure to engage in interactive play, language delay), restricted and repetitive behaviors (lining up toys in specific patterns, echolalia), insistence on sameness (distress with routine changes), and sensory hypersensitivity (covering ears). These symptoms are present from early childhood and cause significant functional impairment.",
+    "learning_objectives": [
+      "Recognize the core diagnostic criteria for autism spectrum disorder",
+      "Distinguish ASD from other developmental and behavioral disorders",
+      "Identify echolalia as a feature of autism spectrum disorder"
+    ],
+    "options": [
+      {"label": "A", "text": "Attention-deficit/hyperactivity disorder", "is_correct": false, "explanation": "Incorrect. ADHD is characterized by inattention, hyperactivity, and impulsivity. While children with ADHD may have social difficulties, they do not typically exhibit restricted repetitive behaviors, echolalia, or insistence on sameness."},
+      {"label": "B", "text": "Autism spectrum disorder", "is_correct": true, "explanation": "Correct. This child meets DSM-5 criteria for ASD with deficits in social communication (poor eye contact, lack of interactive play, language delay with echolalia) and restricted, repetitive behaviors (lining up objects, insistence on routines, sensory hypersensitivity). Early behavioral intervention is the cornerstone of treatment."},
+      {"label": "C", "text": "Selective mutism", "is_correct": false, "explanation": "Incorrect. Selective mutism involves failure to speak in specific social situations despite speaking normally in others. This child has pervasive language delay and uses echolalia rather than functional speech."},
+      {"label": "D", "text": "Intellectual disability without autism", "is_correct": false, "explanation": "Incorrect. While this child has language delay, the restricted repetitive behaviors, sensory hypersensitivity, and specific social interaction deficits are characteristic of ASD rather than isolated intellectual disability."},
+      {"label": "E", "text": "Childhood-onset schizophrenia", "is_correct": false, "explanation": "Incorrect. Childhood-onset schizophrenia is exceedingly rare (onset before age 13) and presents with hallucinations, delusions, and disorganized thinking rather than the social communication deficits and repetitive behaviors seen here."}
+    ]
+  },
+  {
+    "topic": "Pediatrics",
+    "subtopic": "Pediatric Infectious Disease",
+    "stem": "A 7-year-old girl is brought to the office with a 4-day history of sore throat, fever (39.2°C), headache, and abdominal pain. She has no cough or rhinorrhea. Physical examination reveals bilateral tonsillar enlargement with exudates, tender anterior cervical lymphadenopathy, and a sandpaper-textured erythematous rash on her trunk and extremities that blanches with pressure. The rash spares the face but there is facial flushing with perioral pallor. A rapid streptococcal antigen test is positive. Which of the following is the most appropriate treatment?",
     "question_type": "single_best_answer",
     "usmle_step": "step2ck",
     "difficulty": "easy",
     "source": "curated",
-    "explanation": "The correct answer is C (Riding a tricycle). This child is meeting all developmental milestones for a 2-year-old: walking up stairs with help, stacking 6 blocks (fine motor), 2-word phrases (language), and following 2-step commands (cognitive). The next major gross motor milestone expected around age 3 is riding a tricycle. At age 3, children also begin speaking in 3-word sentences and can draw a circle.",
+    "explanation": "This child has scarlet fever: Group A Streptococcus (GAS) pharyngitis with the characteristic sandpaper rash, facial flushing with perioral pallor, and pastia lines. The positive rapid strep test confirms GAS infection. First-line treatment is oral penicillin V or amoxicillin for 10 days. Treatment prevents rheumatic fever, reduces symptom duration, and limits spread. Amoxicillin is often preferred in children due to better taste and once-daily dosing option.",
     "learning_objectives": [
-      "Identify age-appropriate developmental milestones",
-      "Recognize normal progression of gross motor skills",
-      "Apply developmental screening in well-child visits"
+      "Recognize the clinical features of scarlet fever",
+      "Identify Group A Streptococcus as the causative organism",
+      "Select appropriate antibiotic therapy for GAS pharyngitis"
     ],
     "options": [
-      {"label": "A", "text": "Walking independently", "is_correct": false, "explanation": "Incorrect. Independent walking is typically achieved by 12-15 months. This 2-year-old already walks up stairs with assistance, indicating he has passed this milestone."},
-      {"label": "B", "text": "Stacking 2 blocks", "is_correct": false, "explanation": "Incorrect. Stacking 2 blocks is a 15-month milestone. This child can already stack 6 blocks, which is age-appropriate for 2 years."},
-      {"label": "C", "text": "Riding a tricycle", "is_correct": true, "explanation": "Correct. Riding a tricycle is a 3-year milestone. Given that this child is on track at 2 years, tricycle riding would be the next expected gross motor achievement at approximately age 3."},
-      {"label": "D", "text": "Skipping", "is_correct": false, "explanation": "Incorrect. Skipping is a 5-year milestone. This is too advanced for the next expected milestone for a 2-year-old."},
-      {"label": "E", "text": "Speaking in complete sentences of 5+ words", "is_correct": false, "explanation": "Incorrect. Speaking in complete sentences of 5+ words is expected around age 4-5. The next language milestone would be 3-word phrases at age 3."}
+      {"label": "A", "text": "Oral amoxicillin for 10 days", "is_correct": true, "explanation": "Correct. Oral amoxicillin (or penicillin V) for 10 days is first-line therapy for GAS pharyngitis/scarlet fever. It prevents acute rheumatic fever, shortens symptom duration, and reduces transmission. Amoxicillin is preferred in children due to better palatability."},
+      {"label": "B", "text": "Oral azithromycin for 5 days", "is_correct": false, "explanation": "Incorrect. Azithromycin is reserved for patients with penicillin allergy. Penicillin/amoxicillin remains first-line due to narrow spectrum, lower cost, and consistent efficacy against GAS."},
+      {"label": "C", "text": "Symptomatic treatment only with NSAIDs", "is_correct": false, "explanation": "Incorrect. GAS pharyngitis requires antibiotic treatment to prevent rheumatic fever, a serious sequela. Symptomatic treatment alone is insufficient."},
+      {"label": "D", "text": "IV ceftriaxone and admission", "is_correct": false, "explanation": "Incorrect. IV antibiotics and hospitalization are not necessary for uncomplicated GAS pharyngitis/scarlet fever. The child can be managed with oral antibiotics as an outpatient."},
+      {"label": "E", "text": "Oral acyclovir for 7 days", "is_correct": false, "explanation": "Incorrect. Acyclovir is an antiviral used for herpes simplex and varicella infections. GAS pharyngitis is a bacterial infection requiring antibiotic therapy, not antivirals."}
     ]
   },
   {
     "topic": "Obstetrics and Gynecology",
     "subtopic": "Obstetrics",
-    "stem": "A 28-year-old primigravida at 34 weeks gestation presents with sudden onset of painless bright red vaginal bleeding. She denies contractions, trauma, or abdominal pain. Vital signs show blood pressure 118/72 mmHg, heart rate 88 bpm. Fetal heart tracing is category I (reassuring). An ultrasound performed in the emergency department shows the placenta completely covering the internal cervical os. Which of the following is the most appropriate next step in management?",
+    "stem": "A 31-year-old G2P1 at 30 weeks gestation presents with a blood pressure of 162/108 mmHg, confirmed on repeat measurement 15 minutes later. She reports a severe headache and visual changes described as 'flashing lights.' She has 3+ peripheral edema. Labs: platelets 88,000/μL, AST 182 U/L, ALT 196 U/L, creatinine 1.3 mg/dL, LDH 680 U/L. Urine protein-to-creatinine ratio is 1.2. Peripheral smear shows schistocytes. Fetal heart tracing is category I. Which of the following is the most appropriate management?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "This patient has preeclampsia with severe features complicated by HELLP syndrome (Hemolysis with schistocytes and elevated LDH, Elevated Liver enzymes, Low Platelets). She also has severe-range blood pressures and neurological symptoms (headache, visual changes). Despite being only 30 weeks, HELLP syndrome is an indication for delivery after maternal stabilization regardless of gestational age, as it can rapidly progress to liver rupture, DIC, and maternal death. Management includes IV magnesium sulfate for seizure prophylaxis, antihypertensive therapy, betamethasone for fetal lung maturity, and delivery within 24-48 hours after stabilization.",
+    "learning_objectives": [
+      "Recognize HELLP syndrome as a severe complication of preeclampsia",
+      "Understand that HELLP syndrome requires delivery regardless of gestational age",
+      "Apply appropriate stabilization measures before delivery in severe preeclampsia"
+    ],
+    "options": [
+      {"label": "A", "text": "Expectant management with bed rest until 37 weeks", "is_correct": false, "explanation": "Incorrect. Expectant management is not appropriate for HELLP syndrome. Unlike preeclampsia without severe features, HELLP carries a high risk of maternal morbidity and mortality that worsens with continued pregnancy."},
+      {"label": "B", "text": "IV magnesium sulfate, betamethasone, antihypertensives, and plan for delivery within 24-48 hours", "is_correct": true, "explanation": "Correct. This is the appropriate management of HELLP syndrome at 30 weeks: IV magnesium for seizure prophylaxis, betamethasone to accelerate fetal lung maturity (given the preterm gestational age), antihypertensives to control severe blood pressure, and delivery within 24-48 hours after steroids are administered."},
+      {"label": "C", "text": "Immediate cesarean delivery without stabilization", "is_correct": false, "explanation": "Incorrect. While delivery is necessary, the mother should be stabilized first with magnesium sulfate and antihypertensive therapy. If the fetal status allows, delaying delivery 24-48 hours for betamethasone to improve fetal lung maturity is preferred."},
+      {"label": "D", "text": "Oral labetalol and weekly outpatient monitoring", "is_correct": false, "explanation": "Incorrect. Outpatient management is inappropriate for HELLP syndrome. This patient requires inpatient management with IV medications and close monitoring, followed by delivery."},
+      {"label": "E", "text": "Plasmapheresis for thrombotic thrombocytopenic purpura", "is_correct": false, "explanation": "Incorrect. While TTP and HELLP share features (microangiopathic hemolytic anemia, thrombocytopenia), this patient's presentation in the context of pregnancy with hypertension and proteinuria is classic for HELLP syndrome, not TTP. Delivery is the definitive treatment for HELLP."}
+    ]
+  },
+  {
+    "topic": "Obstetrics and Gynecology",
+    "subtopic": "Gynecology",
+    "stem": "A 24-year-old woman presents with a 2-day history of progressively worsening right lower quadrant pain, vaginal spotting, and lightheadedness. Her last menstrual period was 7 weeks ago. She has a history of pelvic inflammatory disease treated 2 years ago. Vital signs: blood pressure 92/58 mmHg, heart rate 118 bpm, temperature 36.8°C. Abdomen is tender in the right lower quadrant with guarding. Pelvic examination reveals right adnexal tenderness and cervical motion tenderness. Urine pregnancy test is positive. Quantitative beta-hCG is 4,200 mIU/mL. Transvaginal ultrasound shows an empty uterus, moderate free fluid in the cul-de-sac, and a 3.5 cm complex right adnexal mass with a fetal pole and cardiac activity. Which of the following is the most appropriate next step?",
     "question_type": "single_best_answer",
     "usmle_step": "step2ck",
     "difficulty": "medium",
     "source": "curated",
-    "explanation": "The correct answer is D (Admit, monitor, and plan for cesarean delivery). This patient has placenta previa (placenta covering the internal os) presenting with painless vaginal bleeding. At 34 weeks with a stable mother and reassuring fetal status, the management is expectant: admit for monitoring, administer betamethasone for fetal lung maturity, and plan for cesarean delivery at 36-37 weeks if stable. Digital cervical exam is absolutely contraindicated as it can provoke massive hemorrhage.",
+    "explanation": "This patient has a ruptured ectopic pregnancy: amenorrhea, positive pregnancy test, empty uterus on ultrasound, right adnexal mass with fetal cardiac activity, free fluid (hemoperitoneum), and hemodynamic instability (hypotension, tachycardia). History of PID is a major risk factor for ectopic pregnancy. The presence of hemodynamic instability and a live ectopic pregnancy mandates emergent surgical intervention (salpingostomy or salpingectomy). Methotrexate is contraindicated when there is hemodynamic instability, cardiac activity, or beta-hCG > 5,000 mIU/mL.",
     "learning_objectives": [
-      "Recognize the classic presentation of placenta previa",
-      "Understand that digital cervical exam is contraindicated in placenta previa",
-      "Apply expectant management principles for stable preterm placenta previa"
+      "Recognize ruptured ectopic pregnancy as a surgical emergency",
+      "Identify contraindications to methotrexate for ectopic pregnancy",
+      "Understand risk factors for ectopic pregnancy"
     ],
     "options": [
-      {"label": "A", "text": "Perform a digital cervical exam to assess dilation", "is_correct": false, "explanation": "Incorrect. Digital cervical exam is absolutely contraindicated in suspected placenta previa. It can disrupt the placenta and cause life-threatening hemorrhage."},
-      {"label": "B", "text": "Immediate cesarean delivery", "is_correct": false, "explanation": "Incorrect. At 34 weeks with a stable mother and reassuring fetal status, immediate delivery is not indicated. Expectant management to gain fetal maturity is preferred unless the mother or fetus becomes unstable."},
-      {"label": "C", "text": "Induce labor with oxytocin", "is_correct": false, "explanation": "Incorrect. Vaginal delivery is contraindicated with complete placenta previa because cervical dilation would disrupt the placenta and cause hemorrhage. Cesarean delivery is the only safe delivery route."},
-      {"label": "D", "text": "Admit, monitor, and plan for cesarean delivery", "is_correct": true, "explanation": "Correct. Expectant management is appropriate for stable placenta previa at 34 weeks. This includes hospital admission, fetal monitoring, betamethasone for lung maturity, and planned cesarean delivery at 36-37 weeks."},
-      {"label": "E", "text": "Discharge home with pelvic rest instructions", "is_correct": false, "explanation": "Incorrect. A patient with active bleeding from complete placenta previa should not be discharged. She requires inpatient monitoring for potential recurrent hemorrhage and possible emergent delivery."}
+      {"label": "A", "text": "Administer intramuscular methotrexate", "is_correct": false, "explanation": "Incorrect. Methotrexate is contraindicated here due to hemodynamic instability, presence of fetal cardiac activity, and evidence of rupture with hemoperitoneum. Methotrexate is reserved for hemodynamically stable patients with unruptured ectopic pregnancies and no cardiac activity."},
+      {"label": "B", "text": "Emergent laparotomy or laparoscopy with salpingectomy", "is_correct": true, "explanation": "Correct. This hemodynamically unstable patient with a ruptured ectopic pregnancy requires emergent surgical intervention. Salpingectomy (or salpingostomy) is performed via laparoscopy or laparotomy depending on clinical stability. Concurrent fluid resuscitation and blood product administration are essential."},
+      {"label": "C", "text": "Serial beta-hCG measurements every 48 hours", "is_correct": false, "explanation": "Incorrect. Serial beta-hCG monitoring is used to evaluate pregnancies of unknown location in stable patients. This patient has a confirmed ectopic pregnancy with rupture and hemodynamic instability requiring immediate surgery."},
+      {"label": "D", "text": "Dilation and curettage", "is_correct": false, "explanation": "Incorrect. D&C is used for intrauterine pathology. The ultrasound confirms an empty uterus with an ectopic pregnancy in the adnexa. D&C would not address the ectopic pregnancy."},
+      {"label": "E", "text": "IV antibiotics for pelvic inflammatory disease", "is_correct": false, "explanation": "Incorrect. While cervical motion tenderness can be seen in PID, the positive pregnancy test, adnexal mass, free fluid, and hemodynamic instability point to ruptured ectopic pregnancy. PID treatment alone would be life-threatening."}
+    ]
+  },
+  {
+    "topic": "Psychiatry",
+    "subtopic": "Mood Disorders",
+    "stem": "A 42-year-old woman is brought to the emergency department by her husband because she has not slept in 4 days, has been spending excessively (maxing out three credit cards totaling $40,000 on items she doesn't need), and has been talking rapidly about starting multiple business ventures simultaneously. She is irritable when her husband tries to intervene. She has a history of a major depressive episode 3 years ago treated with sertraline, which was discontinued 1 year ago. She denies substance use; urine drug screen is negative. Vital signs and basic labs are normal. On examination, she is hyperverbal with pressured speech, flight of ideas, and grandiose delusions that she will become a billionaire. Which of the following is the most appropriate initial treatment?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This patient presents with a manic episode: decreased need for sleep, excessive spending (impaired judgment), pressured speech, flight of ideas, grandiose delusions, irritability, and increased goal-directed activity. With a history of a prior depressive episode, she meets criteria for bipolar I disorder. First-line treatment for an acute manic episode includes mood stabilizers (lithium or valproate) and/or atypical antipsychotics. Lithium is the gold standard mood stabilizer with the strongest evidence for reducing suicide risk in bipolar disorder. An atypical antipsychotic (such as quetiapine or olanzapine) may also be started for acute control.",
+    "learning_objectives": [
+      "Recognize the diagnostic criteria for a manic episode",
+      "Diagnose bipolar I disorder based on the presence of mania with a history of depression",
+      "Select appropriate pharmacotherapy for acute mania"
+    ],
+    "options": [
+      {"label": "A", "text": "Restart sertraline 50 mg daily", "is_correct": false, "explanation": "Incorrect. Antidepressant monotherapy is contraindicated in bipolar disorder as it can worsen mania or induce rapid cycling. This patient's prior depressive episode treated with an antidepressant may have been an early manifestation of bipolar disorder."},
+      {"label": "B", "text": "Lithium and an atypical antipsychotic", "is_correct": true, "explanation": "Correct. The combination of lithium (mood stabilizer) and an atypical antipsychotic provides the most effective acute treatment for severe mania. Lithium is the first-line mood stabilizer and has demonstrated efficacy in reducing suicide risk. An atypical antipsychotic provides faster control of acute symptoms."},
+      {"label": "C", "text": "Lorazepam 2 mg as needed for anxiety", "is_correct": false, "explanation": "Incorrect. While benzodiazepines can be used as adjunctive therapy for acute agitation in mania, they do not treat the underlying mood episode. A mood stabilizer is the essential treatment."},
+      {"label": "D", "text": "Cognitive behavioral therapy alone", "is_correct": false, "explanation": "Incorrect. CBT is beneficial as adjunctive therapy for bipolar disorder but is insufficient as sole treatment for acute mania with psychotic features (grandiose delusions). Pharmacotherapy is essential."},
+      {"label": "E", "text": "Methylphenidate for ADHD", "is_correct": false, "explanation": "Incorrect. While mania can be mistaken for ADHD (distractibility, increased activity, rapid speech), this patient has episodic symptoms with grandiose delusions and decreased need for sleep, which are characteristic of mania. Stimulants could worsen mania."}
+    ]
+  },
+  {
+    "topic": "Psychiatry",
+    "subtopic": "Psychotic Disorders",
+    "stem": "A 21-year-old male college student is brought to the emergency department by campus police after he was found screaming in his dorm hallway that the government was monitoring him through the electrical outlets. His roommate reports that over the past 5 months, the patient has become increasingly isolated, stopped attending classes, and has been talking to himself. The patient reports hearing two voices commenting on his behavior and telling him he is in danger. He believes his thoughts are being broadcast on the radio. He has lost 20 pounds over the past 3 months without trying. Urine drug screen is negative. There is no significant medical or family psychiatric history. Which of the following is the most likely diagnosis?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This patient presents with auditory hallucinations (two voices commenting on behavior), persecutory delusions (government monitoring), thought broadcasting, social withdrawal, and functional decline over 5 months. These symptoms represent both positive symptoms (hallucinations, delusions) and negative symptoms (social withdrawal, self-neglect) of schizophrenia. The duration exceeds 6 months when prodromal decline is included, and substance use and medical causes have been excluded. The age of onset (late teens to early 20s in males) is typical.",
+    "learning_objectives": [
+      "Recognize the positive and negative symptoms of schizophrenia",
+      "Apply DSM-5 diagnostic criteria for schizophrenia including duration requirements",
+      "Differentiate schizophrenia from other psychotic disorders"
+    ],
+    "options": [
+      {"label": "A", "text": "Brief psychotic disorder", "is_correct": false, "explanation": "Incorrect. Brief psychotic disorder lasts between 1 day and 1 month with full return to baseline functioning. This patient has had symptoms for at least 5 months, excluding this diagnosis."},
+      {"label": "B", "text": "Schizophreniform disorder", "is_correct": false, "explanation": "Incorrect. Schizophreniform disorder has the same symptom criteria as schizophrenia but lasts between 1 and 6 months. Given that this patient has had progressive decline over 5 months with active psychotic symptoms, the total duration likely exceeds 6 months, making schizophrenia the more appropriate diagnosis."},
+      {"label": "C", "text": "Schizophrenia", "is_correct": true, "explanation": "Correct. This patient meets DSM-5 criteria for schizophrenia: two or more characteristic symptoms (hallucinations, delusions, disorganized speech) present for a significant portion of time during a 1-month period, with continuous signs of disturbance for at least 6 months (including prodromal decline). First-line treatment is second-generation antipsychotics."},
+      {"label": "D", "text": "Schizoaffective disorder", "is_correct": false, "explanation": "Incorrect. Schizoaffective disorder requires a concurrent major mood episode (depressive or manic) along with psychotic symptoms. While the patient has functional decline and weight loss, there is no clear description of a mood episode meeting full criteria."},
+      {"label": "E", "text": "Delusional disorder", "is_correct": false, "explanation": "Incorrect. Delusional disorder involves non-bizarre delusions without other psychotic symptoms. This patient has auditory hallucinations and bizarre delusions (thought broadcasting), which are not features of delusional disorder."}
+    ]
+  },
+  {
+    "topic": "Psychiatry",
+    "subtopic": "Substance Use",
+    "stem": "A 38-year-old man presents to the emergency department with confusion, tremulousness, and visual hallucinations of 'bugs crawling on the walls' 48 hours after his last alcoholic drink. He has a 15-year history of heavy alcohol use (a fifth of whiskey daily) and abruptly stopped drinking 2 days ago when he ran out of money. Vital signs: temperature 38.9°C, blood pressure 168/102 mmHg, heart rate 126 bpm, respiratory rate 22/min. He is diaphoretic, agitated, and disoriented to time and place. Labs: glucose 92 mg/dL, sodium 138 mEq/L, potassium 3.2 mEq/L, magnesium 1.4 mg/dL (normal 1.7-2.2). Blood alcohol level is 0 mg/dL. Which of the following is the most appropriate initial treatment?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "medium",
+    "source": "curated",
+    "explanation": "This patient has delirium tremens (DT), the most severe form of alcohol withdrawal, presenting 48-96 hours after cessation. Features include confusion, agitation, visual hallucinations, autonomic hyperactivity (tachycardia, hypertension, hyperthermia, diaphoresis), and disorientation. DT has a mortality rate of 5-15% without treatment. First-line treatment is high-dose IV benzodiazepines (diazepam or lorazepam) titrated to effect using a symptom-triggered protocol (CIWA scale). Electrolyte repletion (potassium, magnesium) and thiamine supplementation are also essential.",
+    "learning_objectives": [
+      "Recognize the clinical features and timeline of delirium tremens",
+      "Identify benzodiazepines as first-line treatment for alcohol withdrawal",
+      "Understand the importance of electrolyte repletion and thiamine in alcohol withdrawal"
+    ],
+    "options": [
+      {"label": "A", "text": "IV diazepam with symptom-triggered dosing protocol", "is_correct": true, "explanation": "Correct. IV benzodiazepines are the cornerstone of DT treatment. Symptom-triggered dosing using the CIWA-Ar scale allows for appropriate dose titration. Diazepam is preferred for its long half-life and smooth tapering, though lorazepam is preferred in liver disease."},
+      {"label": "B", "text": "Oral naltrexone 50 mg daily", "is_correct": false, "explanation": "Incorrect. Naltrexone is used for relapse prevention in alcohol use disorder, not for acute alcohol withdrawal. It does not address the life-threatening autonomic instability and CNS excitability of delirium tremens."},
+      {"label": "C", "text": "IV haloperidol 5 mg", "is_correct": false, "explanation": "Incorrect. Antipsychotics like haloperidol lower the seizure threshold and should not be used as first-line monotherapy for alcohol withdrawal. They may be used cautiously as adjuncts for severe agitation refractory to benzodiazepines."},
+      {"label": "D", "text": "Oral disulfiram 250 mg daily", "is_correct": false, "explanation": "Incorrect. Disulfiram is an alcohol deterrent medication used for relapse prevention. It causes an aversive reaction when alcohol is consumed but has no role in treating acute withdrawal or delirium tremens."},
+      {"label": "E", "text": "Physical restraints and observation", "is_correct": false, "explanation": "Incorrect. Physical restraints without pharmacological treatment do not address the underlying pathophysiology of alcohol withdrawal (CNS hyperexcitability from GABA downregulation and glutamate upregulation). Benzodiazepines enhance GABA activity and are essential."}
+    ]
+  },
+  {
+    "topic": "Emergency Medicine",
+    "subtopic": "Cardiac Emergencies",
+    "stem": "A 55-year-old man collapses at a shopping mall. Bystander CPR is initiated. When paramedics arrive, the cardiac monitor shows ventricular fibrillation. The patient is pulseless and unresponsive. Two minutes of high-quality CPR has been performed. The defibrillator is charged and ready. Which of the following is the most appropriate next step?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "easy",
+    "source": "curated",
+    "explanation": "In ventricular fibrillation (a shockable rhythm), the most important intervention is immediate defibrillation. Per ACLS guidelines, the sequence for VF/pulseless VT is: identify the rhythm, deliver an unsynchronized shock (biphasic 120-200J, monophasic 360J), immediately resume CPR for 2 minutes, then reassess rhythm. Defibrillation is the only definitive treatment for VF and should be performed as soon as possible. Epinephrine and amiodarone are given after the first and second unsuccessful shocks, respectively.",
+    "learning_objectives": [
+      "Apply ACLS algorithm for ventricular fibrillation",
+      "Recognize defibrillation as the primary treatment for VF arrest",
+      "Understand the sequence of interventions in cardiac arrest management"
+    ],
+    "options": [
+      {"label": "A", "text": "Administer IV epinephrine 1 mg", "is_correct": false, "explanation": "Incorrect. In VF, the first intervention after CPR is defibrillation, not epinephrine. Epinephrine is administered after the first unsuccessful defibrillation attempt and every 3-5 minutes thereafter."},
+      {"label": "B", "text": "Deliver an unsynchronized shock at 200 joules biphasic", "is_correct": true, "explanation": "Correct. Immediate defibrillation is the most important intervention for VF. An unsynchronized shock should be delivered as soon as the defibrillator is ready. CPR should be resumed immediately after the shock without pausing to check the rhythm."},
+      {"label": "C", "text": "Administer IV amiodarone 300 mg", "is_correct": false, "explanation": "Incorrect. Amiodarone is given after the second unsuccessful defibrillation for refractory VF/pVT. The initial focus should be on defibrillation and high-quality CPR."},
+      {"label": "D", "text": "Perform synchronized cardioversion at 100 joules", "is_correct": false, "explanation": "Incorrect. Synchronized cardioversion is used for unstable tachyarrhythmias with a pulse (SVT, atrial fibrillation, atrial flutter). For pulseless VF, unsynchronized defibrillation is required because there is no organized QRS complex to synchronize with."},
+      {"label": "E", "text": "Administer IV atropine 1 mg", "is_correct": false, "explanation": "Incorrect. Atropine is no longer recommended in the ACLS cardiac arrest algorithm. It was previously used for asystole and PEA but has been removed due to lack of evidence for improved outcomes."}
+    ]
+  },
+  {
+    "topic": "Emergency Medicine",
+    "subtopic": "Toxicology",
+    "stem": "A 16-year-old girl is brought to the emergency department 3 hours after intentionally ingesting an unknown quantity of acetaminophen tablets in a suicide attempt. She is alert and oriented but reports mild nausea. Vital signs: blood pressure 112/68 mmHg, heart rate 88 bpm, temperature 36.9°C. Physical examination is unremarkable. Labs: AST 32 U/L, ALT 28 U/L, INR 1.0, creatinine 0.8 mg/dL. Serum acetaminophen level at 4 hours post-ingestion is 210 μg/mL. Using the Rumack-Matthew nomogram, this level falls above the treatment line. Which of the following is the most appropriate treatment?",
+    "question_type": "single_best_answer",
+    "usmle_step": "step2ck",
+    "difficulty": "hard",
+    "source": "curated",
+    "explanation": "This patient has a potentially toxic acetaminophen ingestion. The 4-hour serum acetaminophen level of 210 μg/mL is above the treatment line on the Rumack-Matthew nomogram (150 μg/mL at 4 hours). N-acetylcysteine (NAC) is the specific antidote for acetaminophen toxicity and should be initiated immediately. NAC replenishes glutathione stores and provides an alternative substrate for the toxic metabolite NAPQI. It is most effective when started within 8 hours of ingestion but should be given at any time if the acetaminophen level is above the treatment line. Normal liver enzymes at 3 hours do not rule out impending hepatotoxicity, as liver injury typically develops 24-72 hours after ingestion.",
+    "learning_objectives": [
+      "Apply the Rumack-Matthew nomogram for acetaminophen toxicity management",
+      "Recognize N-acetylcysteine as the antidote for acetaminophen overdose",
+      "Understand the timeline of acetaminophen-induced hepatotoxicity"
+    ],
+    "options": [
+      {"label": "A", "text": "Activated charcoal only, with outpatient follow-up in 24 hours", "is_correct": false, "explanation": "Incorrect. While activated charcoal can reduce acetaminophen absorption if given within 1-2 hours of ingestion, it is of limited benefit at 3 hours. More importantly, the acetaminophen level above the treatment line mandates NAC therapy. Outpatient management is inappropriate for a toxic ingestion."},
+      {"label": "B", "text": "IV N-acetylcysteine (NAC)", "is_correct": true, "explanation": "Correct. NAC is the specific antidote for acetaminophen toxicity. With a 4-hour level above the treatment line, NAC should be started immediately. The 21-hour IV protocol (150 mg/kg loading, then 50 mg/kg over 4 hours, then 100 mg/kg over 16 hours) or the oral protocol (140 mg/kg loading, then 70 mg/kg every 4 hours for 17 additional doses) are both effective."},
+      {"label": "C", "text": "Whole bowel irrigation with polyethylene glycol", "is_correct": false, "explanation": "Incorrect. Whole bowel irrigation is used for ingestions of sustained-release medications, iron, lithium, or drug packets. It is not indicated for acetaminophen overdose. NAC is the appropriate treatment."},
+      {"label": "D", "text": "Observation only since liver enzymes are normal", "is_correct": false, "explanation": "Incorrect. Normal liver enzymes at 3 hours post-ingestion do not exclude impending hepatotoxicity. Acetaminophen-induced liver injury typically manifests 24-72 hours after ingestion. The elevated serum acetaminophen level above the treatment line necessitates NAC therapy."},
+      {"label": "E", "text": "Emergent hemodialysis", "is_correct": false, "explanation": "Incorrect. Hemodialysis is not routinely used for acetaminophen overdose. NAC is highly effective when given early. Hemodialysis may be considered in massive ingestions with very high levels or in cases of renal failure, but NAC remains the primary treatment."}
     ]
   }
 ]
