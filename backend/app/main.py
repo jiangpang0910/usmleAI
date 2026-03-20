@@ -14,9 +14,10 @@ from app.database import Base, engine
 
 # Import models so they are registered with Base.metadata before create_all
 import app.models.knowledge  # noqa: F401
+import app.models.session  # noqa: F401
 
-# Import API routers for topics, questions, answers, and Claude AI integration
-from app.routers import topics, questions, answers, claude
+# Import API routers for topics, questions, answers, Claude AI, and sessions
+from app.routers import topics, questions, answers, claude, sessions
 
 
 @asynccontextmanager
@@ -77,3 +78,7 @@ app.include_router(answers.router)
 
 # Claude router: POST /api/claude/test and POST /api/claude/explain
 app.include_router(claude.router)
+
+# Sessions router: POST /api/sessions/record-answer, GET /api/sessions/performance,
+# POST /api/sessions/adaptive/start
+app.include_router(sessions.router)
