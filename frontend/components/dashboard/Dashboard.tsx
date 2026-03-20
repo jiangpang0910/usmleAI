@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import {
   Card,
   CardHeader,
@@ -103,6 +104,9 @@ const usmleSteps: USMLEStep[] = [
  * - Clear text hierarchy (title > section headers > body)
  */
 export default function Dashboard() {
+  /** Router instance for navigating to topic picker when user clicks "Pick a Topic" */
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-background">
       {/* ===== Navy Header Bar ===== */}
@@ -132,11 +136,13 @@ export default function Dashboard() {
                   <CardDescription>{action.description}</CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  {/* Button is non-functional for now — functionality added in Phase 2/3 */}
+                  {/* Pick a Topic navigates to /topics; other actions are coming soon */}
                   <Button
                     className="w-full"
                     onClick={() =>
-                      alert(`${action.title} — coming soon!`)
+                      action.title === "Pick a Topic"
+                        ? router.push("/topics")
+                        : alert(`${action.title} — coming soon!`)
                     }
                   >
                     {action.buttonLabel}
