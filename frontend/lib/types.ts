@@ -312,3 +312,17 @@ export interface SubmitExamBlockRequest {
   /** Total seconds spent on this block */
   time_spent_seconds: number;
 }
+
+// ===== Auth Types =====
+
+/** User profile returned from GET /api/auth/me */
+export interface AuthUser {
+  /** UUID of the user */
+  id: string;
+  /** User's email from Google */
+  email: string;
+  /** Display name from Google profile */
+  name: string | null;
+  /** Google profile picture URL */
+  picture_url: string | null;
+}

@@ -27,7 +27,8 @@ import type {
 // Base URL for the FastAPI backend server.
 // Uses the NEXT_PUBLIC_API_URL environment variable if set,
 // otherwise defaults to localhost:8000 for local development.
-const API_BASE_URL =
+// Exported so auth.ts can build the OAuth login redirect URL.
+export const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 /**
@@ -44,9 +45,25 @@ export async function apiFetch<T>(
   endpoint: string,
   options?: RequestInit
 ): Promise<T> {
+  // Build headers with JSON content type as default
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+    ...((options?.headers as Record<string, string>) || {}),
+  };
+
+  // Attach JWT auth token from localStorage if available (browser-only)
+  // This makes authentication automatic on all API calls without
+  // changing any existing call sites
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("usmleai_token");
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+  }
+
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
-    headers: { "Content-Type": "application/json", ...options?.headers },
     ...options,
+    headers,
   });
 
   // Throw a descriptive error for non-2xx responses

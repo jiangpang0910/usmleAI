@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import AuthProvider from "@/components/providers/AuthProviderWrapper";
 
 /**
  * Load the Inter font from Google Fonts.
@@ -32,7 +33,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* antialiased smooths font rendering across browsers */}
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        {/* AuthProvider wraps the entire app to provide auth state to all pages */}
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }

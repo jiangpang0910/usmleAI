@@ -10,6 +10,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/lib/auth";
 
 /**
  * Data structure for each quick-start action card.
@@ -107,16 +108,59 @@ export default function Dashboard() {
   /** Router instance for navigating to topic picker when user clicks "Pick a Topic" */
   const router = useRouter();
 
+  /** Auth state and actions from the AuthProvider context */
+  const { user, loading, login, logout } = useAuth();
+
   return (
     <div className="min-h-screen bg-background">
       {/* ===== Navy Header Bar ===== */}
       {/* Dark navy header strip with white text — medical school aesthetic */}
       <header className="bg-[hsl(217,71%,20%)] text-white py-6 px-8 shadow-md">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-2xl font-bold tracking-tight">usmleAI</h1>
-          <p className="text-sm text-blue-200">
-            AI-powered USMLE preparation
-          </p>
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
+          {/* Left side: app branding */}
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">usmleAI</h1>
+            <p className="text-sm text-blue-200">
+              AI-powered USMLE preparation
+            </p>
+          </div>
+
+          {/* Right side: auth controls — sign in button or user info */}
+          {!loading && (
+            <div className="flex items-center gap-3">
+              {user ? (
+                <>
+                  {/* Show user's Google profile picture if available */}
+                  {user.picture_url && (
+                    <img
+                      src={user.picture_url}
+                      alt="Profile"
+                      className="w-6 h-6 rounded-full"
+                    />
+                  )}
+                  {/* Display user's name, falling back to email */}
+                  <span className="text-sm text-blue-100">
+                    {user.name || user.email}
+                  </span>
+                  {/* Sign out button clears JWT and returns to anonymous state */}
+                  <button
+                    onClick={logout}
+                    className="text-sm text-blue-200 hover:text-white border border-blue-400/40 rounded px-3 py-1 transition-colors"
+                  >
+                    Sign out
+                  </button>
+                </>
+              ) : (
+                /* Sign in button redirects to Google OAuth consent screen */
+                <button
+                  onClick={login}
+                  className="text-sm text-white border border-blue-300/50 rounded px-4 py-1.5 hover:bg-white/10 transition-colors"
+                >
+                  Sign in with Google
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </header>
 
