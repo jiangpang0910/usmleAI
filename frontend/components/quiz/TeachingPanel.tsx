@@ -105,16 +105,8 @@ export default function TeachingPanel({
     [questionId, userAnswerLabel]
   );
 
-  /**
-   * Auto-fetch explanation when the panel becomes visible for the first time.
-   * Uses the default "explanation" mode initially.
-   */
-  useEffect(() => {
-    if (isVisible && !content && !isLoading) {
-      fetchExplanation("explanation");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isVisible]);
+  /** Whether the user has requested teaching feedback */
+  const [hasRequested, setHasRequested] = useState(false);
 
   /**
    * Handle teaching mode toggle.
@@ -150,6 +142,24 @@ export default function TeachingPanel({
 
   // Don't render anything if the panel isn't visible
   if (!isVisible) return null;
+
+  // Show a button to request teaching feedback — don't auto-fetch
+  if (!hasRequested) {
+    return (
+      <Card className="mt-6">
+        <CardContent className="pt-6 text-center">
+          <Button
+            onClick={() => {
+              setHasRequested(true);
+              fetchExplanation("explanation");
+            }}
+          >
+            Get Teaching Feedback
+          </Button>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card className="mt-6">
