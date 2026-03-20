@@ -9,7 +9,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Question Generation
 
-- [ ] **QGEN-01**: User can practice single best answer questions (vignette → pick A-E)
+- [x] **QGEN-01**: User can practice single best answer questions (vignette → pick A-E)
 - [ ] **QGEN-02**: User can practice sequential question sets (multi-part cases)
 - [ ] **QGEN-03**: User can practice drag-and-drop/abstract format questions
 - [ ] **QGEN-04**: User can submit free-response answers and get AI evaluation
@@ -18,9 +18,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Teaching
 
-- [ ] **TEACH-01**: User sees detailed explanations (why each option is right/wrong, pathophysiology)
-- [ ] **TEACH-02**: User can use Socratic mode (AI guides with follow-up questions)
-- [ ] **TEACH-03**: User can toggle between detailed explanation and Socratic mode
+- [x] **TEACH-01**: User sees detailed explanations (why each option is right/wrong, pathophysiology)
+- [x] **TEACH-02**: User can use Socratic mode (AI guides with follow-up questions)
+- [x] **TEACH-03**: User can toggle between detailed explanation and Socratic mode
 
 ### Study Modes
 
@@ -66,13 +66,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | QGEN-05 | Phase 1 | Complete |
 | QGEN-06 | Phase 1 | Complete |
-| QGEN-01 | Phase 2 | Pending |
+| QGEN-01 | Phase 2 | Complete |
 | QGEN-02 | Phase 2 | Pending |
 | QGEN-03 | Phase 2 | Pending |
 | QGEN-04 | Phase 2 | Pending |
-| TEACH-01 | Phase 2 | Pending |
-| TEACH-02 | Phase 2 | Pending |
-| TEACH-03 | Phase 2 | Pending |
+| TEACH-01 | Phase 2 | Complete |
+| TEACH-02 | Phase 2 | Complete |
+| TEACH-03 | Phase 2 | Complete |
 | STUDY-01 | Phase 3 | Pending |
 | STUDY-02 | Phase 3 | Pending |
 | STUDY-03 | Phase 3 | Pending |

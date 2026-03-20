@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-20T02:13:42.447Z"
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-20T02:50:21.160Z"
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 8
+  completed_plans: 4
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-19)
 
 **Core value:** Medical students can practice USMLE-style questions in every format and learn *why* answers are right or wrong through AI-powered teaching
-**Current focus:** Phase 01 — foundation
+**Current focus:** Phase 02 — question-engine
 
 ## Current Position
 
-Phase: 01 (foundation) — EXECUTING
-Plan: 3 of 3
+Phase: 02 (question-engine) — EXECUTING
+Plan: 2 of 5
 
 ## Performance Metrics
 
@@ -49,6 +49,7 @@ Plan: 3 of 3
 | Phase 01 P01 | 3min | 2 tasks | 9 files |
 | Phase 01 P02 | 14min | 2 tasks | 16 files |
 | Phase 01 P03 | 5min | 2 tasks | 14 files |
+| Phase 02 P01 | 2min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -67,6 +68,9 @@ Recent decisions affecting current work:
 - [Phase 01]: Tailwind CSS v3 for shadcn/ui compatibility
 - [Phase 01]: JSON seed data for version-controlled curated USMLE content
 - [Phase 01]: Idempotent seeding with topic count check prevents duplicate data
+- [Phase 02]: Module-level constants for teaching mode system prompts (explanation vs socratic)
+- [Phase 02]: conversation_history as list[dict] for flexible multi-turn Socratic dialogue
+- [Phase 02]: OptionFeedback with from_attributes for per-option teaching breakdown
 
 ### Pending Todos
 
@@ -84,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-20T02:13:42.441Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-question-engine/02-CONTEXT.md
+Last session: 2026-03-20T02:50:20.208Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None
