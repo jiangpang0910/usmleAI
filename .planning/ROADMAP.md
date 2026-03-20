@@ -62,13 +62,14 @@ Plans:
   1. User can select a subject (e.g., Cardiology, Pharmacology) and receive a set of questions scoped to that topic
   2. User can start an adaptive session where the AI selects questions based on their past performance and adjusts difficulty as the session progresses
   3. User can take a timed exam simulation with blocks that mirror the real USMLE format (time limits, question count, no mid-block feedback)
-**Plans**: 4 plans
+**Plans**: 5 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Backend session models, answer history tracking, performance aggregation, and adaptive question selection endpoint
+- [ ] 03-01-PLAN.md — Backend session models, answer history tracking, performance aggregation, adaptive question selection endpoint, and all frontend types/API functions
 - [ ] 03-02-PLAN.md — Adaptive session frontend: setup page with weak topic preview, quiz flow, and dashboard button wiring
 - [ ] 03-03-PLAN.md — Exam simulation backend: session creation with USMLE-accurate block/timing structure and block result submission
 - [ ] 03-04-PLAN.md — Exam simulation frontend: timed blocks, no-feedback mode, break screen, block review, and dashboard button wiring
+- [ ] 03-05-PLAN.md — OpenRouter migration: swap explain endpoint from Claude API to Gemini 2.0 Flash via OpenRouter
 
 ### Phase 4: Progress Tracking
 **Goal**: Users can see how they are performing over time, understand which areas need the most work, and have the system surface review material at the right intervals
@@ -90,5 +91,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/3 | Planning complete | - |
 | 2. Question Engine | 2/5 | In Progress|  |
-| 3. Study Modes | 0/4 | Planning complete | - |
+| 3. Study Modes | 0/5 | Planning complete | - |
 | 4. Progress Tracking | 0/TBD | Not started | - |
