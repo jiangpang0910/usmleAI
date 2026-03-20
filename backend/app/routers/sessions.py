@@ -22,9 +22,9 @@ from app.schemas.session import (
     TopicPerformance,
     AdaptiveSessionRequest,
     AdaptiveSessionResponse,
-    AdaptiveQuestionInfo,
     PerformanceSummaryResponse,
 )
+from app.schemas.knowledge import QuestionResponse
 
 # Create router with /api/sessions prefix and "sessions" tag for API docs
 router = APIRouter(prefix="/api/sessions", tags=["sessions"])
@@ -264,18 +264,15 @@ def start_adaptive_session(
     # Combine weak and other questions into the final set
     all_questions = weak_questions + other_questions
 
-    # Step 9: Convert to response format with minimal metadata
-    question_infos = [
-        AdaptiveQuestionInfo(
-            question_id=q.id,
-            topic_id=q.topic_id,
-            difficulty=q.difficulty,
-        )
+    # Step 9: Convert to full QuestionResponse objects so frontend can render immediately
+    # This avoids a second round-trip to fetch question details
+    question_responses = [
+        QuestionResponse.model_validate(q)
         for q in all_questions
     ]
 
     return AdaptiveSessionResponse(
         session_id=session.id,
-        questions=question_infos,
+        questions=question_responses,
         weak_topics=weak_topics,
     )

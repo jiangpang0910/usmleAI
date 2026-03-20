@@ -131,8 +131,9 @@ class AdaptiveSessionResponse(BaseModel):
     # UUID of the newly created adaptive session
     session_id: UUID
 
-    # List of selected questions with metadata for frontend consumption
-    questions: list[AdaptiveQuestionInfo]
+    # List of selected questions with full data for frontend rendering
+    # Uses Any to accept both AdaptiveQuestionInfo and full QuestionResponse objects
+    questions: list
 
     # Topics where the student's accuracy is below 60% threshold
     weak_topics: list[TopicPerformance]
