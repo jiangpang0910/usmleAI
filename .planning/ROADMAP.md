@@ -91,5 +91,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/3 | Planning complete | - |
 | 2. Question Engine | 5/5 | Complete   | 2026-03-20 |
-| 3. Study Modes | 2/5 | In Progress|  |
+| 3. Study Modes | 4/5 | In Progress|  |
 | 4. Progress Tracking | 0/TBD | Not started | - |
